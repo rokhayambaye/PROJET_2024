@@ -4,7 +4,6 @@
 - Créer un diagramme de gantt (diagramme qui permet de lister les tâches et de créer un planning à respecter)
 - Créer un site web avec la carte, le diagramme,...
 - Créer les branches: diagramme, site web, 3 bases de données 
-- 
 
 # INTRODUCTION
 Présentation projet
