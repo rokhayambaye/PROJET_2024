@@ -43,8 +43,3 @@ Structure du projet (documents, codes sources, ... séparés)
 
 ## DOCUMENTATION
 
-## REPARTITION DES TÂCHES
-- Créer un site web -> Samy
-- Le diagramme de gantt -> DIALLO
-- Base de données Coralie et Rokhaya
-
