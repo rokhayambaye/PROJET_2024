@@ -20,7 +20,7 @@ Le but est de créer un site web interactif permettant de visualiser ces donnée
 1) Un site web avec des cartes et des graphiques permettant de visualiser ces données de manière intuitive.
 2) Une présentation vidéo (similaire à celle de NYC CitiBike) illustrant les tendances de trafic.
 3) Un système prédictif pour anticiper le trafic avec un code couleur, à la manière de Bison Futé.
-4) une analyse sur le trafic cycliste à Montpellier à l'aide de données ouvertes 
+4) une analyse sur le trafic cycliste à Montpellier à l'aide de données ouvertes.
 # STRUCTURE
 Structure du projet (documents, codes sources, ... séparés)
 
