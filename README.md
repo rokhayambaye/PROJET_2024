@@ -1,15 +1,12 @@
 # CIRCULATION DES VÉLOS À MONTPELLIER
 
-## 1er approche 
-- Créer un diagramme de gantt (diagramme qui permet de lister les tâches et de créer un planning à respecter)
-- Créer un site web avec la carte, le diagramme,...
-- Créer les branches: diagramme, site web, 3 bases de données 
-- Décrire les packages et les logiciels 
-
 ## INTRODUCTION
-Présentation projet
-dans ce projet
-problématique
+À Montpellier, le choix des transports est nombreux, mais le vélo reste l'une des options les plus écologiques et pratiques. Cela est notamment dû à Vélomagg, qui propose des vélos en libre-service à différents endroits de la ville.
+Dans ce projet, nous nous limiterons à Montpellier et toutes nos observations seront rassemblées sur un site web. Nous souhaitons visualiser le trafic cycliste sur une année tout en prédisant ce trafic pour le lendemain afin que toute personne se déplacant à vélo puisse savoir par quels chemins passer.
+
+## SITE INTERNET
+Le site est disponible à l'adresse suivante :
+https://coralieromani.github.io/PROJET_2024/
 
 ## OBJECTIFS et Contexte
 Le projet porte sur l'analyse des déplacements de vélos dans Montpellier, en utilisant des ensembles de données publiques disponibles, tels que :  \
@@ -43,3 +40,9 @@ Structure du projet (documents, codes sources, ... séparés)
 
 ## DOCUMENTATION
 
+
+## 1er approche 
+- Créer un diagramme de gantt (diagramme qui permet de lister les tâches et de créer un planning à respecter)
+- Créer un site web avec la carte, le diagramme,...
+- Créer les branches: diagramme, site web, 3 bases de données 
+- Décrire les packages et les logiciels 
