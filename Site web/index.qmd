@@ -1,0 +1,43 @@
+---
+title: "CIRCULATION DES VÉLOS À MONTPELLIER"
+author: "Samy"
+date: "2024"
+format:
+  html:
+    toc: true  # Affiche une table des matières
+    code-fold: true  # Permet de replier/déplier les blocs de code
+    css: styles.css  # Fichier CSS personnalisé pour styliser le site
+    theme: flatly  # Choix d'un thème pré-conçu pour une apparence moderne
+---
+
+![Piste à Montpellier](https://static.actu.fr/uploads/2020/09/montpellier-velo-piste-cyclable-960x640.jpg)
+
+## Introduction
+
+
+Bienvenue sur le site du projet **HAX712X du groupe 1**.  
+Ce projet porte sur l'analyse des **déplacements de vélos dans Montpellier**, en utilisant des ensembles de données publiques disponibles, tels que :
+- **Trajets en vélos partagés** : Les trajets des vélos VéloMagg.
+- **Comptage de cyclistes et piétons** : Données issues des capteurs de vélo.
+- **Données OpenStreetMap** : Pour cartographier les infrastructures et les trajets.
+
+![Vélos à Montpellier](https://www.montpellier3m.fr/sites/default/files/banner-beneficesvelo.jpg)
+---
+
+## Objectifs du projet
+
+Les principaux objectifs de ce projet sont :
+1. Collecter et analyser des données sur les déplacements à vélo à Montpellier.
+2. Développer des **visualisations interactives** pour représenter les résultats de manière claire.
+3. Proposer des recommandations pour améliorer l'infrastructure cyclable dans la ville.
+
+---
+
+## Méthodologie
+
+La méthodologie adoptée pour ce projet inclut :
+1. **Collecte des données** : Les données sont issues de [VéloMagg](https://data.montpellier3m.fr), des capteurs de circulation, et d'OpenStreetMap.
+2. **Nettoyage et analyse** : Les données sont traitées avec des outils comme **Python**, **Pandas**, **Matplotlib**, et **Scikit-learn** pour obtenir des insights clairs.
+3. **Visualisation des résultats** : Utilisation de bibliothèques comme **Plotly** et **Folium** pour des visualisations interactives.
+
+## Carte de MONTPELLIER
