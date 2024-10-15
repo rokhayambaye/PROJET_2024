@@ -23,26 +23,26 @@ Le but est de créer un site web interactif permettant de visualiser ces donnée
 
 ### Fichiers et dossiers principaux
 
-- `my_module_name/` : Dossier contenant les scripts Python pour l'analyse des données.\
-- `telechargement_données.py` : Script pour télécharger et préparer les données.\
-- `visualisation.py` : Script pour la création des graphiques et des cartes interactives.\
-- `prediction.py` : Contient le modèle de prédiction du trafic .\
- - `données_traffic.py` : Classe principale pour la gestion des données.\
-- `gantt/` : Contiendra le fichier du diagramme de Gantt pour la planification.\
-- `siteweb/` : Contient les fichiers pour la création du site web interactif.\
-- `.gitignore` : Fichier pour ignorer les fichiers inutiles.\
+- `my_module_name/` : Dossier contenant les scripts Python pour l'analyse des données.
+- `telechargement_données.py` : Script pour télécharger et préparer les données.
+- `visualisation.py` : Script pour la création des graphiques et des cartes interactives.
+- `prediction.py` : Contient le modèle de prédiction du trafic .
+ - `données_traffic.py` : Classe principale pour la gestion des données.
+- `gantt/` : Contiendra le fichier du diagramme de Gantt pour la planification.
+- `siteweb/` : Contient les fichiers pour la création du site web interactif.
+- `.gitignore` : Fichier pour ignorer les fichiers inutiles.
 - `README.md` : Description générale du projet.
 ### Branches Git
 
-- **base des données** : Branche dédiée au téléchargement et à la préparation des jeux de données.\
-- **diagramme de Gantt** : Branche dédiée à la gestion du planning via un diagramme de Gantt.\
+- **base des données** : Branche dédiée au téléchargement et à la préparation des jeux de données.
+- **diagramme de Gantt** : Branche dédiée à la gestion du planning via un diagramme de Gantt.
 - **site web** : Branche pour le développement du site web interactif.
 
 ## COMMENT ON PROCEDE
 1. **Téléchargement et traitement des données** : Depuis les sources VéloMagg, comptages de cyclistes et OpenStreetMap.
-2. **Planification du projet** : Création du diagramme de Gantt pour organiser les tâches.\
-3. **Création des visualisations** : Graphiques temporels, cartes de densité, cartes interactives.\
-4. **Modélisation prédictive** : Modèles de séries temporelles pour prédire le trafic cycliste.\
+2. **Planification du projet** : Création du diagramme de Gantt pour organiser les tâches.
+3. **Création des visualisations** : Graphiques temporels, cartes de densité, cartes interactives.
+4. **Modélisation prédictive** : Modèles de séries temporelles pour prédire le trafic cycliste.
 5. **Développement du site web** : Hébergement des résultats interactifs via GitHub Pages.
 ## REPARTITION DES TÂCHES
 - Créer un site web -> Samy
