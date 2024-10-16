@@ -1,7 +1,5 @@
 ---
 title: "CIRCULATION DES VÉLOS À MONTPELLIER"
-author: "Samy"
-date: "2024"
 format:
   html:
     toc: true  # Affiche une table des matières
