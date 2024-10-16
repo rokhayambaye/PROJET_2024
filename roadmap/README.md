@@ -1,4 +1,4 @@
-# CIRCULATION DES VÉLOS À MONTPELLIER
+# ANALYSE DU TRAFIC CYCLISTE
 
 ## INTRODUCTION
 À Montpellier, le choix des transports est nombreux, mais le vélo reste l'une des options les plus écologiques et pratiques. Cela est notamment dû à Vélomagg, qui propose des vélos en libre-service à différents endroits de la ville.
@@ -19,6 +19,7 @@ Le but est de créer un site web interactif permettant de visualiser ces donnée
 2) Une présentation vidéo (similaire à celle de NYC CitiBike) illustrant les tendances de trafic.
 3) Un système prédictif pour anticiper le trafic avec un code couleur, à la manière de Bison Futé.
 4) une analyse sur le trafic cycliste à Montpellier à l'aide de données ouvertes.
+
 ## Architecture du projet
 
 ### Fichiers et dossiers principaux
@@ -38,6 +39,9 @@ Le but est de créer un site web interactif permettant de visualiser ces donnée
 - **diagramme de Gantt** : Branche dédiée à la gestion du planning via un diagramme de Gantt.
 - **site web** : Branche pour le développement du site web interactif.
 
+### Packages et logiciels utilisés
+...
+
 ## COMMENT ON PROCEDE
 1. **Téléchargement et traitement des données** : Depuis les sources VéloMagg, comptages de cyclistes et OpenStreetMap.
 2. **Planification du projet** : Création du diagramme de Gantt pour organiser les tâches.
@@ -51,20 +55,3 @@ Le but est de créer un site web interactif permettant de visualiser ces donnée
 - Base de donné Open street map -> Coralie
 - Base de donné Balades en partage de vélo -> a definir
 - Cartographier Montpellier
-
-
-## STRUCTURE
-### Architecture du site
-### Description des données 
-### Package 
-
-Structure du projet (documents, codes sources, ... séparés)
-
-## DOCUMENTATION
-
-
-## 1er approche 
-- Créer un diagramme de gantt (diagramme qui permet de lister les tâches et de créer un planning à respecter)
-- Créer un site web avec la carte, le diagramme,...
-- Créer les branches: diagramme, site web, 3 bases de données 
-- Décrire les packages et les logiciels 
