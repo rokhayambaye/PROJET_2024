@@ -8,7 +8,7 @@ Dans ce projet, nous nous limiterons à Montpellier et toutes nos observations s
 Le site est disponible à l'adresse suivante :
 https://coralieromani.github.io/PROJET_2024/
 
-## OBJECTIFS et Contexte
+## OBJECTIFS 
 Ce projet vise à analyser le trafic cycliste à Montpellier en exploitant plusieurs jeux de données. L'objectif principal est de développer des visualisations interactives sur un site web permettant d'explorer et de prédire les flux de vélos dans la ville. Les données exploitées incluront les trajets du service VéloMagg, les comptages de cyclistes et piétons, ainsi que les informations cartographiques provenant d'OpenStreetMap.
 
 Le projet sera réalisé en équipe, avec une gestion collaborative des contributions sur GitHub, en veillant à une répartition équilibrée des tâches. L'essentiel du travail portera sur la création de visualisations et la mise en place d'une interface web interactive pour faciliter la navigation et l'interprétation des résultats.
