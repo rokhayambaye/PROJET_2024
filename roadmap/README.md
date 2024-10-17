@@ -9,45 +9,40 @@ Le site est disponible à l'adresse suivante :
 https://coralieromani.github.io/PROJET_2024/
 
 ## OBJECTIFS et Contexte
-Le projet porte sur l'analyse des déplacements de vélos dans Montpellier, en utilisant des ensembles de données publiques disponibles, tels que :  \
-      -Trajets en vélos partagés : Les trajets des vélos VéloMagg.\
-      -Comptage de cyclistes et piétons : Données issues des capteurs de vélo.\
-      -Données OpenStreetMap : Pour cartographier les infrastructures et les trajets.\
-Le but est de créer un site web interactif permettant de visualiser ces données et de faire des prédictions sur le trafic de vélos pour les jours qui vont suivre. Les résultats attendus incluent :
+Ce projet vise à analyser le trafic cycliste à Montpellier en exploitant plusieurs jeux de données. L'objectif principal est de développer des visualisations interactives sur un site web permettant d'explorer et de prédire les flux de vélos dans la ville. Les données exploitées incluront les trajets du service VéloMagg, les comptages de cyclistes et piétons, ainsi que les informations cartographiques provenant d'OpenStreetMap.
 
-1) Un site web avec des cartes et des graphiques permettant de visualiser ces données de manière intuitive.
-2) Une présentation vidéo (similaire à celle de NYC CitiBike) illustrant les tendances de trafic.
-3) Un système prédictif pour anticiper le trafic avec un code couleur, à la manière de Bison Futé.
-4) une analyse sur le trafic cycliste à Montpellier à l'aide de données ouvertes.
+Le projet sera réalisé en équipe, avec une gestion collaborative des contributions sur GitHub, en veillant à une répartition équilibrée des tâches. L'essentiel du travail portera sur la création de visualisations et la mise en place d'une interface web interactive pour faciliter la navigation et l'interprétation des résultats.
+
 
 ## Architecture du projet
 
 ### Fichiers et dossiers principaux
 
-- `my_module_name/` : Dossier contenant les scripts Python pour l'analyse des données.
+- `roadmap` : Contientles fichiers décrivant le projet, son architecture, et les étapes à suivre.
 - `telechargement_données.py` : Script pour télécharger et préparer les données.
 - `visualisation.py` : Script pour la création des graphiques et des cartes interactives.
 - `prediction.py` : Contient le modèle de prédiction du trafic .
  - `données_traffic.py` : Classe principale pour la gestion des données.
-- `gantt/` : Contiendra le fichier du diagramme de Gantt pour la planification.
 - `siteweb/` : Contient les fichiers pour la création du site web interactif.
 - `.gitignore` : Fichier pour ignorer les fichiers inutiles.
 - `README.md` : Description générale du projet.
 ### Branches Git
-
+- **Branche Main** : Branche principale contenant le code stable.
 - **base des données** : Branche dédiée au téléchargement et à la préparation des jeux de données.
 - **diagramme de Gantt** : Branche dédiée à la gestion du planning via un diagramme de Gantt.
 - **site web** : Branche pour le développement du site web interactif.
 
 ### Packages et logiciels utilisés
-...
-
-## COMMENT ON PROCEDE
-1. **Téléchargement et traitement des données** : Depuis les sources VéloMagg, comptages de cyclistes et OpenStreetMap.
-2. **Planification du projet** : Création du diagramme de Gantt pour organiser les tâches.
-3. **Création des visualisations** : Graphiques temporels, cartes de densité, cartes interactives.
-4. **Modélisation prédictive** : Modèles de séries temporelles pour prédire le trafic cycliste.
-5. **Développement du site web** : Hébergement des résultats interactifs via GitHub Pages.
+- **Python**:
+Python est un langage de programmation polyvalent, souvent utilisé dans le domaine de la science des données et de l'intelligence artificielle. Il offre une vaste gamme de bibliothèques pour l'analyse de données, la visualisation et la modélisation prédictive. Dans ce projet, Python sera utilisé pour analyser les jeux de données liés au trafic cycliste, construire des modèles prédictifs pour estimer l’évolution du trafic, et développer des visualisations interactives qui seront intégrées dans un site web. Sa flexibilité et sa large communauté en font un choix privilégié pour des projets de ce type.
+- **Pandas** :
+Pandas est une bibliothèque Python essentielle pour la manipulation et l’analyse de données structurées, notamment sous forme de tables (comme des fichiers CSV). Elle permet de filtrer, nettoyer, transformer et analyser rapidement des ensembles de données. Dans ce projet, Pandas sera utilisé pour traiter les données des trajets cyclistes du service VéloMagg et les comptages de cyclistes/piétons, en facilitant des opérations comme le calcul de statistiques descriptives, la gestion des valeurs manquantes, ou encore l’agrégation des données par jour ou par zones géographiques.
+## Pipeline de développement
+- Collecte et traitement des données : Récupération des données depuis les sources VéloMagg, les comptages de cyclistes et OpenStreetMap, suivie de leur préparation pour l'analyse.
+- Planification du projet : Élaboration d'un diagramme de Gantt pour organiser et suivre les différentes tâches du projet.
+- Conception des visualisations : Création de graphiques temporels, de cartes de densité et de cartes interactives pour représenter les données de manière claire.
+- Prévision du trafic cycliste : Mise en place de modèles de séries temporelles pour anticiper les variations du trafic à vélo.
+- Développement du site web : Publication des résultats interactifs et des visualisations sur GitHub Pages pour faciliter l'accès et l'exploration des données.
 ## REPARTITION DES TÂCHES
 - Créer un site web -> Samy
 - Le diagramme de gantt -> DIALLO
