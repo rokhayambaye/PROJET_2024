@@ -22,7 +22,6 @@ Le projet sera réalisé en équipe, avec une gestion collaborative des contribu
 - `.github/workflows/` : Configuration des actions GitHub pour l'intégration continue et le déploiement du site.
 - `Base des données` Contient les fichiers nécessaires pour le téléchargement et le nettoyage des données.
 - `telechargement_données.py` : Script pour télécharger et préparer les données.
-- `visualisation.py` : Script pour la création des graphiques et des cartes interactives.
 - `prediction.py` : Contient le modèle de prédiction du trafic .
  - `données_traffic.py` : Classe principale pour la gestion des données.
 - `siteweb/` : Contient les fichiers pour la création du site web interactif.
