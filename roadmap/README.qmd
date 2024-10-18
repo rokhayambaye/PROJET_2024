@@ -33,11 +33,16 @@ Le projet sera réalisé en équipe, avec une gestion collaborative des contribu
 - **diagramme de Gantt** : Branche dédiée à la gestion du planning via un diagramme de Gantt.
 - **site web** : Branche pour le développement du site web interactif.
 
-### Packages et logiciels utilisés
+### Logiciels utilisés
 - **Python**:
-Python est un langage de programmation polyvalent, souvent utilisé dans le domaine de la science des données et de l'intelligence artificielle. Il offre une vaste gamme de bibliothèques pour l'analyse de données, la visualisation et la modélisation prédictive. Dans ce projet, Python sera utilisé pour analyser les jeux de données liés au trafic cycliste, construire des modèles prédictifs pour estimer l’évolution du trafic, et développer des visualisations interactives qui seront intégrées dans un site web. Sa flexibilité et sa large communauté en font un choix privilégié pour des projets de ce type.
+Dans ce projet, Python sera utilisé pour analyser les jeux de données liés au trafic cycliste, construire des modèles prédictifs pour estimer l’évolution du trafic, et développer des visualisations interactives qui seront intégrées dans un site web. 
+
+- **Quarto**:
+  Pour le développement du site web, nous utiliserons Quarto, qui facilitera sa création. Il offre également la possibilité d'intégrer des images, des documents et des rapports interactifs, ce qui sera utile pour le README. Quarto permet aussi de combiner du code Python avec du texte explicatif.
+
+### Packages
 - **Pandas** :
-Pandas est une bibliothèque Python essentielle pour la manipulation et l’analyse de données structurées, notamment sous forme de tables (comme des fichiers CSV). Elle permet de filtrer, nettoyer, transformer et analyser rapidement des ensembles de données. Dans ce projet, Pandas sera utilisé pour traiter les données des trajets cyclistes du service VéloMagg et les comptages de cyclistes/piétons, en facilitant des opérations comme le calcul de statistiques descriptives, la gestion des valeurs manquantes, ou encore l’agrégation des données par jour ou par zones géographiques.
+ Elle permet de filtrer, nettoyer, transformer et analyser rapidement des ensembles de données. Dans ce projet, Pandas sera utilisé pour traiter les données des trajets cyclistes du service VéloMagg et les comptages de cyclistes/piétons, en facilitant des opérations comme le calcul de statistiques descriptives, la gestion des valeurs manquantes, ou encore l’agrégation des données par jour ou par zones géographiques.
 
 
 ## Répartition des tâches
