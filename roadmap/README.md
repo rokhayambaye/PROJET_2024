@@ -19,8 +19,7 @@ Le but est de créer un site web interactif permettant de visualiser ces donnée
 2) Une présentation vidéo (similaire à celle de NYC CitiBike) illustrant les tendances de trafic.
 3) Un système prédictif pour anticiper le trafic avec un code couleur, à la manière de Bison Futé.
 4) une analyse sur le trafic cycliste à Montpellier à l'aide de données ouvertes.
-
-## Architecture du projet
+5) ## Architecture du projet
 
 ### Fichiers et dossiers principaux
 
@@ -39,19 +38,27 @@ Le but est de créer un site web interactif permettant de visualiser ces donnée
 - **diagramme de Gantt** : Branche dédiée à la gestion du planning via un diagramme de Gantt.
 - **site web** : Branche pour le développement du site web interactif.
 
-### Packages et logiciels utilisés
-...
 
-## COMMENT ON PROCEDE
+## REPARTITION DES TÂCHES
 1. **Téléchargement et traitement des données** : Depuis les sources VéloMagg, comptages de cyclistes et OpenStreetMap.
 2. **Planification du projet** : Création du diagramme de Gantt pour organiser les tâches.
 3. **Création des visualisations** : Graphiques temporels, cartes de densité, cartes interactives.
 4. **Modélisation prédictive** : Modèles de séries temporelles pour prédire le trafic cycliste.
 5. **Développement du site web** : Hébergement des résultats interactifs via GitHub Pages.
-## REPARTITION DES TÂCHES
 - Créer un site web -> Samy
 - Le diagramme de gantt -> DIALLO
 - Base de données comptage cycliste et pieton -> Rokhaya
 - Base de donné Open street map -> Coralie
 - Base de donné Balades en partage de vélo -> a definir
 - Cartographier Montpellier
+
+
+## STRUCTURE
+### Architecture du site
+### Description des données 
+### Package 
+
+Structure du projet (documents, codes sources, ... séparés)
+
+
+
