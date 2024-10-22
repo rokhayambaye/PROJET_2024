@@ -14,22 +14,31 @@ format:
 
 À Montpellier, les options de transport sont variées, mais le vélo se distingue comme l'une des solutions les plus écologiques et pratiques. Cette popularité s'explique en grande partie par les nombreuses infrastructures mises à disposition, notamment un réseau étendu de pistes cyclables et le système Vélomagg, qui propose des vélos en libre-service à divers points stratégiques de la ville. Dans ce contexte, notre projet vise à visualiser l'évolution du trafic cycliste sur une année complète et à prédire le flux pour le lendemain. L'objectif est de fournir aux cyclistes des informations pertinentes sur les itinéraires recommandés, en tenant compte des conditions de circulation, de la météo et du calendrier (jours fériés, week-ends, etc.).
 
----
-
-## Visualisation du trafic cycliste à Montpellier
-
-![Carte centré FDS](/Users/samymrad/Desktop/FAC/DevLogi/Projet/CarteMTPcentreFDS.png){ width=70% }
-
-Nous souhaitons visualiser le trafic cycliste sur une année tout en prédisant ce trafic pour le lendemain afin que toute personne se déplaçant à vélo puisse savoir par quels chemins passer, en prenant en compte la circulation, la météo et le calendrier (jours fériés, week-ends, etc.).
-
+Ca serait intéressant de comparer les trajet velo/voiture
 
 ---
 
-## Méthodologie
+## Visualisation du trafic cycliste au tour de la FDS
 
-La méthodologie adoptée pour ce projet inclut :
-1. **Collecte des données** : Les données sont issues de [VéloMagg](https://data.montpellier3m.fr), des capteurs de circulation, et d'OpenStreetMap.
-2. **Nettoyage et analyse** : Les données sont traitées avec des outils comme **Python**, **Pandas**, **Matplotlib**, et **Scikit-learn** pour obtenir des insights clairs.
-3. **Visualisation des résultats** : Utilisation de bibliothèques comme **Plotly** et **Folium** pour des visualisations interactives.
+![Carte centré FDS](https://github.com/coralieromani/PROJET_2024/blob/site_web/docs/Images/CarteMTPcentreFDS.png?raw=true){ width=70% }
 
-## Carte de MONTPELLIER
+La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l'emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.
+
+---
+
+## Carte interactive  
+```{python}
+import folium
+
+# Créer une carte centrée sur Montpellier
+m = folium.Map(location=[43.6119, 3.8767], zoom_start=13)
+
+# Sauvegarder la carte en tant que fichier HTML (temporaire)
+m.save("carte_montpellier.html")
+```
+
+---
+
+## VIDEO/IMAGES des flux 
+
+
