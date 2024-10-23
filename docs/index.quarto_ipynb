@@ -21,11 +21,13 @@
         "\n",
         "À Montpellier, les options de transport sont variées, mais le vélo se distingue comme l'une des solutions les plus écologiques et pratiques. Cette popularité s'explique en grande partie par les nombreuses infrastructures mises à disposition, notamment un réseau étendu de pistes cyclables et le système Vélomagg, qui propose des vélos en libre-service à divers points stratégiques de la ville. Dans ce contexte, notre projet vise à visualiser l'évolution du trafic cycliste sur une année complète et à prédire le flux pour le lendemain. L'objectif est de fournir aux cyclistes des informations pertinentes sur les itinéraires recommandés, en tenant compte des conditions de circulation, de la météo et du calendrier (jours fériés, week-ends, etc.).\n",
         "\n",
+        "Ca serait intéressant de comparer les trajet velo/voiture\n",
+        "\n",
         "---\n",
         "\n",
         "## Visualisation du trafic cycliste au tour de la FDS\n",
         "\n",
-        "![Carte centré FDS](https://github.com/coralieromani/PROJET_2024/blob/site_web/docs/Images/CarteMTPcentreFDS.png?raw=true){ width=70% }\n",
+        "![Carte centré FDS](https://github.com/coralieromani/PROJET_2024/blob/site_web/docs/Images/CarteMTPcentreFDS.png?raw=true)\n",
         "\n",
         "La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l'emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.\n",
         "\n",
@@ -33,7 +35,7 @@
         "\n",
         "## Carte interactive  "
       ],
-      "id": "b395796b"
+      "id": "748babca"
     },
     {
       "cell_type": "code",
@@ -47,7 +49,7 @@
         "# Sauvegarder la carte en tant que fichier HTML (temporaire)\n",
         "m.save(\"carte_montpellier.html\")"
       ],
-      "id": "446e0c02",
+      "id": "462e34b0",
       "execution_count": null,
       "outputs": []
     },
@@ -59,7 +61,7 @@
         "\n",
         "## VIDEO/IMAGES des flux \n"
       ],
-      "id": "48d495b8"
+      "id": "b189c6c5"
     }
   ],
   "metadata": {
