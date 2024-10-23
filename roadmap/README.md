@@ -24,6 +24,7 @@ VéloMagg est un service de location de vélos en libre-service qui nous permett
 - `.github/workflows/` : Configuration des actions GitHub pour l'intégration continue et la création du site.
 - `.gitignore` : Fichier pour ignorer les fichiers inutiles.
 - `README.md` : Description générale du projet.
+- `docs`: Contient les flichiers du site web (.qmd, .html, .css, images)
 
 ### Branches Git
 - **Branche Main** : Branche principale contenant le code.
@@ -51,5 +52,5 @@ Pandas permet de nettoyer et analyser rapidement des ensembles de données. Dans
 - **Intégration des données OpenStreetMap** : Extraction et traitement des données géographiques issues d'OpenStreetMap pour enrichir les analyses spatiales.
 - **Analyse des balades en vélo partagé** : Collecte et exploitation des données liées aux services de vélo en libre-service pour l'analyse des parcours et de la fréquentation.
 - **Cartographie de la ville de Montpellier** : Création de cartes interactives et visuelles pour représenter les données spatiales et leur répartition à Montpellier.
-- **Video**: Video des fluc de cycliste à Montpellier
+- **Video**: Video des flux des cyclistes à Montpellier
   
