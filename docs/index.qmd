@@ -47,6 +47,6 @@ La carte présente les trajets cyclables autour de la Faculté des Sciences de M
 En été il a plus de vélo en hiver et les temps de pluie moins de flux ....
 ---
 ## Diagrames
-### Diagrame des locationx de vélomagg au cours d'un an
+### Diagrame des locations de vélomagg au cours d'un an
 ### Diagrame des nombres de cycliste à montpellier
 
