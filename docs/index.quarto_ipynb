@@ -25,17 +25,9 @@
         "\n",
         "---\n",
         "\n",
-        "## Visualisation du trafic cycliste au tour de la FDS\n",
-        "\n",
-        "![Carte centré FDS](https://github.com/coralieromani/PROJET_2024/blob/site_web/docs/Images/CarteMTPcentreFDS.png?raw=true)\n",
-        "\n",
-        "La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l'emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.\n",
-        "\n",
-        "---\n",
-        "\n",
         "## Carte interactive  "
       ],
-      "id": "748babca"
+      "id": "df4bd37c"
     },
     {
       "cell_type": "code",
@@ -49,7 +41,7 @@
         "# Sauvegarder la carte en tant que fichier HTML (temporaire)\n",
         "m.save(\"carte_montpellier.html\")"
       ],
-      "id": "462e34b0",
+      "id": "8add5ce9",
       "execution_count": null,
       "outputs": []
     },
@@ -59,9 +51,21 @@
       "source": [
         "---\n",
         "\n",
-        "## VIDEO/IMAGES des flux \n"
+        "## Visualisation du trafic cycliste au tour de la FDS\n",
+        "\n",
+        "![Carte centré FDS](https://github.com/coralieromani/PROJET_2024/blob/site_web/docs/Images/CarteMTPcentreFDS.png?raw=true)\n",
+        "\n",
+        "La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l'emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.\n",
+        "\n",
+        "---\n",
+        "\n",
+        "## VIDEO des flux \n",
+        "\n",
+        "\n",
+        "### Intéprétation des flux \n",
+        "En été il a plus de vélo en hiver et les temps de pluie moins de flux ....\n"
       ],
-      "id": "b189c6c5"
+      "id": "5ac0bdba"
     }
   ],
   "metadata": {

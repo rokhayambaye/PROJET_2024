@@ -43,13 +43,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
   <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Sommaire</h2>
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#visualisation-du-trafic-cycliste-à-au-tour-de-la-fds" id="toc-visualisation-du-trafic-cycliste-à-au-tour-de-la-fds" class="nav-link" data-scroll-target="#visualisation-du-trafic-cycliste-à-au-tour-de-la-fds">Visualisation du trafic cycliste à au tour de la FDS</a></li>
   <li><a href="#carte-interactive" id="toc-carte-interactive" class="nav-link" data-scroll-target="#carte-interactive">Carte interactive</a></li>
-  <li><a href="#videoimages-des-flux" id="toc-videoimages-des-flux" class="nav-link" data-scroll-target="#videoimages-des-flux">VIDEO/IMAGES des flux</a></li>
+  <li><a href="#visualisation-du-trafic-cycliste-au-tour-de-la-fds" id="toc-visualisation-du-trafic-cycliste-au-tour-de-la-fds" class="nav-link" data-scroll-target="#visualisation-du-trafic-cycliste-au-tour-de-la-fds">Visualisation du trafic cycliste au tour de la FDS</a></li>
+  <li><a href="#video-des-flux" id="toc-video-des-flux" class="nav-link" data-scroll-target="#video-des-flux">VIDEO des flux</a></li>
+  <li><a href="#intéprétation-des-flux" id="toc-intéprétation-des-flux" class="nav-link" data-scroll-target="#intéprétation-des-flux">Intéprétation des flux</a></li>
+  <li><a href="#diagrames" id="toc-diagrames" class="nav-link" data-scroll-target="#diagrames">Diagrames</a>
+  <ul class="collapse">
+  <li><a href="#diagrame-des-locationx-de-vélomagg-au-cours-dun-an" id="toc-diagrame-des-locationx-de-vélomagg-au-cours-dun-an" class="nav-link" data-scroll-target="#diagrame-des-locationx-de-vélomagg-au-cours-dun-an">Diagrame des locationx de vélomagg au cours d’un an</a></li>
+  <li><a href="#diagrame-des-nombres-de-cycliste-à-montpellier" id="toc-diagrame-des-nombres-de-cycliste-à-montpellier" class="nav-link" data-scroll-target="#diagrame-des-nombres-de-cycliste-à-montpellier">Diagrame des nombres de cycliste à montpellier</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -78,25 +84,43 @@ ul.task-list li input[type="checkbox"] {
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>À Montpellier, les options de transport sont variées, mais le vélo se distingue comme l’une des solutions les plus écologiques et pratiques. Cette popularité s’explique en grande partie par les nombreuses infrastructures mises à disposition, notamment un réseau étendu de pistes cyclables et le système Vélomagg, qui propose des vélos en libre-service à divers points stratégiques de la ville. Dans ce contexte, notre projet vise à visualiser l’évolution du trafic cycliste sur une année complète et à prédire le flux pour le lendemain. L’objectif est de fournir aux cyclistes des informations pertinentes sur les itinéraires recommandés, en tenant compte des conditions de circulation, de la météo et du calendrier (jours fériés, week-ends, etc.).</p>
+<p>Ca serait intéressant de comparer les trajet velo/voiture</p>
 <hr>
 </section>
-<section id="visualisation-du-trafic-cycliste-à-au-tour-de-la-fds" class="level2">
-<h2 class="anchored" data-anchor-id="visualisation-du-trafic-cycliste-à-au-tour-de-la-fds">Visualisation du trafic cycliste à au tour de la FDS</h2>
+<section id="carte-interactive" class="level2">
+<h2 class="anchored" data-anchor-id="carte-interactive">Carte interactive</h2>
+<p>#```{python} #import folium</p>
+<p>#Créer une carte centrée sur Montpellier #m = folium.Map(location=[43.6119, 3.8767], zoom_start=13)</p>
+<p>#Sauvegarder la carte en tant que fichier HTML (temporaire) #m.save(“carte_montpellier.html”) #```</p>
+<hr>
+</section>
+<section id="visualisation-du-trafic-cycliste-au-tour-de-la-fds" class="level2">
+<h2 class="anchored" data-anchor-id="visualisation-du-trafic-cycliste-au-tour-de-la-fds">Visualisation du trafic cycliste au tour de la FDS</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://github.com/coralieromani/PROJET_2024/blob/site_web/docs/Images/CarteMTPcentreFDS.png?raw=true" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="https://github.com/coralieromani/PROJET_2024/blob/site_web/docs/Images/CarteMTPcentreFDS.png?raw=true" class="img-fluid figure-img"></p>
 <figcaption>Carte centré FDS</figcaption>
 </figure>
 </div>
 <p>La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l’emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.</p>
 <hr>
 </section>
-<section id="carte-interactive" class="level2">
-<h2 class="anchored" data-anchor-id="carte-interactive">Carte interactive</h2>
+<section id="video-des-flux" class="level2">
+<h2 class="anchored" data-anchor-id="video-des-flux">VIDEO des flux</h2>
+</section>
+<section id="intéprétation-des-flux" class="level2">
+<h2 class="anchored" data-anchor-id="intéprétation-des-flux">Intéprétation des flux</h2>
+<p>En été il a plus de vélo en hiver et les temps de pluie moins de flux ….</p>
 <hr>
 </section>
-<section id="videoimages-des-flux" class="level2">
-<h2 class="anchored" data-anchor-id="videoimages-des-flux">VIDEO/IMAGES des flux</h2>
+<section id="diagrames" class="level2">
+<h2 class="anchored" data-anchor-id="diagrames">Diagrames</h2>
+<section id="diagrame-des-locationx-de-vélomagg-au-cours-dun-an" class="level3">
+<h3 class="anchored" data-anchor-id="diagrame-des-locationx-de-vélomagg-au-cours-dun-an">Diagrame des locationx de vélomagg au cours d’un an</h3>
+</section>
+<section id="diagrame-des-nombres-de-cycliste-à-montpellier" class="level3">
+<h3 class="anchored" data-anchor-id="diagrame-des-nombres-de-cycliste-à-montpellier">Diagrame des nombres de cycliste à montpellier</h3>
+</section>
 </section>
 
 </main>

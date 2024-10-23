@@ -3,6 +3,7 @@ title: "CIRCULATION DES VÉLOS À MONTPELLIER"
 format:
   html:
     toc: true  # Affiche une table des matières
+    toc-title: "Sommaire"  # Titre personnalisé de la table des matières
     code-fold: true  # Permet de replier/déplier les blocs de code
     css: styles.css  # Fichier CSS personnalisé pour styliser le site
     theme: flatly  # Choix d'un thème pré-conçu pour une apparence moderne
@@ -19,15 +20,15 @@ Ca serait intéressant de comparer les trajet velo/voiture
 ---
 
 ## Carte interactive  
-```{python}
-import folium
+#```{python}
+#import folium
 
-# Créer une carte centrée sur Montpellier
-m = folium.Map(location=[43.6119, 3.8767], zoom_start=13)
+#Créer une carte centrée sur Montpellier
+#m = folium.Map(location=[43.6119, 3.8767], zoom_start=13)
 
-# Sauvegarder la carte en tant que fichier HTML (temporaire)
-m.save("carte_montpellier.html")
-```
+#Sauvegarder la carte en tant que fichier HTML (temporaire)
+#m.save("carte_montpellier.html")
+#```
 
 
 ---
@@ -37,10 +38,15 @@ m.save("carte_montpellier.html")
 ![Carte centré FDS](https://github.com/coralieromani/PROJET_2024/blob/site_web/docs/Images/CarteMTPcentreFDS.png?raw=true)
 
 La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l'emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.
+
 ---
 
 ## VIDEO des flux 
 
-
-### Intéprétation des flux 
+## Intéprétation des flux 
 En été il a plus de vélo en hiver et les temps de pluie moins de flux ....
+---
+## Diagrames
+### Diagrame des locationx de vélomagg au cours d'un an
+### Diagrame des nombres de cycliste à montpellier
+
