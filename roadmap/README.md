@@ -24,6 +24,7 @@ VéloMagg est un service de location de vélos en libre-service qui nous permett
 - `.github/workflows/` : Configuration des actions GitHub pour l'intégration continue et la création du site.
 - `.gitignore` : Fichier pour ignorer les fichiers inutiles.
 - `README.md` : Description générale du projet.
+- `docs`: Contient les flichiers du site web (.qmd, .html, .css, images)
 
 ### Branches Git
 - **Branche Main** : Branche principale contenant le code.
