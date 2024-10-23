@@ -40,11 +40,21 @@ Dans ce projet, Python sera utilisé pour analyser les bases de données liés a
 Pour le développement du site web, nous utiliserons Quarto, qui facilitera sa création. Il offre également la possibilité d'intégrer des images, des documents et des rapports interactifs, ce qui sera utile pour le README. Quarto permet aussi de combiner du code Python avec du texte explicatif.
 
 ### Packages
+
 - **Numpy** :
 La bibliothèque Numpy de Python permet d'effectuer des calculs numériques mais aussi de traiter des matrices ou des tableaux multidimensionnels grâce aux fonction intégrées.
 
 - **Pandas** :
 Pandas permet de nettoyer et analyser rapidement des ensembles de données. On l'utilisera pour traiter les données des trajets du service VéloMagg et les comptages de cyclistes.
+
+- **Pooch** :
+Pooch est une bibliothèque Python permettant de télécharger des données à partir d'une URL et de les stocker.
+
+- **Os** :
+Os, qui est directement intégré dans Python, nous fournit une interface pour gérer les fichiers téléchargés.
+
+- **Seaborn** :
+Seaborn est une bibliothèque de Python, nous permettant de visualiser les données en facilitant la création des graphiques sur Matplotlib.
 
 - **Folium** :
 Folium permet de créer des cartes interactives pour visualiser les trajets cyclistes, ajouter des points d’intérêt (comme les stations Vélomagg), et délimiter des zones (comme -5 min, -10 min, etc.).
@@ -55,9 +65,7 @@ Leaflet est une bibliothèque JavaScript de cartographie qui nous permettra de c
 ## Répartition des tâches
 - **Création du site web**: Développement d'une plateforme pour la publication et l'exploration interactive des résultats du projet, incluant des visualisations de données.
 - **Élaboration du diagramme de Gantt** : Planification et suivi de l'avancement du projet à l'aide d'un diagramme de Gantt, afin d'assigner et gérer les différentes étapes et tâches.
-- **Gestion de la base de données de comptage** : Collecte, traitement et analyse des données de comptage des cyclistes et des piétons à partir des sources disponibles.
-- **Intégration des données OpenStreetMap** : Extraction et traitement des données géographiques issues d'OpenStreetMap pour enrichir les analyses spatiales.
-- **Analyse des balades en vélo partagé** : Collecte et exploitation des données liées aux services de vélo en libre-service pour l'analyse des parcours et de la fréquentation.
+- **Gestion des bases des données** : Collecte, traitement et analyse des données à partir des sources disponibles.
 - **Cartographie de la ville de Montpellier** : Création de cartes interactives et visuelles pour représenter les données spatiales et leur répartition à Montpellier.
-- **Video**: Video des flux des cyclistes à Montpellier
+- **Video**: Création de la video des flux des cyclistes à Montpellier.
   
