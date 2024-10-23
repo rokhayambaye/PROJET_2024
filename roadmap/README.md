@@ -15,8 +15,8 @@ Le projet sera réalisé en équipe, en veillant à une répartition équilibré
 ## DESCRIPTION BASES DE DONNÉES 
 ### VéloMagg
 VéloMagg est un service de location de vélos en libre-service qui nous permettra de visualiser le nombre de cyclistes et leurs trajets dans la ville. En effet, leur site nous fournit plusieurs données sur les vélos loués comme les stations de départ et d'arrivée mais aussi la durée de la location.
-
-
+## Comptages vélo et piéton issus des compteurs de vélo
+Les données de comptage proviennent d'éco-compteurs conçus pour mesurer le passage des vélos et des piétons. Chaque enregistrement donne le nombre total de passages (vélos et piétons) sur une période définie.
 ## Architecture du projet
 
 ### Fichiers et dossiers principaux
@@ -25,7 +25,7 @@ VéloMagg est un service de location de vélos en libre-service qui nous permett
 - `.gitignore` : Fichier pour ignorer les fichiers inutiles.
 - `README.md` : Description générale du projet.
 - `docs`: Contient les flichiers du site web (.qmd, .html, .css, images)
-
+- `requirement.txt`:Fichier pour lister les bibliothèques Python et les versions spécifiques requises pour le projet.
 ### Branches Git
 - **Branche Main** : Branche principale contenant le code.
 - **base des données** : Branche dédiée au téléchargement et à la préparation des bases de données.
