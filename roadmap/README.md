@@ -41,7 +41,8 @@ Pour le développement du site web, nous utiliserons Quarto, qui facilitera sa c
 ### Packages
 - **Pandas** :
 Pandas permet de nettoyer et analyser rapidement des ensembles de données. Dans ce projet, on l'utilisera pour traiter les données des trajets du service VéloMagg et les comptages de cyclistes, en facilitant des opérations comme le calcul de statistiques descriptives, la gestion des valeurs manquantes, ou encore l’agrégation des données par jour ou par zones géographiques.
-
+- **Folium** :
+  Folium permet de créer des cartes interactives pour visualiser les trajets cyclistes, ajouter des points d’intérêt (comme les stations Vélomagg), et délimiter des zones (comme -5 min, -10 min, etc.).
 
 ## Répartition des tâches
 - **Création du site web**: Développement d'une plateforme pour la publication et l'exploration interactive des résultats du projet, incluant des visualisations de données.
@@ -50,3 +51,5 @@ Pandas permet de nettoyer et analyser rapidement des ensembles de données. Dans
 - **Intégration des données OpenStreetMap** : Extraction et traitement des données géographiques issues d'OpenStreetMap pour enrichir les analyses spatiales.
 - **Analyse des balades en vélo partagé** : Collecte et exploitation des données liées aux services de vélo en libre-service pour l'analyse des parcours et de la fréquentation.
 - **Cartographie de la ville de Montpellier** : Création de cartes interactives et visuelles pour représenter les données spatiales et leur répartition à Montpellier.
+- **Video**: Video des fluc de cycliste à Montpellier
+  
