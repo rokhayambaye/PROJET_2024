@@ -17,30 +17,23 @@ format:
 
 Ca serait intéressant de comparer les trajet velo/voiture
 
----
 
 ## Carte interactive  
-
 ![Carte de Montpellier ](https://raw.githubusercontent.com/coralieromani/PROJET_2024/refs/heads/main/docs/Images/CARTE%20MONTPELLIER.png)
 
-
----
-
 ## Visualisation du trafic cycliste au tour de la FDS
-
 ![Carte centré FDS](https://raw.githubusercontent.com/coralieromani/PROJET_2024/refs/heads/main/docs/Images/CarteMTPcentreFDS.png)
 
 La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l'emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.
-
----
 
 ## VIDEO des flux 
 
 ## Intéprétation des flux 
 En été il a plus de vélo en hiver et les temps de pluie moins de flux ....
----
-## Diagrammes
+
+## Diagramme
 ![Diagramme des locations de vélomaggs et des nombres de cycliste a Montpellier ](https://raw.githubusercontent.com/coralieromani/PROJET_2024/refs/heads/main/docs/Images/Diagrammecyclistesvelomaag.png)
 
 Analyse des courbes location vélomagg et nombres de cyclystes sur un an, selon les saisons, vacances ect, pour commencer sur un mois mais pourquoi pas le faire par semaine cela pourrait être plus intéressant et plus précis et on rajouterais les semaine pluvieuse et temps ensoleillé.  
 
+## Conclusion et perspectives
