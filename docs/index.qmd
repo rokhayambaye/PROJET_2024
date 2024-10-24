@@ -20,22 +20,15 @@ Ca serait intéressant de comparer les trajet velo/voiture
 ---
 
 ## Carte interactive  
-#```{python}
-#import folium
 
-#Créer une carte centrée sur Montpellier
-#m = folium.Map(location=[43.6119, 3.8767], zoom_start=13)
-
-#Sauvegarder la carte en tant que fichier HTML (temporaire)
-#m.save("carte_montpellier.html")
-#```
+![Carte de Montpellier ](https://github.com/coralieromani/PROJET_2024/blob/main/docs/Images/CARTE%20MONTPELLIER.png)
 
 
 ---
 
 ## Visualisation du trafic cycliste au tour de la FDS
 
-![Carte centré FDS](https://github.com/coralieromani/PROJET_2024/blob/site_web/docs/Images/CarteMTPcentreFDS.png?raw=true)
+![Carte centré FDS](https://github.com/coralieromani/PROJET_2024/blob/main/docs/Images/CarteMTPcentreFDS.png)
 
 La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l'emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.
 
@@ -46,7 +39,8 @@ La carte présente les trajets cyclables autour de la Faculté des Sciences de M
 ## Intéprétation des flux 
 En été il a plus de vélo en hiver et les temps de pluie moins de flux ....
 ---
-## Diagrames
-### Diagrame des locations de vélomagg au cours d'un an
-### Diagrame des nombres de cycliste à montpellier
+## Diagrammes
+![Diagramme des locations de vélomaggs et des nombres de cycliste a Montpellier ](https://github.com/coralieromani/PROJET_2024/blob/main/docs/Images/Diagrammecyclistesvelomaag.png)
+
+Analyse des courbes location vélomagg et nombres de cyclystes sur un an, selon les saisons, vacances ect, pour commencer sur un mois mais pourquoi pas le faire par semaine cela pourrait être plus intéressant et plus précis et on rajouterais les semaine pluvieuse et temps ensoleillé.  
 
