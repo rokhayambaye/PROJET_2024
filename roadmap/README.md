@@ -15,8 +15,9 @@ Le projet sera réalisé en équipe, en veillant à une répartition équilibré
 ## DESCRIPTION BASES DE DONNÉES 
 ### VéloMagg
 VéloMagg est un service de location de vélos en libre-service qui nous permettra de visualiser le nombre de cyclistes et leurs trajets dans la ville. En effet, leur site nous fournit plusieurs données sur les vélos loués comme les stations de départ et d'arrivée mais aussi la durée de la location.
-## Comptages vélo et piéton issus des compteurs de vélo
+### Comptages vélo et piéton issus des compteurs de vélo
 Les données de comptage proviennent d'éco-compteurs conçus pour mesurer le passage des vélos et des piétons. Chaque enregistrement donne le nombre total de passages (vélos et piétons) sur une période définie.
+
 ## Architecture du projet
 
 ### Fichiers et dossiers principaux
@@ -37,7 +38,7 @@ Les données de comptage proviennent d'éco-compteurs conçus pour mesurer le pa
 Dans ce projet, Python sera utilisé pour analyser les bases de données liés au trafic cycliste, construire des modèles prédictifs pour estimer l’évolution du trafic, et développer des visualisations interactives. 
 
 - **Quarto**:
-Pour le développement du site web, nous utiliserons Quarto, qui facilitera sa création. Il offre également la possibilité d'intégrer des images, des documents et des rapports interactifs, ce qui sera utile pour le README. Quarto permet aussi de combiner du code Python avec du texte explicatif.
+Pour le développement du site web, nous utiliserons Quarto, qui facilitera sa création. Il offre également la possibilité d'intégrer des images, des documents et des rapports interactifs et aussi de combiner du code Python avec du texte explicatif.
 
 ### Packages
 
@@ -63,12 +64,12 @@ Folium permet de créer des cartes interactives pour visualiser les trajets cycl
 Leaflet est une bibliothèque JavaScript de cartographie qui nous permettra de créer la carte interactive grâce aux données récupérées sur OpenStreetMap.
 
 - **Matplotlib** :
-  Matplotlib est une bibliothèque Python qui vas nous permettre de créer des diagrammes
+  Matplotlib est une bibliothèque Python, souvent utilisée avec Numpy et Pandas qui nous permettra de créer des diagrammes.
 
 ## Répartition des tâches
 - **Création du site web**: Développement d'une plateforme pour la publication et l'exploration interactive des résultats du projet, incluant des visualisations de données.
 - **Élaboration du diagramme de Gantt** : Planification et suivi de l'avancement du projet à l'aide d'un diagramme de Gantt, afin d'assigner et gérer les différentes étapes et tâches.
 - **Gestion des bases des données** : Collecte, traitement et analyse des données à partir des sources disponibles.
 - **Cartographie de la ville de Montpellier** : Création de cartes interactives et visuelles pour représenter les données spatiales et leur répartition à Montpellier.
-- **Video**: Création de la video des flux des cyclistes à Montpellier.
+- **Video**: Création de la video des flux des cyclistes à Montpellier sur une année.
   
