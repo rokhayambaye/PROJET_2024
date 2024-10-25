@@ -16,3 +16,5 @@ pooch.retrieve(url, path=path, fname=fname, known_hash=None)
 Velomagg = pd.read_csv("CoursesVelomagg.csv")
 
 Velomagg.info()
+Velomagg.groupby(['Bike'])[['Departure station','Departure', 'Return station', 'Return']].count()
+# %%
