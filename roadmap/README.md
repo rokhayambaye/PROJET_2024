@@ -76,5 +76,10 @@ Mermaid est utilisée pour générer le diagramme de notre projet à partir d'un
 - **Élaboration du diagramme de Gantt** : Planification et suivi de l'avancement du projet à l'aide d'un diagramme de Gantt, afin d'assigner et gérer les différentes étapes et tâches.
 - **Gestion des bases des données** : Collecte, traitement et analyse des données à partir des sources disponibles.
 - **Cartographie de la ville de Montpellier** : Création de cartes interactives et visuelles pour représenter les données spatiales et leur répartition à Montpellier.
+<<<<<<< HEAD
 - **Video**: Création de la video des flux des cyclistes à Montpellier sur une année.
   
+=======
+- **Video**: Video des flux des cyclistes à Montpellier
+- **Mermaid** : Mermaid est utilisée pour générer le diagramme de Gant de notre projet à partir d'un fichier Markdown avec une syntaxe simple et spécifique. 
+>>>>>>> 6af1efb ( Ajout du package Mermaid)
