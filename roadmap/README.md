@@ -64,7 +64,10 @@ Folium permet de créer des cartes interactives pour visualiser les trajets cycl
 Leaflet est une bibliothèque JavaScript de cartographie qui nous permettra de créer la carte interactive grâce aux données récupérées sur OpenStreetMap.
 
 - **Matplotlib** :
-  Matplotlib est une bibliothèque Python, souvent utilisée avec Numpy et Pandas qui nous permettra de créer des diagrammes.
+Matplotlib est une bibliothèque Python, souvent utilisée avec Numpy et Pandas qui nous permettra de créer des diagrammes.
+
+- **Mermaid** :
+Mermaid est utilisée pour générer le diagramme de Gantt à partir d'un fichier Markdown.
 
 ## Répartition des tâches
 - **Création du site web**: Développement d'une plateforme pour la publication et l'exploration interactive des résultats du projet, incluant des visualisations de données.
