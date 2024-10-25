@@ -55,9 +55,9 @@ VéloMagg est un service de location de vélos en libre-service qui nous permett
 
 -   **Leaflet** : Leaflet est une bibliothèque JavaScript de cartographie qui nous permettra de créer la carte interactive grâce aux données récupérées sur OpenStreetMap.
 
-- **Matplotlib** : Matplotlib est une bibliothèque Python, souvent utilisée avec Numpy et Pandas qui nous permettra de créer des diagrammes.
+-   **Matplotlib** : Matplotlib est une bibliothèque Python, souvent utilisée avec Numpy et Pandas qui nous permettra de créer des diagrammes.
 
--  **Mermaid** : Mermaid est utilisée pour générer le diagramme de notre projet à partir d'un fichier Markdown en utilisant une syntaxe simple et déclarative.
+-   **Mermaid** : Mermaid est utilisée pour générer le diagramme de notre projet à partir d'un fichier Markdown en utilisant une syntaxe simple et déclarative.
 
 ## Répartition des tâches
 
@@ -67,9 +67,8 @@ VéloMagg est un service de location de vélos en libre-service qui nous permett
 
 -   **Gestion des bases des données** : Collecte, traitement et analyse des données à partir des sources disponibles.
 
--   **Cartographie de la ville de Montpellier** : Création de cartes interactives et visuelles pour représenter les données spatiales et leur répartition à Montpellier. \<\<\<\<\<\<\< HEAD
+-   **Cartographie de la ville de Montpellier** : Création de cartes interactives et visuelles pour représenter les données spatiales et leur répartition à Montpellier.
 
 -   **Video**: Création de la video des flux des cyclistes à Montpellier sur une année.
 
 -   **Video**: Video des flux des cyclistes à Montpellier
-
