@@ -15,6 +15,13 @@ pooch.retrieve(url, path=path, fname=fname, known_hash=None)
 
 Velomagg = pd.read_csv("CoursesVelomagg.csv")
 
-Velomagg.info()
-Velomagg.groupby(['Bike'])[['Departure station','Departure', 'Return station', 'Return']].count()
+# Colonnes souhaitées
+columns =['Departure station', 'Departure', 'Return station', 'Return', 'Duration (sec.)', 'Covered distance (m)']
+
+# Créer un nouveau DataFrame avec uniquement ces colonnes
+Velomagg_filtree = Velomagg[columns]
+
+Velomagg_final = Velomagg_filtree.dropna(subset=['Return station', 'Return'])
+
+Velomagg_final.info()
 # %%
