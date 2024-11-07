@@ -15,21 +15,13 @@ pooch.retrieve(url, path=path, fname=fname, known_hash=None)
 
 Velomagg = pd.read_csv("CoursesVelomagg.csv")
 
-Velomagg.info()
-# %%
-import json
+# Colonnes souhaitées
+columns =['Departure station', 'Departure', 'Return station', 'Return', 'Duration (sec.)', 'Covered distance (m)']
 
-# Définir l'URL
-url = 'https://portail-api-data.montpellier3m.fr/ecocounter_timeseries/urn:ngsi-ld:EcoCounter:X2H19070220/attrs/intensity?fromDate=2022-10-01T00:00:00&toDate=2023-10-01T00:00:00'
-path, fname = os.path.split(path_target)
-pooch.retrieve(url, path=path, fname=fname, known_hash=None)
-path_target = "./Compteurs.json"
-path, fname = os.path.split(path_target)
-pooch.retrieve(url, path=path, fname=fname, known_hash=None)  
-# %%
-compteurs = pd.read_json("Compteurs.json")
-compteurs.info()
-compteurs.head()
+# Créer un nouveau DataFrame avec uniquement ces colonnes
+Velomagg_filtree = Velomagg[columns]
 
+Velomagg_final = Velomagg_filtree.dropna(subset=['Return station', 'Return'])
 
+Velomagg_final.info()
 # %%
