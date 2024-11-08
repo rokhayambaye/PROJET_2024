@@ -15,6 +15,6 @@ path, fname = os.path.split(path_target)
 pooch.retrieve(url, path=path, fname=fname, known_hash=None)  
 MMM_MMM_GeolocCompteurs = pd.read_csv("MMM_MMM_GeolocCompteurs.csv")
 MMM_MMM_GeolocCompteurs.info()
-MMM_MMM_GeolocCompteurs.head(n=100)
+MMM_MMM_GeolocCompteurs.head(n=10)
 
 # %%

@@ -25,3 +25,8 @@ for element in data['elements']:
 # Convertir en DataFrame pour une meilleure visualisation
 df_stations = pd.DataFrame(stations)
 print(df_stations)
+
+df_stations= df_stations [df_stations['Nom'] != 'Station sans nom'] #Suppresion des stations sans nom
+print(df_stations)
+
+df_stations.to_csv("carte/stations_velomagg.csv", index=False)
