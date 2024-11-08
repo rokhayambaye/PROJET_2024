@@ -16,5 +16,13 @@ pooch.retrieve(url, path=path, fname=fname, known_hash=None)
 MMM_MMM_GeolocCompteurs = pd.read_csv("MMM_MMM_GeolocCompteurs.csv")
 MMM_MMM_GeolocCompteurs.info()
 MMM_MMM_GeolocCompteurs.head(n=100)
+# Colonnes souhaitées
+
+# Créer un nouveau DataFrame avec uniquement ces colonnes
+# Extraire uniquement les colonnes 'Latitude' et 'Longitude'
+MMM_MMM_GeolocCompteurs_final = MMM_MMM_GeolocCompteurs[['Latitude', 'Longitude','OSM_Line_i']]
+
+# Afficher les premières lignes du DataFrame filtré
+MMM_MMM_GeolocCompteurs_final.head(100)
 
 # %%
