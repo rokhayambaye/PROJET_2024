@@ -5,7 +5,7 @@ import os
 import pandas as pd
 import seaborn as sns 
 import pooch
-# Lire le fichier CSV avec pandas
+# Lire le fichier CSV 
 sns.set_palette("colorblind")
 palette = sns.color_palette("twilight", n_colors=12)
 pd.options.display.max_rows = 8
@@ -15,7 +15,7 @@ path_target = "./MMM_MMM_GeolocCompteurs.csv"
 path, fname = os.path.split(path_target)
 pooch.retrieve(url, path=path, fname=fname, known_hash=None)  
 df = pd.read_csv("MMM_MMM_GeolocCompteurs.csv")
-#csv_file = '/Users/rokhayambaye/HAX712X/PROJET_2024/Base_des_donnes/MMM_MMM_GeolocCompteurs.csv' 
+#Recuperer le nom des compteurs
 compteurs = df['N° Série'].tolist()
 output_dir = "data_compteurs"
 os.makedirs(output_dir, exist_ok=True)
@@ -28,7 +28,7 @@ base_url = "https://portail-api-data.montpellier3m.fr/ecocounter_timeseries"
 for compteur in compteurs:
     url = f"{base_url}/{compteur}/attrs/intensity?fromDate={from_date}&toDate={to_date}"
 
-    # Nom du fichier basé sur l'ID du compteur
+    # Nom du fichier basé sur le N de serie  du compteur
     file_name = f"{compteur.split(':')[-1]}.json"
     file_path = os.path.join(output_dir, file_name)
 
