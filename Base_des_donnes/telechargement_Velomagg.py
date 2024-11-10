@@ -14,7 +14,7 @@ path_target = "./CoursesVelomagg.csv"
 
 path, fname = os.path.split(path_target)
 pooch.retrieve(url, path=path, fname=fname, known_hash=None)
-
+#modification des caratères speciaux
 Velomagg = pd.read_csv(path_target)
 Velomagg['Departure station'] = Velomagg['Departure station'].str.replace('Ã©', 'é')
 Velomagg['Return station'] = Velomagg['Return station'].str.replace('Ã©', 'é')
