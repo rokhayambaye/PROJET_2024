@@ -24,9 +24,16 @@ for element in data['elements']:
 
 # Convertir en DataFrame pour une meilleure visualisation
 df_stations = pd.DataFrame(stations)
-print(df_stations)
 
 df_stations= df_stations [df_stations['Nom'] != 'Station sans nom'] #Suppresion des stations sans nom
-print(df_stations)
+
+# Liste des stations à retirer
+stations_a_retirer = ["Seb éco", "Palavas Sport", "Le Galexia", "Galexia", "Paulette", "Bikemed","Parking du Tramway Saint-Jean de Védas","Jacou",
+                      "Vélomagg plage","Notre-Dame de Sablassou","Lattes Centre"]
+
+# Filtrer le DataFrame pour conserver uniquement les stations qui ne sont pas dans la liste
+df_stations =df_stations[~df_stations['Nom'].isin(stations_a_retirer)]
 
 df_stations.to_csv("carte/stations_velomagg.csv", index=False)
+
+print(df_stations)
