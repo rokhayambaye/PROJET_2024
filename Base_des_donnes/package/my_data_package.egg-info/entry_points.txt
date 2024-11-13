@@ -1,0 +1,2 @@
+[console_scripts]
+download-data = my_data_package.downloader:download_data
