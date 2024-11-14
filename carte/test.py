@@ -54,47 +54,12 @@ for i in range(len(stations_nodes) - 1):
     else:
         print(f"No path found between {start_node} and {end_node}")
 
-
-# Obtenir le contour de la ville de Montpellier
-place_name = "Montpellier, France"
-area = ox.geocode_to_gdf(place_name)
-
-fds_coord = [43.6312537,3.8612405] # Coordonnées de la Faculté des Sciences de Montpellier
-
-
 days_of_week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
 
 # Créer une carte pour chaque jour de la semaine
 for day in days_of_week:
     m = folium.Map(location=[43.6117, 3.8777], zoom_start=13)
     m.get_root().html.add_child(folium.Element(f"<h3 style='position: fixed; top: 10px; left: 10px; background-color: white; padding: 5px;'>Carte du {day}</h3>"))
-
-    # Ajouter un marqueur pour la Faculté des Sciences
-    folium.Marker(
-        location=fds_coord,
-        popup="Faculté des Sciences",
-        icon=Icon(icon="university", color="RED", prefix="fa")
-    ).add_to(m)
-
- # Ajouter le contour de la ville avec une bordure bleue
-    folium.GeoJson(
-        data=area["geometry"],
-        style_function=lambda x: {
-            "fillColor": "black",
-            "color": "black",
-            "weight": 2,
-        }
-    ).add_to(m)
-
-    # Ajouter les cercles de temps de trajet autour de la Faculté des Sciences
-    folium.Circle(
-        location=fds_coord,
-        radius=1000,  # Moins de 5 minutes
-        color="red",
-        fill=True,
-        fill_opacity=0.1,
-        popup="Moins de 5 minutes en vélo"
-    ).add_to(m)
 
     # Ajouter les stations à la carte avec leurs noms
     for id, row in stations_df.iterrows():
