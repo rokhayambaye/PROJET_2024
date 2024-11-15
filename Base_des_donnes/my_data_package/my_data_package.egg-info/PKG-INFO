@@ -1,8 +1,0 @@
-Metadata-Version: 2.1
-Name: my_data_package
-Version: 0.1
-Summary: Package pour télécharger les données des compteurs de Montpellier
-Home-page: https://github.com/coralieromani/PROJET_2024
-Author: Mbaye
-Author-email: mbayerokhaya416@example.com
-Requires-Dist: pandas

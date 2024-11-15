@@ -32,6 +32,9 @@ output_file = 'donnees_montpellier_2023'
 
 
 
+
+
+
 # %%
 merge_csv_files(folder_path, output_file)
 # %%
