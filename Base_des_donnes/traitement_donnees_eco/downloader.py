@@ -1,5 +1,4 @@
 #%%
-# my_data_package/downloader.py
 import requests
 from bs4 import BeautifulSoup
 import os
