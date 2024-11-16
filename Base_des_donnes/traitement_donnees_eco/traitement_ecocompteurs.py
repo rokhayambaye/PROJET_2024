@@ -128,8 +128,8 @@ import glob
 
 def process_all_json_files():
     # Définir les chemins d'accès aux dossiers
-    input_dir = 'donnees_montpellier'  # Remplacez par le chemin réel de votre dossier de données
-    output_dir = 'donnees_montpellier_2023_nettoyer'  # Remplacez par le chemin réel du dossier de sortie
+    input_dir = 'Base_des_donnes/donnees_montpellier'  # Remplacez par le chemin réel de votre dossier de données
+    output_dir = 'Base_des_donnes/donnees_montpellier_2023_nettoyer'  # Remplacez par le chemin réel du dossier de sortie
 
     # Vérifier si le dossier d'entrée existe
     if not os.path.exists(input_dir):

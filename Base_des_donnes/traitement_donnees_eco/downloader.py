@@ -37,7 +37,7 @@ def telecharger_fichier(url, dossier_destination):
 url_base = "https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo"
 
 # Dossier où les fichiers seront sauvegardés
-dossier_destination = "donnees_montpellier"
+dossier_destination = "Base_des_donnes/donnees_montpellier"
 
 # Créer le dossier de destination s'il n'existe pas
 os.makedirs(dossier_destination, exist_ok=True)
