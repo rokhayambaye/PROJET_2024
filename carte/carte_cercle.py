@@ -10,7 +10,7 @@ area = ox.geocode_to_gdf(place_name)
 
 
 fds_coord = [43.6312537,3.8612405] # Coordonnées de la Faculté des Sciences de Montpellier
-stations_df = pd.read_csv('carte/stations_velomagg.csv')
+stations_df = pd.read_csv('Base_des_donnees/stations_velomagg.csv')
 
 
 # Créer une carte avec les cercles de temps 

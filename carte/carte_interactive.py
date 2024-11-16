@@ -8,11 +8,11 @@ from datetime import datetime
 from matplotlib import cm
 from matplotlib.colors import Normalize
 
-stations_df = pd.read_csv('carte/stations_velomagg.csv')
+stations_df = pd.read_csv('Base_des_donnees/stations_velomagg.csv')
 stations_coords = stations_df[['Latitude', 'Longitude']].values
 
 # Créer le DataFrame
-compteurs_df = pd.read_csv('Base_des_donnes/donnees_montpellier_2023.csv', delimiter=';')
+compteurs_df = pd.read_csv('Base_des_donnees/donnees_montpellier_2023.csv', delimiter=';')
 compteurs_df = compteurs_df[['intensity','date','longitude','latitude']]
 
 # Intervalles et Poids associés par tranche de 600
