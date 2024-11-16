@@ -11,17 +11,17 @@ from matplotlib.colors import Normalize
 stations_df = pd.read_csv('Base_des_donnees/stations_velomagg.csv')
 stations_coords = stations_df[['Latitude', 'Longitude']].values
 
-# Créer le DataFrame
-compteurs_df = pd.read_csv('Base_des_donnees/donnees_montpellier_2023.csv', delimiter=';')
-compteurs_df = compteurs_df[['intensity','date','longitude','latitude']]
+compteurs_df = pd.read_csv('Base_des_donnees/moyenne_intensite.csv')
 
-# Intervalles et Poids associés par tranche de 600
+G = ox.graph_from_place( "Montpellier, France", network_type='all')
+
+# Intervalles et Poids associés par tranche de 500
 poids_par_intervalles = [
-    ((0, 600), 1), 
-    ((600, 1200), 2),  
-    ((1200, 1800), 3),
-    ((1800, 2400), 4),
-    ((2400, 3700), 5),
+    ((0, 500), 1), 
+    ((500, 1000), 2),  
+    ((1000, 1500), 3),
+    ((1500, 2000), 4),
+    ((2000, 2500), 5),
 ]
 
 def poids(valeur):
@@ -31,13 +31,11 @@ def poids(valeur):
     return 0
 
 # Ajout colonne Poids 
-compteurs_df['weight'] = compteurs_df['intensity'].apply(poids)
+compteurs_df['poids'] = compteurs_df['intensite'].apply(poids)
 
 # Normaliser les poids
 norm = Normalize(vmin=min(p[1] for p in poids_par_intervalles),
                  vmax=max(p[1] for p in poids_par_intervalles))
-
-G = ox.graph_from_place( "Montpellier, France", network_type='all')
 
 # Noeuds les plus proches
 stations_nodes = []
@@ -46,7 +44,7 @@ for id, row in stations_df.iterrows():
     node = ox.distance.nearest_nodes(G, X=lon, Y=lat)
     stations_nodes.append((node, row['Nom']))
 
-# Extraire tous les chemins entre les stations (par pairs)
+# Chemins entre les stations (par pairs)
 paths = []
 for i in range(len(stations_nodes) - 1):
     start_node = stations_nodes[i][0]
@@ -66,10 +64,12 @@ area = ox.geocode_to_gdf("Montpellier, France")
 # Coordonnées de la Faculté des Sciences
 fds_coord = [43.6312537,3.8612405]
 
-# Créer une carte pour chaque jour de la semaine
+# Carte pour chaque jour de la semaine
 days_of_week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
 
-for day in days_of_week:
+for i, day in enumerate(days_of_week):
+    day_data = compteurs_df[compteurs_df['jour'] == day]
+    
     m = folium.Map(location=[43.6117, 3.8777], zoom_start=13)
     m.get_root().html.add_child(folium.Element(f"<h3 style='position: fixed; top: 10px; left: 10px; background-color: white; padding: 5px;'>Carte du {day}</h3>"))
 
@@ -98,7 +98,7 @@ for day in days_of_week:
             icon=Icon(icon='bicycle', color='black', prefix='fa', icon_size=(15, 15))
         ).add_to(m)
 
-    # Dictionnaire associant les poids à des couleurs spécifiques
+    # Poids et couleurs spécifiques associés
     couleurs_par_poids = {
         1: "#1f77b4",  # Bleu
         2: "#2ca02c",  # Vert
@@ -106,17 +106,18 @@ for day in days_of_week:
         4: "#ff7f0e",  # Orange
         5: "#d62728",  # Rouge
     }
+    
     # Ecocompteurs
-    for id, row in compteurs_df.iterrows():
-        color = couleurs_par_poids.get(row['weight'])
+    for id, row in day_data.iterrows():
+        color = couleurs_par_poids.get(row['poids'])
         folium.CircleMarker(
             location=[row['latitude'], row['longitude']],
-            radius=8 + row['weight'],
+            radius=8 + row['poids'],
             color=color,
             fill=True,
             fill_color=color,
             fill_opacity=0.7,
-            popup=f"Poids: {row['weight']}<br>Intensité: {row['intensity']}"
+            popup=f"Intensité: {row['intensite']} au {day}"
         ).add_to(m)
         
     # Chemins
