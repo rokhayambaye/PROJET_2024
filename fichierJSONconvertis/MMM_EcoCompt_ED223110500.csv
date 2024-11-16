@@ -1,3 +1,0 @@
-﻿"intensity","laneId","dateObserved","location__coordinates__001","location__coordinates__002","location__type","id","type","vehicleType","reversedLane"
-"316","140548130","2024-11-12T00:00:00/2024-11-13T00:00:00","3.8417193833333334","43.608986783333336","Point","MMM_EcoCompt_ED223110500_202411120000","TrafficFlowObserved","bicycle","False"
-"165","140548130","2024-11-13T00:00:00/2024-11-14T00:00:00","3.8417193833333334","43.608986783333336","Point","MMM_EcoCompt_ED223110500_202411130000","TrafficFlowObserved","bicycle","False"

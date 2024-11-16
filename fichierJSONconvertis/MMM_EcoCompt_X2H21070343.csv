@@ -1,7 +1,0 @@
-﻿"intensity","laneId","dateObserved","location__coordinates__001","location__coordinates__002","location__type","id","type","vehicleType","reversedLane"
-"45","755700690","2024-05-17T00:00:00/2024-05-18T00:00:00","3.867914","43.67179","Point","MMM_EcoCompt_X2H21070343_202405170000","TrafficFlowObserved","bicycle","False"
-"25","755700690","2024-05-19T00:00:00/2024-05-20T00:00:00","3.867914","43.67179","Point","MMM_EcoCompt_X2H21070343_202405190000","TrafficFlowObserved","bicycle","False"
-"44","755700690","2024-05-16T00:00:00/2024-05-17T00:00:00","3.867914","43.67179","Point","MMM_EcoCompt_X2H21070343_202405160000","TrafficFlowObserved","bicycle","False"
-"59","755700690","2024-05-21T00:00:00/2024-05-22T00:00:00","3.867914","43.67179","Point","MMM_EcoCompt_X2H21070343_202405210000","TrafficFlowObserved","bicycle","False"
-"22","755700690","2024-05-20T00:00:00/2024-05-21T00:00:00","3.867914","43.67179","Point","MMM_EcoCompt_X2H21070343_202405200000","TrafficFlowObserved","bicycle","False"
-"9","755700690","2024-05-18T00:00:00/2024-05-19T00:00:00","3.867914","43.67179","Point","MMM_EcoCompt_X2H21070343_202405180000","TrafficFlowObserved","bicycle","False"
