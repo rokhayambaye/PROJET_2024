@@ -63,5 +63,5 @@ fig.update_layout(
 )
 
 # Sauvegarder et afficher le graphique
-fig.write_html("locations_et_temperature_interactif.html")
+fig.write_html("Diagramme/locations_et_temperature_interactif.html")
 fig.show()
