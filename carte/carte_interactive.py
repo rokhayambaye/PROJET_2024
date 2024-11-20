@@ -4,16 +4,40 @@ import networkx as nx
 import folium
 from folium import Icon
 import pandas as pd
+import geopandas as gpd
 from datetime import datetime
 from matplotlib import cm
 from matplotlib.colors import Normalize
+import shapely
+from shapely.geometry import Point
 
 stations_df = pd.read_csv('Base_des_donnees/stations_velomagg.csv')
 stations_coords = stations_df[['Latitude', 'Longitude']].values
 
 compteurs_df = pd.read_csv('Base_des_donnees/moyenne_intensite.csv')
 
-G = ox.graph_from_place( "Montpellier, France", network_type='all')
+G = ox.graph_from_place( "Montpellier, France", network_type='bike')
+
+# Contour de la ville
+area = ox.geocode_to_gdf("Montpellier, France")
+
+# Coordonnées de la Faculté des Sciences
+fds_coord = [43.6312537,3.8612405]
+
+# Extraire le polygone de Montpellier
+montpellier_polygon = area["geometry"].iloc[0]  # Polygone principal
+
+# Vérifier si chaque écocompteur est dans Montpellier
+compteurs_df['inside'] = compteurs_df.apply(
+    lambda row: montpellier_polygon.contains(Point(row['longitude'], row['latitude'])),
+    axis=1
+)
+
+# Ne conserver que les écocompteurs dans Montpellier
+compteurs_df = compteurs_df[compteurs_df['inside']]
+
+routes = gpd.read_file('Base_des_donnees/export.geojson')
+routes = routes.to_crs(epsg=32631)
 
 # Intervalles et Poids associés par tranche de 500
 poids_par_intervalles = [
@@ -57,13 +81,7 @@ for i in range(len(stations_nodes) - 1):
             print(f"No valid path between {stations_nodes[i][1]} and {stations_nodes[i + 1][1]}")
     else:
         print(f"No path found between {start_node} and {end_node}")
-
-# Contour de la ville
-area = ox.geocode_to_gdf("Montpellier, France")
-
-# Coordonnées de la Faculté des Sciences
-fds_coord = [43.6312537,3.8612405]
-
+        
 # Carte pour chaque jour de la semaine
 days_of_week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
 
@@ -99,7 +117,7 @@ for i, day in enumerate(days_of_week):
         ).add_to(m)
 
     # Poids et couleurs spécifiques associés
-    couleurs_par_poids = {
+    couleurs = {
         1: "#1f77b4",  # Bleu
         2: "#2ca02c",  # Vert
         3: "#FFFF00",  # Jaune
@@ -109,7 +127,7 @@ for i, day in enumerate(days_of_week):
     
     # Ecocompteurs
     for id, row in day_data.iterrows():
-        color = couleurs_par_poids.get(row['poids'])
+        color = couleurs.get(row['poids'])
         folium.CircleMarker(
             location=[row['latitude'], row['longitude']],
             radius=8 + row['poids'],
@@ -119,10 +137,30 @@ for i, day in enumerate(days_of_week):
             fill_opacity=0.7,
             popup=f"Intensité: {row['intensite']} au {day}"
         ).add_to(m)
-        
+
     # Chemins
-    for route in paths:
-        route_coords = [(G.nodes[node]['y'], G.nodes[node]['x']) for node in route]
-        folium.PolyLine(locations=route_coords, color='blue', weight=4, opacity=0.7).add_to(m)
+    circuit = gpd.GeoDataFrame(
+        day_data,
+        geometry = [Point(lon, lat) for lon, lat in zip(day_data['longitude'], day_data['latitude'])],
+        crs="EPSG:4326"
+    )
+    circuit = circuit.to_crs(epsg=32631)
+    join = gpd.sjoin_nearest(routes,circuit, how="inner", max_distance=100)
+    
+    # Ajouter les polylignes sur la carte
+    for _, row in join.iterrows():
+        route_color = 'blue'
+        if isinstance(row.geometry, shapely.geometry.LineString):
+            coords = [[p[1], p[0]] for p in list(row.geometry.coords)]
+        elif isinstance(row.geometry, shapely.geometry.Polygon):
+            coords = [[p[1], p[0]] for p in list(row.geometry.exterior.coords)]
+        else:
+            continue
+
+        folium.PolyLine(
+            locations=coords,
+            color=route_color,
+            weight=5
+        ).add_to(m)
 
     m.save(f"carte/map_montpellier_{day}.html")
