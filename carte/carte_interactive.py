@@ -7,6 +7,7 @@ import pandas as pd
 from datetime import datetime
 from matplotlib import cm
 from matplotlib.colors import Normalize
+from shapely.geometry import Point
 
 stations_df = pd.read_csv('Base_des_donnees/stations_velomagg.csv')
 stations_coords = stations_df[['Latitude', 'Longitude']].values
@@ -14,6 +15,12 @@ stations_coords = stations_df[['Latitude', 'Longitude']].values
 compteurs_df = pd.read_csv('Base_des_donnees/moyenne_intensite.csv')
 
 G = ox.graph_from_place( "Montpellier, France", network_type='all')
+
+# Contour de la ville
+area = ox.geocode_to_gdf("Montpellier, France")
+
+# Coordonnées de la Faculté des Sciences
+fds_coord = [43.6312537,3.8612405]
 
 # Intervalles et Poids associés par tranche de 500
 poids_par_intervalles = [
@@ -58,11 +65,17 @@ for i in range(len(stations_nodes) - 1):
     else:
         print(f"No path found between {start_node} and {end_node}")
 
-# Contour de la ville
-area = ox.geocode_to_gdf("Montpellier, France")
+#Extraire le polygone de Montpellier
+montpellier_polygon = area["geometry"].iloc[0]  # Polygone principal
 
-# Coordonnées de la Faculté des Sciences
-fds_coord = [43.6312537,3.8612405]
+#Vérifier si chaque écocompteur est dans Montpellier
+compteurs_df['inside'] = compteurs_df.apply(
+    lambda row: montpellier_polygon.contains(Point(row['longitude'], row['latitude'])),
+    axis=1
+)
+
+# Ne conserve que les ecocompteurs dans Montpellier
+compteurs_df = compteurs_df [compteurs_df['inside']]
 
 # Carte pour chaque jour de la semaine
 days_of_week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
