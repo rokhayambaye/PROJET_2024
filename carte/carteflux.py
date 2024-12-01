@@ -1,7 +1,16 @@
 import folium
+from folium import Icon
 import osmnx as ox
 import pandas as pd
 import branca.colormap as cm
+
+
+stations_df = pd.read_csv('Base_des_donnees/stations_velomagg.csv')
+stations_coords = stations_df[['Latitude', 'Longitude']].values
+
+
+# Contour de la ville
+area = ox.geocode_to_gdf("Montpellier, France")
 
 # Charger les données des éco-compteurs
 file_path = 'Base_des_donnees/donnees_montpellier_2023.csv'  
@@ -21,6 +30,7 @@ edges = ox.graph_to_gdfs(montpellier_graph, nodes=False)
 min_intensity = intensites['intensity'].min()
 max_intensity = intensites['intensity'].max()
 colormap = cm.linear.YlOrRd_09.scale(min_intensity, max_intensity)
+
 
 # Associer des couleurs aux routes cyclables (en fonction des intensités les plus proches)
 def get_closest_intensity(lat, lon):
@@ -44,6 +54,24 @@ for _, row in edges.iterrows():
         color=colormap(row['intensity']),
         weight=3,
         opacity=0.8,
+    ).add_to(mymap)
+
+# Stations Velomagg
+for id, row in stations_df.iterrows():
+    folium.Marker(
+        location=[row['Latitude'], row['Longitude']],
+        popup=row['Nom'],
+        icon=Icon(icon='bicycle', color='black', prefix='fa', icon_size=(15, 15))
+    ).add_to(mymap)
+
+# Contour de la ville
+folium.GeoJson(
+    data=area["geometry"],
+    style_function=lambda x: {
+        "color": "black",
+        "weight": 2,
+        "fillOpacity": 0
+    }
     ).add_to(mymap)
 
 # Ajouter une légende
