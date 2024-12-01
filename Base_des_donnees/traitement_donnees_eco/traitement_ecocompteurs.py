@@ -1,12 +1,9 @@
-# %% Import packages
-
 import json
 import pandas as pd
-from datetime import datetime
 import os
 import glob
 
-# %% Conversion et sélection des données 
+# Conversion et sélection des données 
 
 def convertir_json_en_csv(input_file, output_dir):
     # Créer le nom du fichier de sortie dans le dossier data_clean
@@ -92,16 +89,16 @@ def convertir_json_en_csv(input_file, output_dir):
         
         # Filtrer les données pour l'année 2023
         masque = (df['date'] >= '2023-01-01') & (df['date'] <= '2023-12-31')
-        df_filtré = df.loc[masque]
+        df_filtre = df.loc[masque]
         
         # Trier par date
-        df_filtré = df_filtré.sort_values('date')
+        df_filtre = df_filtre.sort_values('date')
         
         # Convertir la date en format string YYYY-MM-DD pour le CSV
-        df_filtré['date'] = df_filtré['date'].dt.strftime('%Y-%m-%d')
+        df_filtre['date'] = df_filtre['date'].dt.strftime('%Y-%m-%d')
         
         # Sauvegarder en CSV avec des paramètres explicites
-        df_filtré.to_csv(fichier_sortie, 
+        df_filtre.to_csv(fichier_sortie, 
                           index=False,
                           sep=';',
                           encoding='utf-8-sig',
@@ -110,21 +107,17 @@ def convertir_json_en_csv(input_file, output_dir):
         # Afficher le message de succès avant de retourner
         print(f"\nConversion réussie : {nom_fichier_entree} -> {nom_fichier_sortie}")
         print(f"Nombre total d'enregistrements : {len(liste_donnees)}")
-        print(f"Nombre d'enregistrements dans la période : {len(df_filtré)}")
-        if not df_filtré.empty:
-            print(f"Période : du {df_filtré['date'].min()} au {df_filtré['date'].max()}")
+        print(f"Nombre d'enregistrements dans la période : {len(df_filtre)}")
+        if not df_filtre.empty:
+            print(f"Période : du {df_filtre['date'].min()} au {df_filtre['date'].max()}")
         
         # Indiquer le succès de la conversion
-        return True if not df_filtré.empty else False
+        return True if not df_filtre.empty else False
         
     except Exception as e:
         print(f"\nErreur lors du traitement de {nom_fichier_entree}")
         print(f"Erreur : {str(e)}")
         return False
-
-# %% 
-import os
-import glob
 
 def process_all_json_files():
     # Définir les chemins d'accès aux dossiers
@@ -177,7 +170,3 @@ def process_all_json_files():
 
 # Lancer le traitement
 process_all_json_files()
-
-
-
-# %%

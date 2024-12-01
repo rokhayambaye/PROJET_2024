@@ -1,4 +1,3 @@
-#%%
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -48,5 +47,3 @@ urls_json = trouver_urls_json(url_base)
 # Télécharger les fichiers JSON
 for url in urls_json:
     telecharger_fichier(url, dossier_destination)
-
-# %%

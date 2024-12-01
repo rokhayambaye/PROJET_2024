@@ -1,7 +1,6 @@
-#%%
 import pandas as pd
 
-compteurs_df = pd.read_csv('Base_des_donnees/donnees_montpellier_2023.csv', delimiter=';')
+compteurs_df = pd.read_csv("https://drive.google.com/uc?id=1yJUkkGiobznF50tQaKwbM4a2bfiEVmRy", delimiter=';')
 compteurs_df = compteurs_df[['intensity','date','longitude','latitude']]
 
 # S'assurer que la colonne 'date' est bien en format datetime
@@ -25,7 +24,3 @@ for idx, row in moyennes_intensite.iterrows():
 
 # Convertir les résultats en DataFrame
 df_resultats = pd.DataFrame(resultats, columns=['longitude','latitude', 'jour', 'intensite'])
-
-# Enregistrer les résultats dans un fichier CSV
-df_resultats.to_csv('Base_des_donnees/moyenne_intensite.csv', index=False)
-# %%
