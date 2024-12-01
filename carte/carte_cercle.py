@@ -53,8 +53,8 @@ folium.Circle(
 
 # Ajouter toutes les stations à la carte
 for id, row in stations_df.iterrows():
-    lat, lon = row['Latitude'], row['Longitude']
-    station_name = row['Nom']
+    lat, lon = row['latitude'], row['longitude']
+    station_name = row['nom']
     folium.Marker(
         location=[lat, lon],
         popup=station_name,
