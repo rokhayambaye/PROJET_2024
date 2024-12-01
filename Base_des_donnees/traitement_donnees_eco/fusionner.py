@@ -1,4 +1,3 @@
-# %%
 import os
 import pandas as pd
 
@@ -26,12 +25,4 @@ def merge_csv_files(folder_path, output_file):
 folder_path = 'Base_des_donnees/donnees_montpellier_2023_nettoyer'
 output_file = 'Base_des_donnees/donnees_montpellier_2023.csv'
 
-
-
-
-
-
-
-# %%
 merge_csv_files(folder_path, output_file)
-# %%
