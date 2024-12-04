@@ -121,8 +121,8 @@ def convertir_json_en_csv(input_file, output_dir):
 
 def process_all_json_files():
     # Définir les chemins d'accès aux dossiers
-    input_dir = 'Base_des_donnees/donnees_montpellier'  # Remplacez par le chemin réel de votre dossier de données
-    output_dir = 'Base_des_donnees/donnees_montpellier_2023_nettoyer'  # Remplacez par le chemin réel du dossier de sortie
+    input_dir = 'bike/Base_des_donnees/donnees_montpellier'  
+    output_dir = 'bike/Base_des_donnees/donnees_montpellier_2023_nettoyer' 
 
     # Vérifier si le dossier d'entrée existe
     if not os.path.exists(input_dir):

@@ -22,7 +22,7 @@ def merge_csv_files(folder_path, output_file):
     print(f"Fichier fusionné enregistré sous : {output_file}")
 
 # Spécifiez le dossier contenant les fichiers filtrés et le fichier de sortie fusionné
-folder_path = 'Base_des_donnees/donnees_montpellier_2023_nettoyer'
-output_file = 'Base_des_donnees/donnees_montpellier_2023.csv'
+folder_path = 'bike/Base_des_donnees/donnees_montpellier_2023_nettoyer'
+output_file = 'bike/Base_des_donnees/donnees_montpellier_2023.csv'
 
 merge_csv_files(folder_path, output_file)

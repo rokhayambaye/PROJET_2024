@@ -96,4 +96,4 @@ for i, day in enumerate(days):
             opacity=0.8,
         ).add_to(mymap)
         
-    mymap.save(f"carte/map_montpellier_{day}.html")
+    mymap.save(f"bike/carte/map_montpellier_{day}.html")
