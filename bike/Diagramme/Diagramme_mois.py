@@ -13,25 +13,25 @@ Donnees_montpellier['month'] = Donnees_montpellier['date'].dt.month
 mois = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 
         'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
 
-# Calculer la moyenne des flux par mois
-moyenne_par_mois = Donnees_montpellier.groupby('month')['intensity'].mean()
+# Calculer le nombres de vélos par mois
+moyenne_par_mois = Donnees_montpellier.groupby('month')['intensity'].sum()
 
 # Créer un graphique interactif avec Plotly
 fig = go.Figure()
 
-# Courbe des moy des flux par mois
+# Barres du nombres de vélos par mois
 fig.add_trace(go.Bar(
     x=mois,
     y=moyenne_par_mois,
-    name='Moyenne des flux',
+    name='Nombres de Vélos',
     marker_color='green'
 ))
 
 # Mise en page 
 fig.update_layout(
-    title='Moyenne des flux de vélos par mois (2023)',
+    title='Nombres de vélos par mois (2023)',
     xaxis_title='Mois',
-    yaxis_title='Nombre moyen de vélos',
+    yaxis_title='Nombres de Vélos (en millions)',
     template='plotly_white',
     height=500
 )
