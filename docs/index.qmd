@@ -18,15 +18,46 @@ format:
 Ca serait intéressant de comparer les trajet velo/voiture
 
 
-## Carte interactive  
-![Carte de Montpellier ](https://raw.githubusercontent.com/coralieromani/PROJET_2024/refs/heads/main/docs/Images/CARTE%20MONTPELLIER.png)
+## Carte Interactive
+
+Voici les carte des flux des circulations de vélos à Montpellier pour chaque jours de la semaine passé sur une moyenne de l’année 2023
+<div>
+  <button onclick="changeMap('Lundi')">Lundi</button>
+  <button onclick="changeMap('Mardi')">Mardi</button>
+  <button onclick="changeMap('Mercredi')">Mercredi</button>
+  <button onclick="changeMap('Jeudi')">Jeudi</button>
+  <button onclick="changeMap('Vendredi')">Vendredi</button>
+  <button onclick="changeMap('Samedi')">Samedi</button>
+  <button onclick="changeMap('Dimanche')">Dimanche</button>
+</div>
+
+<div id="map-container" style="margin-top: 20px;">
+  <iframe id="map-frame" src="carte/map_montpellier_Lundi.html" width="100%" height="600" style="border: none;"></iframe>
+</div>
+
+<script>
+  function changeMap(day) {
+    document.getElementById("map-frame").src = `carte/map_montpellier_${day}.html`;
+  }
+</script>
+
+
 
 ## Visualisation du trafic cycliste au tour de la FDS
-![Carte centré FDS](https://raw.githubusercontent.com/coralieromani/PROJET_2024/refs/heads/main/docs/Images/CarteMTPcentreFDS.png)
+
 
 La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l'emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.
 
-## VIDEO des flux 
+
+## Vidéo des flux
+
+<video controls width="100%" height="auto">
+  <source src="Video/bike_animation_with_routes.mp4">
+</video>
+
+
+
+
 
 ## Intéprétation des flux 
 En été il a plus de vélo en hiver et les temps de pluie moins de flux ....
