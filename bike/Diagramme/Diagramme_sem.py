@@ -2,8 +2,9 @@ import pandas as pd
 import plotly.graph_objects as go
 
 # Charger les données
-file_path = 'Base_des_donnees/donnees_montpellier_2023.csv'  
-Donnees_montpellier = pd.read_csv(file_path, sep=';')  # Ajouter le séparateur correct si nécessaire
+url_fichier = "https://drive.google.com/uc?id=1yJUkkGiobznF50tQaKwbM4a2bfiEVmRy"
+
+Donnees_montpellier = pd.read_csv(url_fichier, sep=';')  # Ajouter le séparateur correct si nécessaire
 
 # Convertir la colonne 'date' en format datetime
 Donnees_montpellier['date'] = pd.to_datetime(Donnees_montpellier['date'])
@@ -42,4 +43,4 @@ fig.update_layout(
 
 # Afficher le graphique
 fig.show()
-fig.write_html("Diagramme/Diagramme_sem_2023.html")
+fig.write_html("docs/Diagramme/Diagramme_sem_2023.html")
