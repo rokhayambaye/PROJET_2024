@@ -10,16 +10,16 @@ Donnees_montpellier['date'] = pd.to_datetime(Donnees_montpellier['date'])
 
 # Ajouter une colonne pour le mois (1 = Janvier, 12 = Décembre)
 Donnees_montpellier['month'] = Donnees_montpellier['date'].dt.month
+mois = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 
+        'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
 
 # Calculer la moyenne des flux par mois
 moyenne_par_mois = Donnees_montpellier.groupby('month')['intensity'].mean()
 
-# Créer un graphique interactif pour afficher les résultats
-mois = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 
-        'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
-
+# Créer un graphique interactif avec Plotly
 fig = go.Figure()
 
+# Courbe des moy des flux par mois
 fig.add_trace(go.Bar(
     x=mois,
     y=moyenne_par_mois,
@@ -27,7 +27,7 @@ fig.add_trace(go.Bar(
     marker_color='green'
 ))
 
-# Ajouter des détails au graphique
+# Mise en page 
 fig.update_layout(
     title='Moyenne des flux de vélos par mois (2023)',
     xaxis_title='Mois',
