@@ -16,7 +16,7 @@ Pour installer ce module, exécutez la commande suivante :
 $ pip install git+https://github.com/coralieromani/PROJET_2024
 ```
 ### **Documentation**
-La documentation complète est disponible [ici](https://votre-utilisateur.github.io/votre-repository/). Elle inclut :
+La documentation complète est disponible [ici](https://lien..). Elle inclut :
 - Une introduction détaillée au projet.
 - Des tutoriels pour le traitement des données et la création de vidéos.
 - Une description complète des classes et fonctions du projet.
