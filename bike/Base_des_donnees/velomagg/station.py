@@ -14,7 +14,7 @@ def get_coordinates(location_name, city):
         else:
             return None, None
     except Exception as e:
-        print(f"Erreur de géocodage pour {location_name}: {e}")
+        print(f"Erreur de geocodage pour {location_name}: {e}")
         return None, None
 
 def process_stations(dataframe):
@@ -34,6 +34,6 @@ def process_stations(dataframe):
             'latitude': lat,
             'longitude': lon
         })
-        time.sleep(1)  # Respect de la limite de fréquence de l'API
+        time.sleep(1)  # Respect de la limite de frequence de l'API
 
     return stations_with_coords
