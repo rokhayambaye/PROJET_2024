@@ -1,28 +1,16 @@
 
 #%%
-"""
-Animation des trajets de vélos à Montpellier.
-
-Ce script charge des données de trajets de vélos depuis un fichier CSV, filtre les trajets selon des critères spécifiques, calcule les itinéraires sur une carte OpenStreetMap, et génère une animation montrant les trajets actifs à différents moments de la journée.
-
-Dépendances :
-- pandas
-- matplotlib
-- matplotlib.animation
-- osmnx
-"""
-
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import osmnx as ox
 
 # Charger les données depuis le fichier CSV
-df = pd.read_csv("velomagg-12-15.csv", parse_dates=["Departure", "Return"])
+df = pd.read_csv("Velomagg_avec_coordonnees.csv", parse_dates=["Departure", "Return"])
 
 # Filtrer les données pour une journée spécifique et exclure les trajets trop longs ou trop courts
-df = df[(df["Departure"].dt.date == pd.to_datetime("2023-12-15").date()) & 
-        (df["Return"].dt.date == pd.to_datetime("2023-12-15").date()) & 
+df = df[(df["Departure"].dt.date == pd.to_datetime("2023-05-12").date()) & 
+        (df["Return"].dt.date == pd.to_datetime("2023-05-12").date()) & 
         ((df["Return"] - df["Departure"]).dt.total_seconds() <= 86400)]
 df["duration"] = (df["Return"] - df["Departure"]).dt.total_seconds()
 df = df[df["duration"] > 10]  # Trajets supérieurs à 10 secondes
@@ -42,15 +30,6 @@ line_data = {}
 time_text = ax.text(0.5, 0.95, "", ha="center", va="center", color="white", fontsize=12, transform=ax.transAxes)
 
 def calculate_routes(row):
-    """
-    Calcule l'itinéraire le plus court entre le point de départ et le point d'arrivée d'un trajet.
-
-    Args:
-        row (pd.Series): Ligne contenant les coordonnées de départ et d'arrivée.
-
-    Returns:
-        list: Liste des nœuds représentant le chemin le plus court, ou une liste vide en cas d'échec.
-    """
     origin = (row["latitude_depart"], row["longitude_depart"])
     destination = (row["latitude_retour"], row["longitude_retour"])
     try:
@@ -64,15 +43,6 @@ def calculate_routes(row):
 df["route"] = df.apply(calculate_routes, axis=1)
 
 def update(frame):
-    """
-    Met à jour les éléments de l'animation pour une frame donnée.
-
-    Args:
-        frame (int): Numéro de la frame actuelle.
-
-    Returns:
-        tuple: Objets graphiques à mettre à jour.
-    """
     current_time = df["Departure"].min() + pd.Timedelta(seconds=frame * 300)
     active_trips = df[(df["Departure"] <= current_time) & (df["Return"] >= current_time)]
     bike_positions = []
@@ -117,7 +87,7 @@ frames = range(0, int((df["Return"].max() - df["Departure"].min()).total_seconds
 ani = FuncAnimation(fig, update, frames=frames, interval=200)
 
 # Sauvegarder la vidéo
-ani.save("bike_animation_15_Dec.mp4", fps=5, writer="ffmpeg")
+ani.save("bike_animation_12_Mai.mp4", fps=5, writer="ffmpeg")
 plt.show()
 
 # %%

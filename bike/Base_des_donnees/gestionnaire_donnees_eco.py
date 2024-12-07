@@ -1,53 +1,30 @@
-#%%
+# Importation des bibliothèques nécessaires
 import requests
 from bs4 import BeautifulSoup
 import os
 import json
 import pandas as pd
 from urllib.parse import urljoin
-import glob
 
 class GestionnaireDonnees:
     def __init__(self, url_base, dossier_brut, fichier_fusion):
-        """
-        Classe permettant de gérer le téléchargement, le traitement et la fusion des données des écocompteurs.
-
-        Cette classe offre les fonctionnalités suivantes :
-        1. Télécharger les fichiers JSON des écocompteurs à partir d'une URL de base.
-        2. Traiter et filtrer les fichiers JSON pour l'année 2023.
-        3. Fusionner toutes les données filtrées dans un seul fichier CSV.
-
-        Attributs :
-        -----------
-            url_base : str
-                URL de la page contenant les liens vers les fichiers JSON.
-            dossier_brut : str
-                Dossier dans lequel les fichiers JSON seront téléchargés.
-            fichier_fusion : str
-                Chemin du fichier CSV fusionné à générer.
-
-        Méthodes :
-        ----------
-            executer() :
-                Exécute tout le pipeline : téléchargement, traitement et fusion des fichiers.
-        """
-
+        # Initialisation des attributs principaux
         self.url_base = url_base
         self.dossier_brut = dossier_brut
         self.fichier_fusion = fichier_fusion
 
+        # Création du dossier de stockage des fichiers JSON s'il n'existe pas
         os.makedirs(dossier_brut, exist_ok=True)
 
     def telecharger_json(self):
-        """
-        Télécharge tous les fichiers JSON disponibles à l'URL de base.
-        """
+        # Recherche et téléchargement des fichiers JSON disponibles à l'URL de base
         print("Recherche des fichiers JSON à télécharger...")
         response = requests.get(self.url_base)
         if response.status_code != 200:
             print(f"Échec de la récupération des données (Code {response.status_code})")
             return []
         
+        # Analyse du contenu HTML pour extraire les liens vers les fichiers JSON
         soup = BeautifulSoup(response.content, 'html.parser')
         liens = soup.find_all('a', href=True)
         urls_json = [urljoin(self.url_base, lien['href']) for lien in liens if lien['href'].endswith('.json')]
@@ -68,9 +45,7 @@ class GestionnaireDonnees:
         return fichiers_json
 
     def convertir_json_en_donnees(self, fichier_entree):
-        """
-        Convertit un fichier JSON en une liste de données filtrées pour 2023.
-        """
+        # Traitement et conversion des fichiers JSON en données structurées
         liste_donnees = []
         try:
             with open(fichier_entree, 'r', encoding='utf-8') as fichier:
@@ -82,6 +57,7 @@ class GestionnaireDonnees:
                     for chaine_json in chaines_json:
                         try:
                             objet_json = json.loads(chaine_json)
+                            # Validation des données et filtrage des entrées non valides
                             if any(objet_json.get(cle) is None for cle in [
                                 'intensity', 'laneId', 'dateObserved', 'location', 'id', 'type', 'vehicleType', 'reversedLane']):
                                 continue
@@ -106,6 +82,7 @@ class GestionnaireDonnees:
             if not liste_donnees:
                 print(f"Aucune donnée valide trouvée dans {fichier_entree}.")
                 return []
+            # Conversion en DataFrame et filtrage des données pour l'année 2023
             df = pd.DataFrame(liste_donnees).dropna()
             df['date'] = pd.to_datetime(df['date'])
             masque = (df['date'] >= '2023-01-01') & (df['date'] <= '2023-12-31')
@@ -117,9 +94,7 @@ class GestionnaireDonnees:
             return []
 
     def fusionner_donnees(self):
-        """
-        Fusionne toutes les données filtrées des fichiers JSON dans un seul DataFrame.
-        """
+        # Fusion de toutes les données filtrées des fichiers JSON en un seul fichier CSV
         data_frames = []
         fichiers_json = self.telecharger_json()
 
@@ -141,18 +116,7 @@ class GestionnaireDonnees:
             print("Aucune donnée à fusionner.")
 
     def executer(self):
-        """
-        Exécute tout le pipeline : téléchargement, traitement et fusion des fichiers.
-        """
+        # Exécution complète du pipeline
         self.fusionner_donnees()
-
-
-# Exemple d'utilisation
-url_base = "https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo"
-dossier_brut = "bike/base_des_donnees/donnees_montpellier"
-fichier_fusion = "bike/base_des_donnees/donnees_montpellier_2023.csv"
-
-gestionnaire = GestionnaireDonnees(url_base, dossier_brut, fichier_fusion)
-gestionnaire.executer()
 
 # %%

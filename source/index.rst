@@ -3,28 +3,36 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ANALYSE DU TRAFIC CYCLISTE's documentation!
-======================================================
+.. Votre projet Sphinx documentation
 
+Bienvenue dans la documentation de notre projet
+=============================================
+
+Cette documentation contient des informations sur l'installation, l'utilisation et les fonctionnalités du projet.
+
+
+Guide
+=====
 .. toctree::
    :maxdepth: 2
+   :caption: Installation et Contacts
 
-   traitement_donnees
-   cartes_et_videos
+   installer/installation
+   installer/contacts
+.. toctree ::
+ :maxdepth: 2 :Caption : installation et contacts  installer/installation installer/contacts  
+.. toctree::
+   :maxdepth: 2
+   :caption: Traitement des bases de données 
 
-=======================
-Traitement des données
-=======================
+   traitement_donnees/donnee_eco
+   traitement_donnees/donnee_velo
+.. toctree ::
+ :maxdepth: 2 :Caption : Donnée Ecocompteurs et Données Velomagg traitement_donnees/donnee_eco traitement_donnees/donnee_velo
+.. toctree::
+   :maxdepth: 2
+   :caption: Video
 
-Voici une description des différentes étapes pour le traitement des données des éco-compteurs et de la base de données VéloMagg.
-
-.. include:: gestionnaire_donnees_eco.rst
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   video_creation
+.. toctree ::
+ :maxdepth: 2 :Caption : creation video_creation
