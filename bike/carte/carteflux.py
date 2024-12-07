@@ -4,8 +4,7 @@ import osmnx as ox
 import pandas as pd
 import branca.colormap as cm
 
-stations_df = pd.read_csv("https://drive.google.com/uc?id=1VGH928Tt0TrrrJb2mIdHrybvLSCkziFi")
-stations_df = stations_df.dropna(subset=['latitude', 'longitude'])
+stations_df = pd.read_csv("https://drive.google.com/uc?id=1HgOLf2JD46ZJlyrF_c99QZb6of6ajNYh")
 
 intensite = pd.read_csv("https://drive.google.com/uc?id=1WUCvXiGC-AEIR8oBWMiq7esZ5L05PU1M", sep=',')
 
@@ -29,8 +28,19 @@ couleurs = {
     4: "#d62728",  # Rouge
 }
 
-# Associer des couleurs aux routes cyclables (en fonction des intensités les plus proches)
+# Associer des couleurs aux routes cyclables
 def get_closest_intensity(lat, lon, day_data):
+    """
+    Trouve l'intensité moyenne la plus proche pour une route donnée.
+
+    Args:
+        lat (float): Latitude du point.
+        lon (float): Longitude du point.
+        day_data (DataFrame): Données d'intensité pour un jour donné.
+
+    Returns:
+        float: Intensité la plus proche ou 0 si aucune donnée n'est trouvée.
+    """
     if day_data.empty:
         print(f"Aucune donnée disponible pour les coordonnées ({lat}, {lon}).")
         return 0 
@@ -43,10 +53,21 @@ def get_closest_intensity(lat, lon, day_data):
         return 0
     return day_data.iloc[closest_index]['intensite']
 
-# Carte pour chaque jour de la semaine
+# Cartes pour chaque jour de la semaine
 days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
 
 for i, day in enumerate(days):
+    """
+    Crée une carte interactive pour un jour donné en fonction de l'intensité des routes.
+
+    Étapes :
+    - Ajout de la faculté des Sciences.
+    - Tracé des contours de la ville.
+    - Ajout des stations Velomagg.
+    - Ajout des routes colorées en fonction des intensités.
+
+    Enregistre une carte dans le répertoire `bike/carte`.
+    """
     day_data = intensite[intensite['jour'] == day]
     edges['intensite'] = edges.apply(lambda row: get_closest_intensity(row.geometry.centroid.y, row.geometry.centroid.x, day_data), axis=1)
     
@@ -79,7 +100,6 @@ for i, day in enumerate(days):
 
     # Ajouter les routes cyclables colorées en fonction de l'intensité
     for _, row in edges.iterrows():
-        # Mappez l'intensité à une couleur spécifique
         if row['intensite'] <= 500:
             color = couleurs[1]  # Vert
         elif row['intensite'] <= 1000:
