@@ -118,5 +118,3 @@ class GestionnaireDonnees:
     def executer(self):
         # Exécution complète du pipeline
         self.fusionner_donnees()
-
-# %%
