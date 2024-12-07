@@ -44,13 +44,10 @@ Les flux cyclables sont également particulièrement importants aux abords des f
 On constate aussi une forte concentration des déplacements à vélo dans le centre historique de Montpellier, où ce mode de transport est idéal pour se déplacer dans des zones souvent saturées par la circulation automobile.
 
 
-## Visualisation du trafic cycliste au tour de la FDS
-
-
 ## Vidéo des flux
 
 <video controls width="100%" height="auto">
-  <source src="Video/bike_animation_with_routes.mp4">
+  <source src="Video/bike_animation_12_Mai.mp4">
 </video>
 
 
@@ -62,9 +59,9 @@ On constate aussi une forte concentration des déplacements à vélo dans le cen
 
 Les diagrammes ci-dessous offrent une vision détaillée de la circulation cycliste à Montpellier au cours de l'année 2023. Vous pouvez explorer :
 
-Le flux quotidien de vélos,
-Les données moyennes par mois,
-Et une vue d'ensemble représentative sur une semaine.
+- **Le flux quotidien de vélos**
+- **Les données moyennes par mois**
+- **Une vue d'ensemble représentative sur une semaine**
 
 <div>
   <button onclick="changeDiagramme('Annee')">Année</button>
@@ -76,12 +73,58 @@ Et une vue d'ensemble représentative sur une semaine.
   <iframe id="diagram-frame" src="Diagramme/Diagramme_Annee_2023.html" width="100%" height="600" style="border: none;"></iframe>
 </div>
 
+<div id="diagram-text" style="margin-top: 20px; font-size: 1.2em; color: #34495e;">
+  Durant l’année 2023, on observe que le nombre de vélos sur les pistes cyclables reste relativement stable, avec une moyenne située entre 20 000 et 40 000 vélos par jour. Cependant, une forte augmentation est enregistrée en septembre, notamment **le 21 septembre 2023**, où **60 000 vélos** ont été comptabilisés, dépassant largement la moyenne annuelle. Cette hausse significative coïncide avec [__la Semaine Européenne de la Mobilité__](https://www.montpellier3m.fr/semaine-europeeenne-de-la-mobilite?utm.com)
+  et **le Challenge de la Mobilité** organisé par la métropole.
+  Cependant, comme cette variation reste un peu difficile à interpréter,  il serait surement plus intéressant d'analyser les données mois par mois.
+</div>
+
 <script>
   function changeDiagramme(view) {
     // Met à jour l'iframe en fonction du bouton cliqué
     document.getElementById("diagram-frame").src = `Diagramme/Diagramme_${view}_2023.html`;
+
+    // Définir les textes détaillés pour chaque vue
+    const texts = {
+      Annee: `
+        <p>
+          Durant l’année 2023, on observe que le nombre de vélos sur les pistes cyclables reste relativement stable, 
+          avec une moyenne située entre <strong>20 000</strong> et <strong>40 000 vélos</strong> par jour. 
+          Cependant, une forte augmentation est enregistrée en septembre, notamment le 
+          <strong>21 septembre 2023</strong>, où <strong>60 000 vélos</strong> ont été comptabilisés, 
+          dépassant largement la moyenne annuelle. Cette hausse significative coïncide avec 
+          <a href="https://www.montpellier3m.fr/semaine-europeeenne-de-la-mobilite?utm.com" target="_blank">
+          la Semaine Européenne de la Mobilité</a> et <strong>le Challenge de la Mobilité</strong> organisé par la métropole.
+        </p>
+        <p>
+          Cependant, comme cette variation reste un peu difficile à interpréter, il serait surement plus intéressant 
+          d'analyser les données mois par mois.
+        </p>
+      `,
+      Mois: `
+        <p>
+          Pour le diagramme par mois, il est plus facilement interprétable, avec une <strong>moyenne</strong> située entre <strong>600 000 et 900 000 vélos</strong> par mois. Cependant, une forte augmentation est enregistrée en <strong>septembre</strong>, avec près de <strong>1 million de vélos</strong>comptabilisés, ce qui en fait le mois le plus actif de l’année. Cette hausse significative coïncide avec l’analyse précédente (la Semaine Européenne de la Mobilité) mais aussi avec <strong>les rentrées scolaire et la reprise des activités professionnelles</strong>, où de nombreux trajets se font à vélo.
+          </p>
+          <p>
+          À l’inverse, les mois de <strong>février et décembre </strong> affichent les niveaux les plus faibles, avec environ 600 000 vélos. Cela peut s’expliquer par des conditions météorologiques moins favorables en hiver, comme le froid, la pluie et des journées plus courtes.
+          On remarque également une baisse surprenante en <strong>juillet et août</strong>, qui pourrait être liée aux vacances estivales et à la chaleur, rendant l’usage du vélo moins fréquent.
+          </p>
+          <p>
+          Ces variations mettent en lumière une certaine saisonnalité dans l’utilisation des vélos. Pour mieux comprendre, il serait intéressant d’explorer les données de circulation moyenne hebdomadaire afin d’examiner plus précisément les liens entre les périodes de travail et les jours de repos.
+        </p>
+      `,
+      Semaine: `
+        <p>
+          La semaine type
+        </p>
+      `
+    };
+
+    // Met à jour le texte dynamique
+    document.getElementById("diagram-text").innerHTML = texts[view];
   }
 </script>
+
 
 
 ## Diagramme location de vélos
@@ -90,7 +133,5 @@ Et une vue d'ensemble représentative sur une semaine.
 </div>
 
 
-## Intéprétation des flux 
-  En été il a plus de vélo en hiver et les temps de pluie moins de flux ....
 
 ## Conclusion et perspectives

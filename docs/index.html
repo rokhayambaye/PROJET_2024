@@ -48,11 +48,9 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#cartes-interactives" id="toc-cartes-interactives" class="nav-link" data-scroll-target="#cartes-interactives">Cartes Interactives</a></li>
-  <li><a href="#visualisation-du-trafic-cycliste-au-tour-de-la-fds" id="toc-visualisation-du-trafic-cycliste-au-tour-de-la-fds" class="nav-link" data-scroll-target="#visualisation-du-trafic-cycliste-au-tour-de-la-fds">Visualisation du trafic cycliste au tour de la FDS</a></li>
   <li><a href="#vidéo-des-flux" id="toc-vidéo-des-flux" class="nav-link" data-scroll-target="#vidéo-des-flux">Vidéo des flux</a></li>
   <li><a href="#diagrammes-circulation-de-vélos" id="toc-diagrammes-circulation-de-vélos" class="nav-link" data-scroll-target="#diagrammes-circulation-de-vélos">Diagrammes circulation de vélos</a></li>
   <li><a href="#diagramme-location-de-vélos" id="toc-diagramme-location-de-vélos" class="nav-link" data-scroll-target="#diagramme-location-de-vélos">Diagramme location de vélos</a></li>
-  <li><a href="#intéprétation-des-flux" id="toc-intéprétation-des-flux" class="nav-link" data-scroll-target="#intéprétation-des-flux">Intéprétation des flux</a></li>
   <li><a href="#conclusion-et-perspectives" id="toc-conclusion-et-perspectives" class="nav-link" data-scroll-target="#conclusion-et-perspectives">Conclusion et perspectives</a></li>
   </ul>
 </nav>
@@ -97,31 +95,74 @@ Voici les carte des flux des circulations de vélos à Montpellier pour chaque j
     document.getElementById("map-frame").src = `carte/map_montpellier_${day}.html`;
   }
 </script>
-<p>On peut facilement remarquer que la circulation des vélos est bien plus importante en semaine qu’elle ne l’est le week-end. Cela s’explique probablement par l’évolution des mentalités et par l’augmentation des infrastructures cyclables. Dans la suite, nous analyserons une vidéo illustrant l’évolution des flux cyclables au cours d’une journée.</p>
-</section>
-<section id="visualisation-du-trafic-cycliste-au-tour-de-la-fds" class="level2">
-<h2 class="anchored" data-anchor-id="visualisation-du-trafic-cycliste-au-tour-de-la-fds">Visualisation du trafic cycliste au tour de la FDS</h2>
+<p>On remarque facilement que les vélos circulent beaucoup plus en jours de semaine qu’en week-end. Cela s’explique sans doute par l’évolution des mentalités et le développement des pistes cyclables. De plus, de plus en plus de personnes optent pour le vélo pour se rendre au travail, que ce soit pour des raisons écologiques ou pratiques : éviter les embouteillages, réduire leur empreinte carbone, ou encore profiter d’un moyen de transport rapide et flexible en ville. Les flux cyclables sont également particulièrement importants aux abords des facultés, où de nombreux étudiants, souvent aux moyens modestes, privilégient le vélo comme une solution économique et accessible. On constate aussi une forte concentration des déplacements à vélo dans le centre historique de Montpellier, où ce mode de transport est idéal pour se déplacer dans des zones souvent saturées par la circulation automobile.</p>
 </section>
 <section id="vidéo-des-flux" class="level2">
 <h2 class="anchored" data-anchor-id="vidéo-des-flux">Vidéo des flux</h2>
 <video controls="" width="100%" height="auto">
-<source src="Video/bike_animation_with_routes.mp4">
+<source src="Video/bike_animation_12_Mai.mp4">
 </video>
 </section>
 <section id="diagrammes-circulation-de-vélos" class="level2">
 <h2 class="anchored" data-anchor-id="diagrammes-circulation-de-vélos">Diagrammes circulation de vélos</h2>
 <p>Les diagrammes ci-dessous offrent une vision détaillée de la circulation cycliste à Montpellier au cours de l’année 2023. Vous pouvez explorer :</p>
-<p>Le flux quotidien de vélos, Les données moyennes par mois, Et une vue d’ensemble représentative sur une semaine.</p>
+<ul>
+<li><strong>Le flux quotidien de vélos</strong></li>
+<li><strong>Les données moyennes par mois</strong></li>
+<li><strong>Une vue d’ensemble représentative sur une semaine</strong></li>
+</ul>
 <div>
 <p><button onclick="changeDiagramme('Annee')">Année</button> <button onclick="changeDiagramme('Mois')">Mois</button> <button onclick="changeDiagramme('Semaine')">Semaine</button></p>
 </div>
 <div id="diagram-container" style="margin-top: 20px;">
 <p><iframe id="diagram-frame" src="Diagramme/Diagramme_Annee_2023.html" width="100%" height="600" style="border: none;"></iframe></p>
 </div>
+<div id="diagram-text" style="margin-top: 20px; font-size: 1.2em; color: #34495e;">
+<p>Durant l’année 2023, on observe que le nombre de vélos sur les pistes cyclables reste relativement stable, avec une moyenne située entre 20 000 et 40 000 vélos par jour. Cependant, une forte augmentation est enregistrée en septembre, notamment <strong>le 21 septembre 2023</strong>, où <strong>60 000 vélos</strong> ont été comptabilisés, dépassant largement la moyenne annuelle. Cette hausse significative coïncide avec <a href="https://www.montpellier3m.fr/semaine-europeeenne-de-la-mobilite?utm.com"><strong>la Semaine Européenne de la Mobilité</strong></a> et <strong>le Challenge de la Mobilité</strong> organisé par la métropole. Cependant, comme cette variation reste un peu difficile à interpréter, il serait surement plus intéressant d’analyser les données mois par mois.</p>
+</div>
 <script>
   function changeDiagramme(view) {
     // Met à jour l'iframe en fonction du bouton cliqué
     document.getElementById("diagram-frame").src = `Diagramme/Diagramme_${view}_2023.html`;
+
+    // Définir les textes détaillés pour chaque vue
+    const texts = {
+      Annee: `
+        <p>
+          Durant l’année 2023, on observe que le nombre de vélos sur les pistes cyclables reste relativement stable, 
+          avec une moyenne située entre <strong>20 000</strong> et <strong>40 000 vélos</strong> par jour. 
+          Cependant, une forte augmentation est enregistrée en septembre, notamment le 
+          <strong>21 septembre 2023</strong>, où <strong>60 000 vélos</strong> ont été comptabilisés, 
+          dépassant largement la moyenne annuelle. Cette hausse significative coïncide avec 
+          <a href="https://www.montpellier3m.fr/semaine-europeeenne-de-la-mobilite?utm.com" target="_blank">
+          la Semaine Européenne de la Mobilité</a> et <strong>le Challenge de la Mobilité</strong> organisé par la métropole.
+        </p>
+        <p>
+          Cependant, comme cette variation reste un peu difficile à interpréter, il serait surement plus intéressant 
+          d'analyser les données mois par mois.
+        </p>
+      `,
+      Mois: `
+        <p>
+          Pour le diagramme par mois, il est plus facilement interprétable, avec une <strong>moyenne</strong> située entre <strong>600 000 et 900 000 vélos</strong> par mois. Cependant, une forte augmentation est enregistrée en <strong>septembre</strong>, avec près de <strong>1 million de vélos</strong>comptabilisés, ce qui en fait le mois le plus actif de l’année. Cette hausse significative coïncide avec l’analyse précédente (la Semaine Européenne de la Mobilité) mais aussi avec <strong>les rentrées scolaire et la reprise des activités professionnelles</strong>, où de nombreux trajets se font à vélo.
+          </p>
+          <p>
+          À l’inverse, les mois de <strong>février et décembre </strong> affichent les niveaux les plus faibles, avec environ 600 000 vélos. Cela peut s’expliquer par des conditions météorologiques moins favorables en hiver, comme le froid, la pluie et des journées plus courtes.
+          On remarque également une baisse surprenante en <strong>juillet et août</strong>, qui pourrait être liée aux vacances estivales et à la chaleur, rendant l’usage du vélo moins fréquent.
+          </p>
+          <p>
+          Ces variations mettent en lumière une certaine saisonnalité dans l’utilisation des vélos. Pour mieux comprendre, il serait intéressant d’explorer les données de circulation moyenne hebdomadaire afin d’examiner plus précisément les liens entre les périodes de travail et les jours de repos.
+        </p>
+      `,
+      Semaine: `
+        <p>
+          La semaine type
+        </p>
+      `
+    };
+
+    // Met à jour le texte dynamique
+    document.getElementById("diagram-text").innerHTML = texts[view];
   }
 </script>
 </section>
@@ -130,10 +171,6 @@ Voici les carte des flux des circulations de vélos à Montpellier pour chaque j
 <div id="diagram-container" style="margin-top: 20px;">
 <p><iframe id="diagram-frame" src="Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe></p>
 </div>
-</section>
-<section id="intéprétation-des-flux" class="level2">
-<h2 class="anchored" data-anchor-id="intéprétation-des-flux">Intéprétation des flux</h2>
-<p>En été il a plus de vélo en hiver et les temps de pluie moins de flux ….</p>
 </section>
 <section id="conclusion-et-perspectives" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion-et-perspectives">Conclusion et perspectives</h2>
