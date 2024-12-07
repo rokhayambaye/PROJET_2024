@@ -47,11 +47,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#carte-interactive" id="toc-carte-interactive" class="nav-link" data-scroll-target="#carte-interactive">Carte interactive</a></li>
+  <li><a href="#cartes-interactives" id="toc-cartes-interactives" class="nav-link" data-scroll-target="#cartes-interactives">Cartes Interactives</a></li>
   <li><a href="#visualisation-du-trafic-cycliste-au-tour-de-la-fds" id="toc-visualisation-du-trafic-cycliste-au-tour-de-la-fds" class="nav-link" data-scroll-target="#visualisation-du-trafic-cycliste-au-tour-de-la-fds">Visualisation du trafic cycliste au tour de la FDS</a></li>
-  <li><a href="#video-des-flux" id="toc-video-des-flux" class="nav-link" data-scroll-target="#video-des-flux">VIDEO des flux</a></li>
+  <li><a href="#vidéo-des-flux" id="toc-vidéo-des-flux" class="nav-link" data-scroll-target="#vidéo-des-flux">Vidéo des flux</a></li>
+  <li><a href="#diagrammes-circulation-de-vélos" id="toc-diagrammes-circulation-de-vélos" class="nav-link" data-scroll-target="#diagrammes-circulation-de-vélos">Diagrammes circulation de vélos</a></li>
+  <li><a href="#diagramme-location-de-vélos" id="toc-diagramme-location-de-vélos" class="nav-link" data-scroll-target="#diagramme-location-de-vélos">Diagramme location de vélos</a></li>
   <li><a href="#intéprétation-des-flux" id="toc-intéprétation-des-flux" class="nav-link" data-scroll-target="#intéprétation-des-flux">Intéprétation des flux</a></li>
-  <li><a href="#diagramme" id="toc-diagramme" class="nav-link" data-scroll-target="#diagramme">Diagramme</a></li>
   <li><a href="#conclusion-et-perspectives" id="toc-conclusion-et-perspectives" class="nav-link" data-scroll-target="#conclusion-et-perspectives">Conclusion et perspectives</a></li>
   </ul>
 </nav>
@@ -80,44 +81,59 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="https://static.actu.fr/uploads/2020/09/montpellier-velo-piste-cyclable-960x640.jpg" class="img-fluid"></p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>À Montpellier, les options de transport sont variées, mais le vélo se distingue comme l’une des solutions les plus écologiques et pratiques. Cette popularité s’explique en grande partie par les nombreuses infrastructures mises à disposition, notamment un réseau étendu de pistes cyclables et le système Vélomagg, qui propose des vélos en libre-service à divers points stratégiques de la ville. Dans ce contexte, notre projet vise à visualiser l’évolution du trafic cycliste sur une année complète et à prédire le flux pour le lendemain. L’objectif est de fournir aux cyclistes des informations pertinentes sur les itinéraires recommandés, en tenant compte des conditions de circulation, de la météo et du calendrier (jours fériés, week-ends, etc.).</p>
-<p>Ca serait intéressant de comparer les trajet velo/voiture</p>
+<p>À Montpellier, les options de transport sont variées, mais le vélo se distingue comme l’une des solutions les plus écologiques et pratiques. Cette popularité s’explique en grande partie par les nombreuses infrastructures mises à disposition, notamment un réseau étendu de pistes cyclables et le système Vélomagg. Dans ce contexte, notre projet vise à visualiser l’évolution du trafic cycliste sur l’année 2023 et à prédire le flux pour cahque jours de la semaine. L’objectif est de fournir aux cyclistes des informations pertinentes sur les itinéraires recommandés, en tenant compte des conditions de circulation, de la météo et du calendrier.</p>
 </section>
-<section id="carte-interactive" class="level2">
-<h2 class="anchored" data-anchor-id="carte-interactive">Carte interactive</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://raw.githubusercontent.com/coralieromani/PROJET_2024/refs/heads/main/docs/Images/CARTE%20MONTPELLIER.png" class="img-fluid figure-img"></p>
-<figcaption>Carte de Montpellier</figcaption>
-</figure>
+<section id="cartes-interactives" class="level2">
+<h2 class="anchored" data-anchor-id="cartes-interactives">Cartes Interactives</h2>
+Voici les carte des flux des circulations de vélos à Montpellier pour chaque jours de la semaine passé sur une moyenne de l’année 2023
+<div>
+<p><button onclick="changeMap('Lundi')">Lundi</button> <button onclick="changeMap('Mardi')">Mardi</button> <button onclick="changeMap('Mercredi')">Mercredi</button> <button onclick="changeMap('Jeudi')">Jeudi</button> <button onclick="changeMap('Vendredi')">Vendredi</button> <button onclick="changeMap('Samedi')">Samedi</button> <button onclick="changeMap('Dimanche')">Dimanche</button></p>
 </div>
+<div id="map-container" style="margin-top: 20px;">
+<p><iframe id="map-frame" src="carte/map_montpellier_Lundi.html" width="100%" height="600" style="border: none;"></iframe></p>
+</div>
+<script>
+  function changeMap(day) {
+    document.getElementById("map-frame").src = `carte/map_montpellier_${day}.html`;
+  }
+</script>
+<p>On peut facilement remarquer que la circulation des vélos est bien plus importante en semaine qu’elle ne l’est le week-end. Cela s’explique probablement par l’évolution des mentalités et par l’augmentation des infrastructures cyclables. Dans la suite, nous analyserons une vidéo illustrant l’évolution des flux cyclables au cours d’une journée.</p>
 </section>
 <section id="visualisation-du-trafic-cycliste-au-tour-de-la-fds" class="level2">
 <h2 class="anchored" data-anchor-id="visualisation-du-trafic-cycliste-au-tour-de-la-fds">Visualisation du trafic cycliste au tour de la FDS</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://raw.githubusercontent.com/coralieromani/PROJET_2024/refs/heads/main/docs/Images/CarteMTPcentreFDS.png" class="img-fluid figure-img"></p>
-<figcaption>Carte centré FDS</figcaption>
-</figure>
-</div>
-<p>La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l’emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.</p>
 </section>
-<section id="video-des-flux" class="level2">
-<h2 class="anchored" data-anchor-id="video-des-flux">VIDEO des flux</h2>
+<section id="vidéo-des-flux" class="level2">
+<h2 class="anchored" data-anchor-id="vidéo-des-flux">Vidéo des flux</h2>
+<video controls="" width="100%" height="auto">
+<source src="Video/bike_animation_with_routes.mp4">
+</video>
+</section>
+<section id="diagrammes-circulation-de-vélos" class="level2">
+<h2 class="anchored" data-anchor-id="diagrammes-circulation-de-vélos">Diagrammes circulation de vélos</h2>
+<p>Les diagrammes ci-dessous offrent une vision détaillée de la circulation cycliste à Montpellier au cours de l’année 2023. Vous pouvez explorer :</p>
+<p>Le flux quotidien de vélos, Les données moyennes par mois, Et une vue d’ensemble représentative sur une semaine.</p>
+<div>
+<p><button onclick="changeDiagramme('Annee')">Année</button> <button onclick="changeDiagramme('Mois')">Mois</button> <button onclick="changeDiagramme('Semaine')">Semaine</button></p>
+</div>
+<div id="diagram-container" style="margin-top: 20px;">
+<p><iframe id="diagram-frame" src="Diagramme/Diagramme_Annee_2023.html" width="100%" height="600" style="border: none;"></iframe></p>
+</div>
+<script>
+  function changeDiagramme(view) {
+    // Met à jour l'iframe en fonction du bouton cliqué
+    document.getElementById("diagram-frame").src = `Diagramme/Diagramme_${view}_2023.html`;
+  }
+</script>
+</section>
+<section id="diagramme-location-de-vélos" class="level2">
+<h2 class="anchored" data-anchor-id="diagramme-location-de-vélos">Diagramme location de vélos</h2>
+<div id="diagram-container" style="margin-top: 20px;">
+<p><iframe id="diagram-frame" src="Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe></p>
+</div>
 </section>
 <section id="intéprétation-des-flux" class="level2">
 <h2 class="anchored" data-anchor-id="intéprétation-des-flux">Intéprétation des flux</h2>
 <p>En été il a plus de vélo en hiver et les temps de pluie moins de flux ….</p>
-</section>
-<section id="diagramme" class="level2">
-<h2 class="anchored" data-anchor-id="diagramme">Diagramme</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://raw.githubusercontent.com/coralieromani/PROJET_2024/refs/heads/main/docs/Images/Diagrammecyclistesvelomaag.png" class="img-fluid figure-img"></p>
-<figcaption>Diagramme des locations de vélomaggs et des nombres de cycliste a Montpellier</figcaption>
-</figure>
-</div>
-<p>Analyse des courbes location vélomagg et nombres de cyclystes sur un an, selon les saisons, vacances ect, pour commencer sur un mois mais pourquoi pas le faire par semaine cela pourrait être plus intéressant et plus précis et on rajouterais les semaine pluvieuse et temps ensoleillé.</p>
 </section>
 <section id="conclusion-et-perspectives" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion-et-perspectives">Conclusion et perspectives</h2>
