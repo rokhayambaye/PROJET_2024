@@ -13,7 +13,7 @@ class TraitementDonneesVelomagg:
 
     def telecharger_et_nettoyer_trajets(self):
         # Téléchargement des données de trajets
-        print("Téléchargement et nettoyage des données de trajets...")
+        print("Téléchargement et nettoyage des donnees de trajets...")
         self.df_trajets = pd.read_csv(self.url_trajets)
 
         # Remplacements pour nettoyer les noms des stations
@@ -38,11 +38,11 @@ class TraitementDonneesVelomagg:
         # Sélection des colonnes nécessaires et suppression des lignes avec des valeurs manquantes
         colonnes = ['Departure station', 'Departure', 'Return station', 'Return', 'Duration (sec.)', 'Covered distance (m)']
         self.df_trajets = self.df_trajets[colonnes].dropna(subset=['Return station', 'Return'])
-        print("Nettoyage terminé.")
+        print("Nettoyage termine.")
 
     def ajouter_coordonnees_stations(self):
         # Téléchargement des données des stations
-        print("Téléchargement des données des stations...")
+        print("Téléchargement des donnees des stations...")
         df_stations = pd.read_csv(self.url_stations)
         # Création d'un dictionnaire des coordonnées des stations
         self.dict_stations = df_stations.set_index('nom')[['latitude', 'longitude']].to_dict(orient='index')
@@ -55,23 +55,23 @@ class TraitementDonneesVelomagg:
                 return None, None
 
         # Ajout des coordonnées aux stations de départ et d'arrivée
-        print("Ajout des coordonnées aux trajets...")
+        print("Ajout des coordonnees aux trajets...")
         self.df_trajets['latitude_depart'], self.df_trajets['longitude_depart'] = zip(*self.df_trajets['Departure station'].apply(obtenir_lat_lon))
         self.df_trajets['latitude_retour'], self.df_trajets['longitude_retour'] = zip(*self.df_trajets['Return station'].apply(obtenir_lat_lon))
 
     def supprimer_lignes_manquantes(self):
         # Suppression des lignes avec des données manquantes
-        print("Suppression des lignes contenant des données manquantes...")
+        print("Suppression des lignes contenant des donnees manquantes...")
         nombre_initial = len(self.df_trajets)
         self.df_trajets = self.df_trajets.dropna()
         nombre_final = len(self.df_trajets)
-        print(f"{nombre_initial - nombre_final} lignes supprimées. {nombre_final} lignes restantes.")
+        print(f"{nombre_initial - nombre_final} lignes supprimees. {nombre_final} lignes restantes.")
 
     def sauvegarder_csv(self):
         # Enregistrement des données enrichies dans un fichier CSV
-        print(f"Enregistrement des données enrichies dans {self.fichier_sortie}...")
+        print(f"Enregistrement des donnees enrichies dans {self.fichier_sortie}...")
         self.df_trajets.to_csv(self.fichier_sortie, index=False)
-        print("Enregistrement terminé.")
+        print("Enregistrement termine.")
 
     def executer(self):
         # Exécution de toutes les étapes du traitement
@@ -80,3 +80,12 @@ class TraitementDonneesVelomagg:
         self.supprimer_lignes_manquantes()
         self.sauvegarder_csv()
 
+
+# %%
+url_trajets = "https://drive.google.com/uc?id=1kUMForLXwdGvV9ha2Qx-vMd6CnoMnWV5"
+url_stations = "https://drive.google.com/uc?id=1HgOLf2JD46ZJlyrF_c99QZb6of6ajNYh"
+
+# Créer une instance de la classe et traiter les données
+traitement = TraitementDonneesVelomagg(url_trajets, url_stations)
+traitement.executer()
+# %%

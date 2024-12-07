@@ -4,22 +4,39 @@ Installation du Projet
 Ce guide explique comment installer et configurer le projet pour démarrer rapidement.
 
 Prérequis
----------
-Avant de commencer, assurez-vous que les éléments suivants sont installés sur votre machine :
+------------
+Avant de commencer, assurez-vous d'installer  :
 
-- Python 3.8 ou version ultérieure
-- pip (gestionnaire de paquets Python)
-- Git
+FFmpeg  requis pour générer les vidéos. Installez-le selon votre système d'exploitation :
+
+- **Windows** : Téléchargez et configurez depuis `ffmpeg.org <https://ffmpeg.org/download.html>`_, puis ajoutez le dossier ``bin`` à la variable d'environnement ``PATH``.
+- **Linux** : Installez avec votre gestionnaire de paquets :
+
+  .. code-block:: bash
+
+     sudo apt install ffmpeg
+
+- **macOS** : Utilisez Homebrew :
+
+  .. code-block:: bash
+
+     brew install ffmpeg
+
+
+Pour vérifier l'installation de FFmpeg, exécutez la commande suivante dans un terminal :
+
+.. code-block:: bash
+
+   ffmpeg -version
 
 Étapes d'installation
 ---------------------
 1. **Cloner le dépôt Git** :
    Clonez le dépôt à l'aide de la commande suivante :git clone https://github.com/coralieromani/PROJET_2024 
+2. **Installer les dépendances** :
 
-2. **Créer un environnement virtuel** :
-Créez un environnement virtuel pour isoler les dépendances du projet :
-python -m venv env source env/bin/activate # Sur macOS/Linux env\Scripts\activate # Sur Windows
+Installez les bibliothèques nécessaires via le fichier `requirements.txt` :
 
-3. **Installer les dépendances** :
-Installez toutes les dépendances nécessaires en exécutant :
-pip install -r requirements.txt
+.. code-block:: bash
+
+   pip install -r requirements.txt

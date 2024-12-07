@@ -91,25 +91,37 @@
 <p>Ce guide explique comment installer et configurer le projet pour démarrer rapidement.</p>
 <section id="prerequis">
 <h2>Prérequis<a class="headerlink" href="#prerequis" title="Lien vers cette rubrique"></a></h2>
-<p>Avant de commencer, assurez-vous que les éléments suivants sont installés sur votre machine :</p>
-<ul class="simple">
-<li><p>Python 3.8 ou version ultérieure</p></li>
-<li><p>pip (gestionnaire de paquets Python)</p></li>
-<li><p>Git</p></li>
+<p>Avant de commencer, assurez-vous d’installer  :</p>
+<p>FFmpeg  requis pour générer les vidéos. Installez-le selon votre système d’exploitation :</p>
+<ul>
+<li><p><strong>Windows</strong> : Téléchargez et configurez depuis <a class="reference external" href="https://ffmpeg.org/download.html">ffmpeg.org</a>, puis ajoutez le dossier <code class="docutils literal notranslate"><span class="pre">bin</span></code> à la variable d’environnement <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p></li>
+<li><p><strong>Linux</strong> : Installez avec votre gestionnaire de paquets :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ffmpeg
+</pre></div>
+</div>
+</li>
+<li><p><strong>macOS</strong> : Utilisez Homebrew :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>ffmpeg
+</pre></div>
+</div>
+</li>
 </ul>
+<p>Pour vérifier l’installation de FFmpeg, exécutez la commande suivante dans un terminal :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg<span class="w"> </span>-version
+</pre></div>
+</div>
 </section>
 <section id="etapes-d-installation">
 <h2>Étapes d’installation<a class="headerlink" href="#etapes-d-installation" title="Lien vers cette rubrique"></a></h2>
 <ol class="arabic simple">
 <li><p><strong>Cloner le dépôt Git</strong> :
 Clonez le dépôt à l’aide de la commande suivante :git clone <a class="reference external" href="https://github.com/coralieromani/PROJET_2024">https://github.com/coralieromani/PROJET_2024</a></p></li>
+<li><p><strong>Installer les dépendances</strong> :</p></li>
 </ol>
-<p>2. <strong>Créer un environnement virtuel</strong> :
-Créez un environnement virtuel pour isoler les dépendances du projet :
-python -m venv env source env/bin/activate # Sur macOS/Linux envScriptsactivate # Sur Windows</p>
-<p>3. <strong>Installer les dépendances</strong> :
-Installez toutes les dépendances nécessaires en exécutant :
-pip install -r requirements.txt</p>
+<p>Installez les bibliothèques nécessaires via le fichier <cite>requirements.txt</cite> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
 </section>
 </section>
 
