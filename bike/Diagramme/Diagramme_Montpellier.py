@@ -13,12 +13,13 @@ flux_global = Donnees_montpellier.groupby('date')['intensity'].sum()
 
 # Créer un graphique interactif avec Plotly
 fig = go.Figure()
-
 fig.add_trace(go.Scatter(
     x=flux_global.index,
     y=flux_global.values,
     mode='lines+markers',
-    name='Flux de vélos'
+    name='Flux de vélos',
+    marker_color='green'
+
 ))
 
 # Ajouter des détails au graphique
@@ -33,5 +34,5 @@ fig.update_layout(
 )
 
 # Sauvegarder et afficher le graphique
-fig.write_html("bike/Diagramme/Diagramme_Flux_2023.html")
+fig.write_html("docs/Diagramme/Diagramme_Annee_2023.html")
 fig.show()

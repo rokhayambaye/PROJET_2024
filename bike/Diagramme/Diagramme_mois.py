@@ -40,4 +40,4 @@ fig.update_layout(
 fig.show()
 
 # Sauvegarder le graphique dans un fichier HTML
-fig.write_html("docs/Diagramme/Diagramme_mois_2023.html")
+fig.write_html("docs/Diagramme/Diagramme_Mois_2023.html")

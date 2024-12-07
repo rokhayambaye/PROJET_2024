@@ -13,12 +13,10 @@ format:
 
 ## Introduction
 
-À Montpellier, les options de transport sont variées, mais le vélo se distingue comme l'une des solutions les plus écologiques et pratiques. Cette popularité s'explique en grande partie par les nombreuses infrastructures mises à disposition, notamment un réseau étendu de pistes cyclables et le système Vélomagg, qui propose des vélos en libre-service à divers points stratégiques de la ville. Dans ce contexte, notre projet vise à visualiser l'évolution du trafic cycliste sur une année complète et à prédire le flux pour le lendemain. L'objectif est de fournir aux cyclistes des informations pertinentes sur les itinéraires recommandés, en tenant compte des conditions de circulation, de la météo et du calendrier (jours fériés, week-ends, etc.).
+À Montpellier, les options de transport sont variées, mais le vélo se distingue comme l'une des solutions les plus écologiques et pratiques. Cette popularité s'explique en grande partie par les nombreuses infrastructures mises à disposition, notamment un réseau étendu de pistes cyclables et le système Vélomagg.
+Dans ce contexte, notre projet vise à visualiser l'évolution du trafic cycliste sur l'année 2023 et à prédire le flux pour cahque jours de la semaine. L'objectif est de fournir aux cyclistes des informations pertinentes sur les itinéraires recommandés, en tenant compte des conditions de circulation, de la météo et du calendrier.
 
-Ca serait intéressant de comparer les trajet velo/voiture
-
-
-## Carte Interactive
+## Cartes Interactives
 
 Voici les carte des flux des circulations de vélos à Montpellier pour chaque jours de la semaine passé sur une moyenne de l’année 2023
 <div>
@@ -41,12 +39,12 @@ Voici les carte des flux des circulations de vélos à Montpellier pour chaque j
   }
 </script>
 
+On remarque facilement que les vélos circulent beaucoup plus en jours de semaine qu’en week-end. Cela s’explique sans doute par l’évolution des mentalités et le développement des pistes cyclables. De plus, de plus en plus de personnes optent pour le vélo pour se rendre au travail, que ce soit pour des raisons écologiques ou pratiques : éviter les embouteillages, réduire leur empreinte carbone, ou encore profiter d’un moyen de transport rapide et flexible en ville.
+Les flux cyclables sont également particulièrement importants aux abords des facultés, où de nombreux étudiants, souvent aux moyens modestes, privilégient le vélo comme une solution économique et accessible. 
+On constate aussi une forte concentration des déplacements à vélo dans le centre historique de Montpellier, où ce mode de transport est idéal pour se déplacer dans des zones souvent saturées par la circulation automobile.
 
 
 ## Visualisation du trafic cycliste au tour de la FDS
-
-
-La carte présente les trajets cyclables autour de la Faculté des Sciences de Montpellier, avec des temps de parcours estimés selon un code couleur. Le centre de la carte est marqué par l'emplacement de la faculté. Les cercles concentriques indiquent des distances cyclables mesurées : en rouge pour les trajets de moins de 5 minutes, en violet pour les trajets de 5 à 10 minutes, et en orange pour ceux de plus de 15 minutes. Les lignes vertes montrent les pistes cyclables disponibles, facilitant ainsi les déplacements à vélo dans Montpellier.
 
 
 ## Vidéo des flux
@@ -59,12 +57,40 @@ La carte présente les trajets cyclables autour de la Faculté des Sciences de M
 
 
 
+
+## Diagrammes circulation de vélos
+
+Les diagrammes ci-dessous offrent une vision détaillée de la circulation cycliste à Montpellier au cours de l'année 2023. Vous pouvez explorer :
+
+Le flux quotidien de vélos,
+Les données moyennes par mois,
+Et une vue d'ensemble représentative sur une semaine.
+
+<div>
+  <button onclick="changeDiagramme('Annee')">Année</button>
+  <button onclick="changeDiagramme('Mois')">Mois</button>
+  <button onclick="changeDiagramme('Semaine')">Semaine</button>
+</div>
+
+<div id="diagram-container" style="margin-top: 20px;">
+  <iframe id="diagram-frame" src="Diagramme/Diagramme_Annee_2023.html" width="100%" height="600" style="border: none;"></iframe>
+</div>
+
+<script>
+  function changeDiagramme(view) {
+    // Met à jour l'iframe en fonction du bouton cliqué
+    document.getElementById("diagram-frame").src = `Diagramme/Diagramme_${view}_2023.html`;
+  }
+</script>
+
+
+## Diagramme location de vélos
+<div id="diagram-container" style="margin-top: 20px;">
+  <iframe id="diagram-frame" src="Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe>
+</div>
+
+
 ## Intéprétation des flux 
-En été il a plus de vélo en hiver et les temps de pluie moins de flux ....
-
-## Diagramme
-![Diagramme des locations de vélomaggs et des nombres de cycliste a Montpellier ](https://raw.githubusercontent.com/coralieromani/PROJET_2024/refs/heads/main/docs/Images/Diagrammecyclistesvelomaag.png)
-
-Analyse des courbes location vélomagg et nombres de cyclystes sur un an, selon les saisons, vacances ect, pour commencer sur un mois mais pourquoi pas le faire par semaine cela pourrait être plus intéressant et plus précis et on rajouterais les semaine pluvieuse et temps ensoleillé.  
+  En été il a plus de vélo en hiver et les temps de pluie moins de flux ....
 
 ## Conclusion et perspectives
