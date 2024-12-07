@@ -19,10 +19,13 @@ Outre les bibliothèques Python listées dans le fichier `requirements.txt`, il 
 ```bash
 $ sudo apt install ffmpeg  # Pour les utilisateurs Linux
 $ brew install ffmpeg      # Pour les utilisateurs Mac
+
+```
 ### **Installation**
 Pour installer ce module, exécutez la commande suivante :
-
+```bash
 $ pip install git+https://github.com/coralieromani/PROJET_2024
+```
 ### **Documentation**
 La documentation complète est disponible [ici](https://votre-utilisateur.github.io/votre-repository/). Elle inclut :
 -Une introduction détaillée au projet.
