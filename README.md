@@ -10,9 +10,6 @@ Ce module analyse et visualise le trafic cycliste à Montpellier, en s'appuyant 
 Grâce à des animations, des cartes interactives et des prédictions de trafic, ce projet offre une exploration complète des données liées aux déplacements à vélo dans la région.
 
 ---
-
-## **Installer**
-
 ### **Prérequis**
 Outre les bibliothèques Python listées dans le fichier `requirements.txt`, il est nécessaire d'avoir **FFmpeg** installé sur votre ordinateur avec des droits d'accès en lecture/écriture/exécution. Pour l’installer, exécutez la commande suivante dans votre terminal :
 
