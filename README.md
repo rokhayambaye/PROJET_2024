@@ -1,6 +1,6 @@
 ---
-title: "README"
-author: "Votre Équipe"
+title: "ANALYSE DU TRAFIC CYCLISTE"
+author: "DIALLO Ousmane , M'RAD Samy , MBAYE Rokhaya, ROMANI DE VINCI Coralie"
 format: markdown
 ---
 
