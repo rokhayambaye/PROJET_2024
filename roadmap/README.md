@@ -25,12 +25,20 @@ Les données de comptage proviennent d'éco-compteurs conçus pour mesurer le pa
 
 ### Fichiers et dossiers principaux
 
--   `roadmap` : Contient les fichiers décrivant le projet, son architecture, et les étapes à suivre.
--   `.github/workflows/` : Configuration des actions GitHub pour l'intégration continue et la création du site.
--   `.gitignore` : Fichier pour ignorer les fichiers inutiles.
--   `README.md` : Description générale du projet.
--   `docs`: Contient les flichiers du site web (.qmd, .html, .css, images)
--   `requirement.txt`:Fichier pour lister les bibliothèques Python et les versions spécifiques requises pour le projet. 
+- Le dossier **`bike`** regroupe les fonctionnalités principales, avec des sous-dossiers pour gérer les bases de données (`Base_des_donnees`), créer des vidéos animées (`video`), produire des cartes interactives (`carte`), et générer des diagrammes visuels (`diagramme`).
+  
+- Le dossier **`roadmap`** contient la documentation liée à la planification, notamment le `README.md` et un diagramme de Gantt.
+
+- Le dossier **`docs`** regroupe les fichiers HTML générés pour les cartes interactives, les diagrammes et le site web.
+
+- Le dossier **`slide`** inclut les diapositives de présentation, réalisées avec libreoffice impress.
+
+- Le dossier **`source`** est dédié à la création de documentation avec Sphinx, tandis que le dossier **`build`** stocke les fichiers HTML générés.
+
+- Le dossier **`tests`** contient les scripts pour vérifier la qualité et le bon fonctionnement du code.
+
+- Enfin, le dossier **`.github/workflows`** gère un workflow d’intégration continue pour exécuter des tests automatiquement à chaque mise à jour ou contribution.
+
   
 ### Branches Git
 -   **Branche Main** : Branche principale contenant le code.
