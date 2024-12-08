@@ -1,8 +1,5 @@
----
-title: "ANALYSE DU TRAFIC CYCLISTE"
-author: "DIALLO Ousmane , M'RAD Samy , MBAYE Rokhaya, ROMANI DE VINCI Coralie"
-format: markdown
----
+
+# ANALYSE DU TRAFIC CYCLISTE🚴‍♀️
 
 # **description**
 
@@ -84,5 +81,9 @@ Ce dossier contient un workflow d’intégration continue. Ce dernier exécute d
 
 ---
 
-## Auteur
-Ce projet a été réalisé dans le cadre d'un travail académique, avec une approche collaborative pour développer un système de gestion et d’analyse des données de partage de vélos.
+## Auteurs
+Ce projet a été réalisé par :
+- **DIALLO Ousmane**
+- **M'RAD Samy**
+- **ROMANI DE VINCI Coralie**
+- **MBAYE Rokhaya**
