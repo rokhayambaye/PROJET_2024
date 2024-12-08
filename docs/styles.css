@@ -1,0 +1,159 @@
+/* Style global */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+    background-color: #ffffff;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+}
+/* Style du premier titre (h1) uniquement */
+h1.title {
+    color: white;
+}
+
+
+/* Style des autres titres (h2, h3) */
+h2, h3 {
+    color: #1abc9c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Style des paragraphes */
+p {
+    font-size: 1.2em;
+    color: #34495e;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Style des liens */
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1abc9c;
+    text-decoration: underline;
+}
+
+/* Style des images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Style des tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #ecf0f1;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #1abc9c;
+    color: white;
+    font-weight: bold;
+}
+
+/* Style des boutons */
+button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #16a085;
+}
+
+/* Style des sections */
+section {
+    padding: 40px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Style du header */
+header {
+    background-color: #1abc9c;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+/* Style de la table des matières (TOC) */
+#TOC {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#TOC ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#TOC ul li {
+    margin-bottom: 10px;
+}
+
+#TOC ul li a {
+    color: #34495e;
+    font-size: 1.1em;
+}
+
+#TOC ul li a:hover {
+    color: #1abc9c;
+}
+
+/* Style des figures */
+figure {
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+/* Effet sur les boîtes */
+.box {
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

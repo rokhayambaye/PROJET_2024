@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traitement des Données VéloMagg &mdash; Documentation ANALYSE DU TRAFIC CYCLISTE </title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Création de la Vidéo des Déplacements" href="../video_creation.html" />
+    <link rel="prev" title="Gestionnaire des Données Éco-Compteurs" href="donnee_eco.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ANALYSE DU TRAFIC CYCLISTE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation et Contacts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installer/installation.html">Installation du Projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installer/contacts.html">Contact</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Traitement des bases de données</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="donnee_eco.html">Gestionnaire des Données Éco-Compteurs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Traitement des Données VéloMagg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#classe-principale">Classe principale</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Video</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../video_creation.html">Création de la Vidéo des Déplacements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Carte</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../carte.html">Création de cartes interactives pour le trafic cycliste à Montpellier</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ANALYSE DU TRAFIC CYCLISTE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Traitement des Données VéloMagg</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/traitement_donnees/donnee_velo.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="traitement-des-donnees-velomagg">
+<h1>Traitement des Données VéloMagg<a class="headerlink" href="#traitement-des-donnees-velomagg" title="Lien vers cette rubrique"></a></h1>
+<p>Ce module contient une classe et des méthodes pour télécharger, nettoyer et enrichir les données des trajets VéloMagg avec les coordonnées des stations.</p>
+<section id="classe-principale">
+<h2>Classe principale<a class="headerlink" href="#classe-principale" title="Lien vers cette rubrique"></a></h2>
+<p><strong>TraitementDonneesVelomagg</strong></p>
+<p>Cette classe permet de :
+1. Télécharger les données de trajets et des stations.
+2. Nettoyer les noms des stations.
+3. Ajouter les coordonnées (latitude et longitude) aux stations de départ et d’arrivée des trajets.
+4. Supprimer les lignes avec des valeurs manquantes.
+5. Sauvegarder les données traitées dans un fichier CSV.</p>
+<p>### Paramètres d’initialisation</p>
+<ul class="simple">
+<li><p><strong>url_trajets</strong> : URL contenant les données des trajets.</p></li>
+<li><p><strong>url_stations</strong> : URL contenant les données des stations.</p></li>
+<li><p><strong>fichier_sortie</strong> <em>(optionnel)</em> : Nom du fichier CSV de sortie (par défaut : <cite>Velomagg_avec_coordonnees.csv</cite>).</p></li>
+</ul>
+<p>### Méthodes</p>
+<ul class="simple">
+<li><p><strong>telecharger_et_nettoyer_trajets()</strong>
+Télécharge les données des trajets et nettoie les noms des stations avec des remplacements spécifiques.</p></li>
+<li><p><strong>ajouter_coordonnees_stations()</strong>
+Télécharge les données des stations et ajoute les coordonnées aux stations de départ et d’arrivée dans les données des trajets.</p></li>
+<li><p><strong>supprimer_lignes_manquantes()</strong>
+Supprime les lignes des trajets contenant des valeurs manquantes pour garantir des données complètes.</p></li>
+<li><p><strong>sauvegarder_csv()</strong>
+Sauvegarde les données enrichies dans un fichier CSV spécifié lors de l’initialisation.</p></li>
+<li><p><strong>executer()</strong>
+Exécute toutes les étapes du pipeline de traitement des données (dans l’ordre des méthodes mentionnées).</p></li>
+</ul>
+<p>### Exemple d’utilisation</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traitement_donnee</span> <span class="kn">import</span> <span class="n">TraitementDonneesVelomagg</span>
+
+<span class="c1"># Définir les URLs des données</span>
+<span class="n">url_trajets</span> <span class="o">=</span> <span class="s2">&quot;https://drive.google.com/uc?id=1kUMForLXwdGvV9ha2Qx-vMd6CnoMnWV5&quot;</span>
+<span class="n">url_stations</span> <span class="o">=</span> <span class="s2">&quot;https://drive.google.com/uc?id=1HgOLf2JD46ZJlyrF_c99QZb6of6ajNYh&quot;</span>
+
+
+<span class="c1"># Créer une instance de la classe</span>
+<span class="n">traitement</span> <span class="o">=</span> <span class="n">TraitementDonneesVelomagg</span><span class="p">(</span>
+    <span class="n">url_trajets</span><span class="o">=</span><span class="n">url_trajets</span><span class="p">,</span>
+    <span class="n">url_stations</span><span class="o">=</span><span class="n">url_stations</span><span class="p">,</span>
+    <span class="n">fichier_sortie</span><span class="o">=</span><span class="s2">&quot;donnees_velomagg.csv&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Exécuter le traitement</span>
+<span class="n">traitement</span><span class="o">.</span><span class="n">executer</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>### Fichier de sortie</p>
+<ul class="simple">
+<li><p>Les données enrichies sont enregistrées dans le fichier CSV défini par <strong>fichier_sortie</strong>.</p></li>
+<li><p>Ce fichier contient les colonnes suivantes :
+- <strong>Departure station</strong>, <strong>Departure</strong>, <strong>Return station</strong>, <strong>Return</strong>
+- <strong>Duration (sec.)</strong>, <strong>Covered distance (m)</strong>
+- <strong>latitude_depart</strong>, <strong>longitude_depart</strong>, <strong>latitude_retour</strong>, <strong>longitude_retour</strong></p></li>
+</ul>
+<p>—</p>
+<p>## Notes supplémentaires</p>
+<ul class="simple">
+<li><p>Les noms des stations sont nettoyés à l’aide d’un dictionnaire de remplacements spécifiques pour uniformiser les données.</p></li>
+<li><p>Les lignes avec des valeurs manquantes sont supprimées après ajout des coordonnées.</p></li>
+</ul>
+<p>—</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="donnee_eco.html" class="btn btn-neutral float-left" title="Gestionnaire des Données Éco-Compteurs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../video_creation.html" class="btn btn-neutral float-right" title="Création de la Vidéo des Déplacements" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, DIALLO Ousmane , M&#39;RAD Samy , MBAYE Rokhaya, ROMANI DE VINCI Coralie.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
