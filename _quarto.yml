@@ -1,0 +1,18 @@
+project:
+  type: website
+  render :
+    - docs/index.qmd
+
+website:
+  title: "Site Web"
+  site-url: "https://coralieromani.github.io/PROJET_2024/"
+  repo-url: "https://github.com/coralieromani/PROJET_2024"
+  navbar:
+    title: "Site"
+    background: primary
+
+format:
+  html:
+    css: docs/styles.css
+    toc: true 
+    output-dir: "docs"
