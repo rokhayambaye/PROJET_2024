@@ -26,7 +26,7 @@ Le projet est structuré en plusieurs dossiers pour simplifier son développemen
 
 - Le dossier **`docs`** regroupe les fichiers HTML générés pour les cartes interactives, les diagrammes et le site web.
 
-- Le dossier **`slide`** inclut les diapositives de présentation, réalisées avec Quarto.
+- Le dossier **`slide`** inclut les diapositives de présentation, réalisées avec libreoffice impress.
 
 - Le dossier **`source`** est dédié à la création de documentation avec Sphinx, tandis que le dossier **`build`** stocke les fichiers HTML générés.
 
