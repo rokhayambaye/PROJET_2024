@@ -19,7 +19,7 @@ jobs:
           version: "1.5.57"
         
       - name: Check Quarto version
-        run: quarto--version
+        run: quarto --version
 
       - name: Render the website
         run: |
