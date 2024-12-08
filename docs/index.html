@@ -78,11 +78,11 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="https://static.actu.fr/uploads/2020/09/montpellier-velo-piste-cyclable-960x640.jpg" class="img-fluid"></p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>À Montpellier, les options de transport sont variées, mais le vélo se distingue comme l’une des solutions les plus écologiques et pratiques. Cette popularité s’explique en grande partie par les nombreuses infrastructures mises à disposition, notamment un réseau étendu de pistes cyclables et le système Vélomagg. Dans ce contexte, notre projet vise à visualiser l’évolution du trafic cycliste sur l’année 2023 et à prédire le flux pour cahque jours de la semaine. L’objectif est de fournir aux cyclistes des informations pertinentes sur les itinéraires recommandés, en tenant compte des conditions de circulation, de la météo et du calendrier.</p>
+<p>À Montpellier, les options de transport sont variées, mais le vélo se distingue comme l’une des solutions les plus écologiques et pratiques. Dans ce contexte, notre projet vise à visualiser l’évolution du trafic cycliste sur l’année 2023 et à prédire le flux pour cahque jours de la semaine. Pour cela nous allons nous basé sur les <a href="https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo">éco-compteurs</a> fournie par la ville et les locations <a href="https://data.montpellier3m.fr/dataset/courses-des-velos-velomagg-de-montpellier-mediterranee-metropole">Vélomagg</a>.</p>
 </section>
 <section id="cartes-interactives" class="level2">
 <h2 class="anchored" data-anchor-id="cartes-interactives">Cartes Interactives</h2>
-Voici les carte des flux des circulations de vélos à Montpellier pour chaque jours de la semaine passé sur une moyenne de l’année 2023
+Voici les cartes prévisionnelles des flux des circulations de vélos à Montpellier pour chaque jours de la semaine basée sur une moyenne de l’année 2023
 <div>
 <p><button onclick="changeMap('Lundi')">Lundi</button> <button onclick="changeMap('Mardi')">Mardi</button> <button onclick="changeMap('Mercredi')">Mercredi</button> <button onclick="changeMap('Jeudi')">Jeudi</button> <button onclick="changeMap('Vendredi')">Vendredi</button> <button onclick="changeMap('Samedi')">Samedi</button> <button class="dimanche" onclick="changeMap('Dimanche')">Dimanche</button></p>
 </div>
@@ -102,7 +102,7 @@ Voici les carte des flux des circulations de vélos à Montpellier pour chaque j
 <source src="Video/bike_animation_12_Mai.mp4">
 </video>
 <video controls="" width="100%" height="auto">
-<source src="Video/bike_animation_with_routes.mp4">
+<source src="Video/bike_animation_14_Mai.mp4">
 </video>
 </section>
 <section id="diagrammes-circulation-de-vélos" class="level2">
@@ -182,6 +182,7 @@ Voici les carte des flux des circulations de vélos à Montpellier pour chaque j
 <div id="diagram-container" style="margin-top: 20px;">
 <p><iframe id="diagram-frame" src="Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe></p>
 </div>
+<p>Le nombre de location coincide globalement avec les flux de vélos hormis le pics du mois de. Cela est forcément du au nombres jours fériés et au climat plus agréable.</p>
 </section>
 
 </main>
