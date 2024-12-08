@@ -1,0 +1,30 @@
+name: Site Web
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.5.57"
+        
+      - name: Check Quarto version
+        run: quarto --version
+
+      - name: Render and Publish the website
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          path: ./docs
+          target: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
