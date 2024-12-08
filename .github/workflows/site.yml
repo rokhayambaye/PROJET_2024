@@ -17,9 +17,12 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: "v1.3.0"
+        
+      - name: Check Quarto version
+        run: quarto--version
 
       - name: Render the website
-        run: 
+        run: |
           quarto render
         working-directory: .
 
