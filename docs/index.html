@@ -51,7 +51,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#vidéo-des-flux" id="toc-vidéo-des-flux" class="nav-link" data-scroll-target="#vidéo-des-flux">Vidéo des flux</a></li>
   <li><a href="#diagrammes-circulation-de-vélos" id="toc-diagrammes-circulation-de-vélos" class="nav-link" data-scroll-target="#diagrammes-circulation-de-vélos">Diagrammes circulation de vélos</a></li>
   <li><a href="#diagramme-location-de-vélos" id="toc-diagramme-location-de-vélos" class="nav-link" data-scroll-target="#diagramme-location-de-vélos">Diagramme location de vélos</a></li>
-  <li><a href="#conclusion-et-perspectives" id="toc-conclusion-et-perspectives" class="nav-link" data-scroll-target="#conclusion-et-perspectives">Conclusion et perspectives</a></li>
   </ul>
 </nav>
 </div>
@@ -85,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="cartes-interactives">Cartes Interactives</h2>
 Voici les carte des flux des circulations de vélos à Montpellier pour chaque jours de la semaine passé sur une moyenne de l’année 2023
 <div>
-<p><button onclick="changeMap('Lundi')">Lundi</button> <button onclick="changeMap('Mardi')">Mardi</button> <button onclick="changeMap('Mercredi')">Mercredi</button> <button onclick="changeMap('Jeudi')">Jeudi</button> <button onclick="changeMap('Vendredi')">Vendredi</button> <button onclick="changeMap('Samedi')">Samedi</button> <button onclick="changeMap('Dimanche')">Dimanche</button></p>
+<p><button onclick="changeMap('Lundi')">Lundi</button> <button onclick="changeMap('Mardi')">Mardi</button> <button onclick="changeMap('Mercredi')">Mercredi</button> <button onclick="changeMap('Jeudi')">Jeudi</button> <button onclick="changeMap('Vendredi')">Vendredi</button> <button onclick="changeMap('Samedi')">Samedi</button> <button class="dimanche" onclick="changeMap('Dimanche')">Dimanche</button></p>
 </div>
 <div id="map-container" style="margin-top: 20px;">
 <p><iframe id="map-frame" src="carte/map_montpellier_Lundi.html" width="100%" height="600" style="border: none;"></iframe></p>
@@ -101,6 +100,9 @@ Voici les carte des flux des circulations de vélos à Montpellier pour chaque j
 <h2 class="anchored" data-anchor-id="vidéo-des-flux">Vidéo des flux</h2>
 <video controls="" width="100%" height="auto">
 <source src="Video/bike_animation_12_Mai.mp4">
+</video>
+<video controls="" width="100%" height="auto">
+<source src="Video/bike_animation_with_routes.mp4">
 </video>
 </section>
 <section id="diagrammes-circulation-de-vélos" class="level2">
@@ -180,9 +182,6 @@ Voici les carte des flux des circulations de vélos à Montpellier pour chaque j
 <div id="diagram-container" style="margin-top: 20px;">
 <p><iframe id="diagram-frame" src="Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe></p>
 </div>
-</section>
-<section id="conclusion-et-perspectives" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion-et-perspectives">Conclusion et perspectives</h2>
 </section>
 
 </main>

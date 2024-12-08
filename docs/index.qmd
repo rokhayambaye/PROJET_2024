@@ -26,7 +26,7 @@ Voici les carte des flux des circulations de vélos à Montpellier pour chaque j
   <button onclick="changeMap('Jeudi')">Jeudi</button>
   <button onclick="changeMap('Vendredi')">Vendredi</button>
   <button onclick="changeMap('Samedi')">Samedi</button>
-  <button onclick="changeMap('Dimanche')">Dimanche</button>
+  <button class=dimanche onclick="changeMap('Dimanche')">Dimanche</button>
 </div>
 
 <div id="map-container" style="margin-top: 20px;">
@@ -50,9 +50,9 @@ On constate aussi une forte concentration des déplacements à vélo dans le cen
   <source src="Video/bike_animation_12_Mai.mp4">
 </video>
 
-
-
-
+<video controls width="100%" height="auto">
+  <source src="Video/bike_animation_with_routes.mp4">
+</video>
 
 
 ## Diagrammes circulation de vélos
@@ -142,5 +142,3 @@ Les diagrammes ci-dessous offrent une vision détaillée de la circulation cycli
 </div>
 
 
-
-## Conclusion et perspectives
