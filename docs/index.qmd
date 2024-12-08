@@ -51,7 +51,7 @@ On constate aussi une forte concentration des déplacements à vélo dans le cen
 </video>
 
 <video controls width="100%" height="auto">
-  <source src="Video/bike_animation_with_routes.mp4">
+  <source src="Video/bike_animation_14_Mai.mp4.mp4">
 </video>
 
 
@@ -140,5 +140,4 @@ Les diagrammes ci-dessous offrent une vision détaillée de la circulation cycli
 <div id="diagram-container" style="margin-top: 20px;">
   <iframe id="diagram-frame" src="Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe>
 </div>
-
 
