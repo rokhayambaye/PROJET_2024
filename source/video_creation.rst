@@ -14,15 +14,13 @@ Fonctionnalités
 Dépendances
 ------------
 Ce script utilise les bibliothèques suivantes :
-- `pandas`
-- `matplotlib`
-- `osmnx`
+- **pandas**
+- **matplotlib**
+- **osmnx**
 
 Code Source
 ------------
 .. code-block:: python
-
-    #%%
     import pandas as pd
     import matplotlib.pyplot as plt
     from matplotlib.animation import FuncAnimation
@@ -105,15 +103,12 @@ Code Source
             time_text.set_text(f"Temps: {current_time.strftime('%Y-%m-%d %H:%M:%S')}")
         return bike_points, list(line_data.values()), time_text
 
-# Créer l'animation
-frames = range(0, int((df["Return"].max() - df["Departure"].min()).total_seconds() // 300) + 1)
-ani = FuncAnimation(fig, update, frames=frames, interval=200)
-
-# Sauvegarder la vidéo
-ani.save("bike_animation_12_Mai.mp4", fps=5, writer="ffmpeg")
-plt.show()
-
-# %%
+    # Créer l'animation
+    frames = range(0, int((df["Return"].max() - df["Departure"].min()).total_seconds() // 300) + 1)
+    ani = FuncAnimation(fig, update, frames=frames, interval=200)
+    # Sauvegarder la vidéo
+    ani.save("bike_animation_12_Mai.mp4", fps=5, writer="ffmpeg")
+    plt.show()
 
 
 Résultat

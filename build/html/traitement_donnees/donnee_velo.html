@@ -94,30 +94,30 @@
 <p>Ce module contient une classe et des méthodes pour télécharger, nettoyer et enrichir les données des trajets VéloMagg avec les coordonnées des stations.</p>
 <section id="classe-principale">
 <h2>Classe principale<a class="headerlink" href="#classe-principale" title="Lien vers cette rubrique"></a></h2>
-<p><strong>`TraitementDonneesVelomagg`</strong></p>
+<p><strong>TraitementDonneesVelomagg</strong></p>
 <p>Cette classe permet de :
-- Télécharger les données de trajets et des stations.
-- Nettoyer les noms des stations.
-- Ajouter les coordonnées (latitude et longitude) aux stations de départ et d’arrivée des trajets.
-- Supprimer les lignes avec des valeurs manquantes.
-- Sauvegarder les données traitées dans un fichier CSV.</p>
+1. Télécharger les données de trajets et des stations.
+2. Nettoyer les noms des stations.
+3. Ajouter les coordonnées (latitude et longitude) aux stations de départ et d’arrivée des trajets.
+4. Supprimer les lignes avec des valeurs manquantes.
+5. Sauvegarder les données traitées dans un fichier CSV.</p>
 <p>### Paramètres d’initialisation</p>
 <ul class="simple">
-<li><p><strong>`url_trajets`</strong> : URL contenant les données des trajets.</p></li>
-<li><p><strong>`url_stations`</strong> : URL contenant les données des stations.</p></li>
-<li><p><strong>`fichier_sortie`</strong> <em>(optionnel)</em> : Nom du fichier CSV de sortie (par défaut : <cite>Velomagg_avec_coordonnees.csv</cite>).</p></li>
+<li><p><strong>url_trajets</strong> : URL contenant les données des trajets.</p></li>
+<li><p><strong>url_stations</strong> : URL contenant les données des stations.</p></li>
+<li><p><strong>fichier_sortie</strong> <em>(optionnel)</em> : Nom du fichier CSV de sortie (par défaut : <cite>Velomagg_avec_coordonnees.csv</cite>).</p></li>
 </ul>
 <p>### Méthodes</p>
 <ul class="simple">
-<li><p><strong>`telecharger_et_nettoyer_trajets()`</strong>
+<li><p><strong>telecharger_et_nettoyer_trajets()</strong>
 Télécharge les données des trajets et nettoie les noms des stations avec des remplacements spécifiques.</p></li>
-<li><p><strong>`ajouter_coordonnees_stations()`</strong>
+<li><p><strong>ajouter_coordonnees_stations()</strong>
 Télécharge les données des stations et ajoute les coordonnées aux stations de départ et d’arrivée dans les données des trajets.</p></li>
-<li><p><strong>`supprimer_lignes_manquantes()`</strong>
+<li><p><strong>supprimer_lignes_manquantes()</strong>
 Supprime les lignes des trajets contenant des valeurs manquantes pour garantir des données complètes.</p></li>
-<li><p><strong>`sauvegarder_csv()`</strong>
+<li><p><strong>sauvegarder_csv()</strong>
 Sauvegarde les données enrichies dans un fichier CSV spécifié lors de l’initialisation.</p></li>
-<li><p><strong>`executer()`</strong>
+<li><p><strong>executer()</strong>
 Exécute toutes les étapes du pipeline de traitement des données (dans l’ordre des méthodes mentionnées).</p></li>
 </ul>
 <p>### Exemple d’utilisation</p>
@@ -141,11 +141,11 @@ Exécute toutes les étapes du pipeline de traitement des données (dans l’ord
 </div>
 <p>### Fichier de sortie</p>
 <ul class="simple">
-<li><p>Les données enrichies sont enregistrées dans le fichier CSV défini par <cite>fichier_sortie</cite>.</p></li>
+<li><p>Les données enrichies sont enregistrées dans le fichier CSV défini par <strong>fichier_sortie</strong>.</p></li>
 <li><p>Ce fichier contient les colonnes suivantes :
-- <cite>Departure station</cite>, <cite>Departure</cite>, <cite>Return station</cite>, <cite>Return</cite>
-- <cite>Duration (sec.)</cite>, <cite>Covered distance (m)</cite>
-- <cite>latitude_depart</cite>, <cite>longitude_depart</cite>, <cite>latitude_retour</cite>, <cite>longitude_retour</cite></p></li>
+- <strong>Departure station</strong>, <strong>Departure</strong>, <strong>Return station</strong>, <strong>Return</strong>
+- <strong>Duration (sec.)</strong>, <strong>Covered distance (m)</strong>
+- <strong>latitude_depart</strong>, <strong>longitude_depart</strong>, <strong>latitude_retour</strong>, <strong>longitude_retour</strong></p></li>
 </ul>
 <p>—</p>
 <p>## Notes supplémentaires</p>

@@ -6,36 +6,36 @@ Ce module contient une classe et des méthodes pour télécharger, nettoyer et e
 Classe principale
 ------------------
 
-**`TraitementDonneesVelomagg`**
+**TraitementDonneesVelomagg**
 
 Cette classe permet de :
-- Télécharger les données de trajets et des stations.
-- Nettoyer les noms des stations.
-- Ajouter les coordonnées (latitude et longitude) aux stations de départ et d'arrivée des trajets.
-- Supprimer les lignes avec des valeurs manquantes.
-- Sauvegarder les données traitées dans un fichier CSV.
+1. Télécharger les données de trajets et des stations.
+2. Nettoyer les noms des stations.
+3. Ajouter les coordonnées (latitude et longitude) aux stations de départ et d'arrivée des trajets.
+4. Supprimer les lignes avec des valeurs manquantes.
+5. Sauvegarder les données traitées dans un fichier CSV.
 
 ### Paramètres d'initialisation
 
-- **`url_trajets`** : URL contenant les données des trajets.
-- **`url_stations`** : URL contenant les données des stations.
-- **`fichier_sortie`** *(optionnel)* : Nom du fichier CSV de sortie (par défaut : `Velomagg_avec_coordonnees.csv`).
+- **url_trajets** : URL contenant les données des trajets.
+- **url_stations** : URL contenant les données des stations.
+- **fichier_sortie** *(optionnel)* : Nom du fichier CSV de sortie (par défaut : `Velomagg_avec_coordonnees.csv`).
 
 ### Méthodes
 
-- **`telecharger_et_nettoyer_trajets()`**  
+- **telecharger_et_nettoyer_trajets()**  
   Télécharge les données des trajets et nettoie les noms des stations avec des remplacements spécifiques.
 
-- **`ajouter_coordonnees_stations()`**  
+- **ajouter_coordonnees_stations()**  
   Télécharge les données des stations et ajoute les coordonnées aux stations de départ et d'arrivée dans les données des trajets.
 
-- **`supprimer_lignes_manquantes()`**  
+- **supprimer_lignes_manquantes()**  
   Supprime les lignes des trajets contenant des valeurs manquantes pour garantir des données complètes.
 
-- **`sauvegarder_csv()`**  
+- **sauvegarder_csv()**  
   Sauvegarde les données enrichies dans un fichier CSV spécifié lors de l'initialisation.
 
-- **`executer()`**  
+- **executer()**  
   Exécute toutes les étapes du pipeline de traitement des données (dans l'ordre des méthodes mentionnées).
 
 ### Exemple d'utilisation
@@ -61,11 +61,11 @@ Cette classe permet de :
 
 ### Fichier de sortie
 
-- Les données enrichies sont enregistrées dans le fichier CSV défini par `fichier_sortie`.
+- Les données enrichies sont enregistrées dans le fichier CSV défini par **fichier_sortie**.
 - Ce fichier contient les colonnes suivantes :
-  - `Departure station`, `Departure`, `Return station`, `Return`
-  - `Duration (sec.)`, `Covered distance (m)`
-  - `latitude_depart`, `longitude_depart`, `latitude_retour`, `longitude_retour`
+  - **Departure station**, **Departure**, **Return station**, **Return**
+  - **Duration (sec.)**, **Covered distance (m)**
+  - **latitude_depart**, **longitude_depart**, **latitude_retour**, **longitude_retour**
 
 ---
 
