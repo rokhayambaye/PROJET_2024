@@ -21,6 +21,9 @@ jobs:
       - name: Check Quarto version
         run: quarto --version
 
+      - name: Render Quarto project
+        run: quarto render
+
       - name: Render and Publish the website
         uses: quarto-dev/quarto-actions/publish@v2
         with:
