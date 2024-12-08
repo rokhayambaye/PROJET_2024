@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: "3.12.3" 
           cache: "pip"
-      - run: python3 -m pip install -r requirements.txt
+      - run: python3 -m pip install -r requirement.txt
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
