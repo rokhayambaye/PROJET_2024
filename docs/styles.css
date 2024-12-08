@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 /* Style du premier titre (h1) uniquement */
 h1.title {
     color: white;
@@ -83,6 +84,10 @@ button {
 
 button:hover {
     background-color: #16a085;
+}
+
+.dimanche {
+    margin-top: 5px;
 }
 
 /* Style des sections */
