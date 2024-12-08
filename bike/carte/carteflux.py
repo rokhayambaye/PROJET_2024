@@ -77,9 +77,23 @@ for i, day in enumerate(days):
     folium.Marker(
         location=[43.6312537,3.8612405],
         popup="Faculté des Sciences",
-        icon=Icon(icon="university", color="red", prefix="fa")
+        icon=Icon(icon="university", color="blue", prefix="fa")
     ).add_to(mymap)
 
+    #Faculté de Droit et de Science Politique
+    folium.Marker(
+        location=[43.6145,3.8763],
+        popup="Faculté de Droit et de Science Politiques",
+        icon=Icon(icon="university", color="blue", prefix="fa")
+    ).add_to(mymap)
+    
+    #Faculté Faculté d'Économie
+    folium.Marker(
+        location=[43.6096,3.8964],
+        popup="Faculté Faculté d'Économie",
+        icon=Icon(icon="university", color="blue", prefix="fa")
+    ).add_to(mymap)
+    
     # Contour de la ville
     folium.GeoJson(
         data=area["geometry"],
@@ -116,4 +130,4 @@ for i, day in enumerate(days):
             opacity=0.8,
         ).add_to(mymap)
         
-    mymap.save(f"bike/carte/map_montpellier_{day}.html")
+    mymap.save(f"docs/Carte/map_montpellier_{day}.html")
