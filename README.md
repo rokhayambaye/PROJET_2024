@@ -18,66 +18,23 @@ La documentation complète est disponible [ici](https://lien..). Elle inclut :
 - Des tutoriels pour le traitement des données et la création de vidéos.
 - Une description complète des classes et fonctions du projet.
 # Structure du Projet
+Le projet est structuré en plusieurs dossiers pour simplifier son développement, sa maintenance et son utilisation :
 
-Le projet est organisé en plusieurs dossiers pour faciliter le développement, la maintenance et l’utilisation. Voici la structure détaillée :
+- Le dossier **`bike`** regroupe les fonctionnalités principales, avec des sous-dossiers pour gérer les bases de données (`Base_des_donnees`), créer des vidéos animées (`video`), produire des cartes interactives (`carte`), et générer des diagrammes visuels (`diagramme`).
+  
+- Le dossier **`roadmap`** contient la documentation liée à la planification, notamment le `README.md` et un diagramme de Gantt.
 
-## 1. Dossier `bike`
-Ce dossier contient les fonctionnalités principales du projet, réparties dans différents sous-dossiers :
+- Le dossier **`docs`** regroupe les fichiers HTML générés pour les cartes interactives, les diagrammes et le site web.
 
-- `bike/Base_des_donnees` : Contient les scripts pour le téléchargement et le traitement des bases de données, y compris :
-  - Les données VéloMagg.
-  - Les données des éco-compteurs.
+- Le dossier **`slide`** inclut les diapositives de présentation, réalisées avec Quarto.
 
-- `bike/video` : Contient le script utilisé pour créer des vidéos animées représentant les déplacements à vélo.
+- Le dossier **`source`** est dédié à la création de documentation avec Sphinx, tandis que le dossier **`build`** stocke les fichiers HTML générés.
 
-- `bike/carte` : Contient le script pour générer des cartes interactives.
+- Le dossier **`tests`** contient les scripts pour vérifier la qualité et le bon fonctionnement du code.
 
-- `bike/diagramme` : Contient les scripts pour produire des diagrammes visuels permettant d'analyser le trafic à vélo et d'autres données.
+- Enfin, le dossier **`.github/workflows`** gère un workflow d’intégration continue pour exécuter des tests automatiquement à chaque mise à jour ou contribution.
 
----
-
-## 2. Dossier `roadmap`
-Ce dossier regroupe les éléments liés à la planification du projet :
-
-- `README.md` : Documentation générale décrivant les objectifs et la structure du projet.
-- `diagramme_de_gantt.png` : Diagramme de Gantt illustrant la planification du projet.
-
----
-
-## 3. Dossier `docs`
-Ce dossier contient tous les fichiers HTML générés, y compris ceux liés aux cartes interactives, aux diagrammes et au site web du projet.
-
----
-
-## 4. Dossier `slide`
-Ce dossier contient les diapositives utilisées pour les présentations du projet. Ces diapositives sont créées avec Quarto.
-
----
-
-## 5. Dossier `source`
-Ce dossier est utilisé pour créer la documentation du projet, en s’appuyant sur des outils comme Sphinx.
-
----
-
-## 6. Dossier `build`
-Ce dossier contient les fichiers HTML générés à partir de la documentation située dans le dossier `source`.
-
----
-
-## 7. Dossier `tests`
-Les tests pour valider le bon fonctionnement des scripts et des fonctions du projet sont implémentés ici. Ils assurent la fiabilité du code et la qualité des développements.
-
----
-
-## 8. Dossier `.github/workflows`
-Ce dossier contient un workflow d’intégration continue. Ce dernier exécute des tests automatiquement chaque jour à 5 h du matin et à chaque contribution (push) dans le dépôt Git.
-
----
-
-### Notes supplémentaires
-- Chaque partie du projet est soigneusement séparée dans des sous-dossiers spécifiques pour garantir une bonne modularité et lisibilité.
-- La documentation générée dans `docs` peut être consultée pour avoir un aperçu complet des résultats du projet.
-- Le diagramme de Gantt et les diapositives facilitent la communication et la présentation des progrès du projet.
+Cette organisation garantit une gestion claire et efficace du projet.
 
 ---
 
