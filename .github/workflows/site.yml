@@ -27,7 +27,7 @@ jobs:
       - name: Render and Publish the website
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          path: ./docs
+          path: docs
           target: main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
