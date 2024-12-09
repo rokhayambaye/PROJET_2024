@@ -38,6 +38,7 @@ format:
        onclick="location.reload();" />
 </div>
 ---
+```
 ## 📜 Licence
 Ce projet est sous licence MIT, une licence permissive largement utilisée. Elle permet :
 
