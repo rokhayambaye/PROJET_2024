@@ -24,7 +24,7 @@ fig.add_trace(go.Scatter(
 
 # Ajouter des détails au graphique
 fig.update_layout(
-    title='Flux global des vélos par jour à Montpellier (2023)',
+    title='Flux quotidien des vélos (2023)',
     xaxis_title='Date',
     yaxis_title='Nombre de vélos',
     template='plotly_white',

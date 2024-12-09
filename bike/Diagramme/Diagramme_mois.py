@@ -29,7 +29,7 @@ fig.add_trace(go.Bar(
 
 # Mise en page 
 fig.update_layout(
-    title='Nombres de vélos par mois (2023)',
+    title='Flux mensuel des vélos',
     xaxis_title='Mois',
     yaxis_title='Nombres de Vélos (en millions)',
     template='plotly_white',

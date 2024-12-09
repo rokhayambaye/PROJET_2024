@@ -81,7 +81,6 @@ Les diagrammes ci-dessous permettent de visualiser le flux cycliste à Montpelli
 <div id="diagram-text" style="margin-top: 20px; color: #34495e;">
   Durant l’année 2023, on observe que le nombre de vélos enregistré reste assez stable. On retrouve une forte intensité en Septembre. Cette hausse significative coïncide avec [__la Semaine Européenne de la Mobilité__](https://www.montpellier3m.fr/semaine-europeeenne-de-la-mobilite?utm.com)
   et **le Challenge de la Mobilité**.
-
 </div>
 
 <script>

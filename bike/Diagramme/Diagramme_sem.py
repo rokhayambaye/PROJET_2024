@@ -30,7 +30,7 @@ fig.add_trace(go.Bar(
 
 # Ajouter des détails au graphique
 fig.update_layout(
-    title='Nombre de vélos moyen par jour de la semaine (2023)',
+    title='Flux moyen des vélos par jour de la semaine',
     xaxis_title='Jour de la semaine',
     yaxis_title='Nombre moyen de vélos',
     template='plotly_white',
