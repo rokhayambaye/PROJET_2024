@@ -87,11 +87,11 @@ ul.task-list li input[type="checkbox"] {
 <p><button onclick="changeMap('Lundi')" style="font-size: 15px; padding: 7px 12px;">Lundi</button> <button onclick="changeMap('Mardi')" style="font-size: 15px; padding: 7px 12px;">Mardi</button> <button onclick="changeMap('Mercredi')" style="font-size: 15px; padding: 7px 12px;">Mercredi</button> <button onclick="changeMap('Jeudi')" style="font-size: 15px; padding: 7px 12px;">Jeudi</button> <button onclick="changeMap('Vendredi')" style="font-size: 15px; padding: 7px 12px;">Vendredi</button> <button onclick="changeMap('Samedi')" style="font-size: 15px; padding: 7px 12px;">Samedi</button> <button class="dimanche" onclick="changeMap('Dimanche')" style="font-size: 15px; padding: 7px 12px;">Dimanche</button></p>
 </div>
 <div id="map-container" style="margin-top: 20px;">
-<p><iframe id="map-frame" src="carte/map_montpellier_Lundi.html" width="100%" height="600" style="border: none;"></iframe></p>
+<p><iframe id="map-frame" src="Carte/map_montpellier_Lundi.html" width="100%" height="600" style="border: none;"></iframe></p>
 </div>
 <script>
   function changeMap(day) {
-    document.getElementById("map-frame").src = `carte/map_montpellier_${day}.html`;
+    document.getElementById("map-frame").src = `Carte/map_montpellier_${day}.html`;
   }
 </script>
 <p>Nous remarquons clairement que la circulation cycliste est plus fluide durant le week-end. Cependant, en semaine, la circulation reste assez fluide sur une grande partie de Montpellier.<br>
