@@ -42,7 +42,7 @@ Cette classe permet de :
 
 .. code-block:: python
 
-    from traitement_donnee import TraitementDonneesVelomagg
+    from velomagg import TraitementDonneesVelomagg
 
     # Définir les URLs des données
     url_trajets = "https://drive.google.com/uc?id=1kUMForLXwdGvV9ha2Qx-vMd6CnoMnWV5"

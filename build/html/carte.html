@@ -98,18 +98,26 @@
 <section id="fonctionnalites-principales">
 <h2>Fonctionnalités principales<a class="headerlink" href="#fonctionnalites-principales" title="Lien vers cette rubrique"></a></h2>
 <ol class="arabic">
-<li><p><strong>Chargement des données :</strong>
-- Les <strong>stations Velomagg</strong> sont chargées à partir d’un fichier CSV distant.
-- Les données d”<strong>intensité de trafic cycliste</strong> sont extraites d’un autre fichier CSV.
-- Les contours de la ville de Montpellier sont récupérés via <cite>osmnx</cite>.</p></li>
-<li><p><strong>Analyse et traitement des données :</strong>
-- Les pistes cyclables de Montpellier sont extraites depuis OpenStreetMap, en excluant les types de routes non pertinentes (par exemple, autoroutes, chemins piétons).
-- Une fonction associée permet de calculer l’intensité moyenne la plus proche pour chaque segment de piste cyclable.</p></li>
-<li><p><strong>Génération des cartes interactives :</strong>
-- <strong>Faculté des Sciences</strong> : Un marqueur est ajouté à cet emplacement clé.
-- <strong>Contour de la ville</strong> : Les limites de Montpellier sont tracées en noir.
-- <strong>Stations Velomagg</strong> : Chaque station est représentée par un marqueur.
-- <strong>Routes cyclables</strong> : Les routes sont colorées en fonction des intensités :</p>
+<li><p><strong>Chargement des données :</strong></p>
+<ul class="simple">
+<li><p>Les stations Velomagg sont chargées à partir d’un fichier CSV distant.</p></li>
+<li><p>Les stations Velomagg sont chargées à partir d’un fichier CSV distant.</p></li>
+<li><p>Les données d’intensité de trafic cycliste sont extraites d’un autre fichier CSV.</p></li>
+<li><p>Les contours de la ville de Montpellier sont récupérés via <cite>osmnx</cite>.</p></li>
+</ul>
+</li>
+<li><p><strong>Analyse et traitement des données :</strong></p>
+<ul class="simple">
+<li><p>Les pistes cyclables de Montpellier sont extraites depuis OpenStreetMap, en excluant les types de routes non pertinentes (par exemple, autoroutes, chemins piétons).</p></li>
+<li><p>Une fonction associée permet de calculer l’intensité moyenne la plus proche pour chaque segment de piste cyclable.</p></li>
+</ul>
+</li>
+<li><p><strong>Génération des cartes interactives :</strong></p>
+<ul>
+<li><p><strong>Faculté des Sciences</strong> : Un marqueur est ajouté à cet emplacement clé.</p></li>
+<li><p><strong>Contour de la ville</strong> : Les limites de Montpellier sont tracées en noir.</p></li>
+<li><p><strong>Stations Velomagg</strong> : Chaque station est représentée par un marqueur.</p></li>
+<li><p><strong>Routes cyclables</strong> : Les routes sont colorées en fonction des intensités :</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Vert : Faible (&lt;= 500)</p></li>
@@ -118,6 +126,8 @@
 <li><p>Rouge : Très élevée (&gt; 2000)</p></li>
 </ul>
 </div></blockquote>
+</li>
+</ul>
 </li>
 <li><p><strong>Création d’une carte pour chaque jour de la semaine :</strong>
 - Une carte interactive est générée et sauvegardée pour chaque jour de la semaine dans le répertoire <cite>bike/carte/</cite>.</p></li>
@@ -260,23 +270,26 @@
 <section id="exemples-de-sorties">
 <h2>Exemples de sorties<a class="headerlink" href="#exemples-de-sorties" title="Lien vers cette rubrique"></a></h2>
 <ul class="simple">
-<li><p>Les cartes générées sont enregistrées dans <cite>bike/carte/</cite> sous les noms <cite>map_montpellier_Lundi.html</cite>, <cite>map_montpellier_Mardi.html</cite>, etc.</p></li>
-<li><p>Ces cartes sont interactives et affichent :
-- Les routes cyclables colorées par intensité.
-- Les positions des stations Velomagg.
-- Le contour de la ville de Montpellier.</p></li>
+<li><p>Les cartes générées sont enregistrées dans <strong>bike/carte/</strong> sous les noms <strong>map_montpellier_Lundi.html</strong>, <strong>map_montpellier_Mardi.html</strong>, etc.</p></li>
+<li><p>Ces cartes sont interactives et affichent :</p></li>
+<li><p>Les routes cyclables colorées par intensité.</p></li>
+<li><p>Les positions des stations Velomagg.</p></li>
+<li><p>Le contour de la ville de Montpellier.</p></li>
 </ul>
 </section>
 <section id="dependances">
 <h2>Dépendances<a class="headerlink" href="#dependances" title="Lien vers cette rubrique"></a></h2>
 <p>Pour exécuter ce script, les bibliothèques suivantes sont nécessaires :
-- <cite>folium</cite>
-- <cite>osmnx</cite>
-- <cite>pandas</cite>
-- <cite>branca</cite></p>
-<p>Assurez-vous d’installer ces bibliothèques avant d’exécuter le script :
-<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>bash
-pip install folium osmnx pandas branca</p>
+- <strong>folium</strong></p>
+<ul class="simple">
+<li><p><strong>osmnx</strong></p></li>
+<li><p><strong>pandas</strong></p></li>
+<li><p><strong>branca</strong></p></li>
+</ul>
+<p>Assurez-vous d’installer ces bibliothèques avant d’exécuter le script :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>folium<span class="w"> </span>osmnx<span class="w"> </span>pandas<span class="w"> </span>branca
+</pre></div>
+</div>
 </section>
 </section>
 

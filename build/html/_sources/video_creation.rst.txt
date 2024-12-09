@@ -21,6 +21,7 @@ Ce script utilise les bibliothèques suivantes :
 Code Source
 ------------
 .. code-block:: python
+
     import pandas as pd
     import matplotlib.pyplot as plt
     from matplotlib.animation import FuncAnimation
@@ -30,9 +31,9 @@ Code Source
     df = pd.read_csv("Velomagg_avec_coordonnees.csv", parse_dates=["Departure", "Return"])
 
     # Filtrer les données pour une journée spécifique et exclure les trajets trop longs ou trop courts
-    df = df[(df["Departure"].dt.date == pd.to_datetime("2023-05-12").date()) & 
-        (df["Return"].dt.date == pd.to_datetime("2023-05-12").date()) & 
-        ((df["Return"] - df["Departure"]).dt.total_seconds() <= 86400)]
+    df = df[(df["Departure"].dt.date == pd.to_datetime("2023-05-12").date()) &
+            (df["Return"].dt.date == pd.to_datetime("2023-05-12").date()) &
+            ((df["Return"] - df["Departure"]).dt.total_seconds() <= 86400)]
     df["duration"] = (df["Return"] - df["Departure"]).dt.total_seconds()
     df = df[df["duration"] > 10]  # Trajets supérieurs à 10 secondes
 
@@ -109,7 +110,6 @@ Code Source
     # Sauvegarder la vidéo
     ani.save("bike_animation_12_Mai.mp4", fps=5, writer="ffmpeg")
     plt.show()
-
 
 Résultat
 ---------
