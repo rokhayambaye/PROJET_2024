@@ -5,7 +5,7 @@ import os
 
 # Ajoute le répertoire parent du dossier 'bike' au sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'bike', 'Base_des_donnees')))
-print(sys.path)
+
 # Importation de la classe
 from velomagg import TraitementDonneesVelomagg
 
