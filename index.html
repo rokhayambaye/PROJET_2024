@@ -88,11 +88,11 @@ ul.task-list li input[type="checkbox"] {
 <p><button onclick="changeMap('Lundi')" style="font-size: 15px; padding: 7px 12px;">Lundi</button> <button onclick="changeMap('Mardi')" style="font-size: 15px; padding: 7px 12px;">Mardi</button> <button onclick="changeMap('Mercredi')" style="font-size: 15px; padding: 7px 12px;">Mercredi</button> <button onclick="changeMap('Jeudi')" style="font-size: 15px; padding: 7px 12px;">Jeudi</button> <button onclick="changeMap('Vendredi')" style="font-size: 15px; padding: 7px 12px;">Vendredi</button> <button onclick="changeMap('Samedi')" style="font-size: 15px; padding: 7px 12px;">Samedi</button> <button class="dimanche" onclick="changeMap('Dimanche')" style="font-size: 15px; padding: 7px 12px;">Dimanche</button></p>
 </div>
 <div id="map-container" style="margin-top: 20px;">
-<p><iframe id="map-frame" src="Carte/map_montpellier_Lundi.html" width="100%" height="600" style="border: none;"></iframe></p>
+<p><iframe id="map-frame" src="docs/Carte/map_montpellier_Lundi.html" width="100%" height="600" style="border: none;"></iframe></p>
 </div>
 <script>
   function changeMap(day) {
-    document.getElementById("map-frame").src = `Carte/map_montpellier_${day}.html`;
+    document.getElementById("map-frame").src = `docs/Carte/map_montpellier_${day}.html`;
   }
 </script>
 <p>Nous remarquons clairement que la circulation cycliste est plus fluide durant le week-end. Cependant, en semaine, la circulation reste assez fluide sur une grande partie de Montpellier.<br>
@@ -101,10 +101,10 @@ Le vélo est un transport à la fois écologique et pratique !</p>
 <section id="vidéos" class="level2">
 <h2 class="anchored" data-anchor-id="vidéos">Vidéos</h2>
 <video controls="" width="100%" height="auto">
-<source src="Video/bike_animation_12_Mai.mp4">
+<source src="docs/Video/bike_animation_12_Mai.mp4">
 </video>
 <video controls="" width="100%" height="auto">
-<source src="Video/bike_animation_14_Mai.mp4">
+<source src="docs/Video/bike_animation_14_Mai.mp4">
 </video>
 </section>
 <section id="diagrammes-flux-de-vélos" class="level2">
@@ -119,17 +119,14 @@ Le vélo est un transport à la fois écologique et pratique !</p>
 <p><button onclick="changeDiagramme('Annee')">Année</button> <button onclick="changeDiagramme('Mois')">Mois</button> <button onclick="changeDiagramme('Semaine')">Semaine</button></p>
 </div>
 <div id="diagram-container" style="margin-top: 20px;">
-<p><iframe id="diagram-frame" src="Diagramme/Diagramme_Annee_2023.html" width="100%" height="600" style="border: none;"></iframe></p>
+<p><iframe id="diagram-frame" src="docs/Diagramme/Diagramme_Annee_2023.html" width="100%" height="600" style="border: none;"></iframe></p>
 </div>
 <div id="diagram-text" style="margin-top: 20px; color: #34495e;">
 <p>Durant l’année 2023, on observe que le nombre de vélos enregistré reste assez stable. On retrouve une forte intensité en Septembre. Cette hausse significative coïncide avec <a href="https://www.montpellier3m.fr/semaine-europeeenne-de-la-mobilite?utm.com"><strong>la Semaine Européenne de la Mobilité</strong></a> et <strong>le Challenge de la Mobilité</strong>.</p>
 </div>
 <script>
   function changeDiagramme(view) {
-    // Met à jour l'iframe en fonction du bouton cliqué
-    document.getElementById("diagram-frame").src = `Diagramme/Diagramme_${view}_2023.html`;
-
-    // Définir les textes détaillés pour chaque vue
+    document.getElementById("diagram-frame").src = `docs/Diagramme/Diagramme_${view}_2023.html`;
     const texts = {
       Annee: `
         <p>
@@ -157,8 +154,6 @@ Le vélo est un transport à la fois écologique et pratique !</p>
           </p>
       `
     };
-
-    // Met à jour le texte dynamique
     document.getElementById("diagram-text").innerHTML = texts[view];
   }
 </script>
@@ -166,7 +161,7 @@ Le vélo est un transport à la fois écologique et pratique !</p>
 <section id="diagramme-locations-de-vélos" class="level2">
 <h2 class="anchored" data-anchor-id="diagramme-locations-de-vélos">Diagramme : locations de vélos</h2>
 <div id="diagram-container" style="margin-top: 20px;">
-<p><iframe id="diagram-frame" src="Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe></p>
+<p><iframe id="diagram-frame" src="docs/Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe></p>
 </div>
 <p>Le nombre de locations de vélos coïncide globalement avec les flux de vélos excepté au mois de Mai (peut être dû aux jours fériés et au climat plus agréable).</p>
 </section>

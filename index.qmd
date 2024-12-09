@@ -1,10 +1,14 @@
 ---
+project:
+  type: website
+  output-dir: docs
+
 title: "TRAFIC CYCLISTE À MONTPELLIER"
 format:
   html:
     toc: true  # Affiche une table des matières
     toc-title: "Sommaire"  # Titre de la table des matières
-    code-fold: true  # Permet de replier/déplier les blocs de code
+    code-fold: true 
     css: styles.css  
     theme: flatly  # Choix d'un thème
 ---
@@ -37,12 +41,12 @@ Voici les cartes estimant l'intensité du trafic cycliste à Montpellier par jou
 </div>
 
 <div id="map-container" style="margin-top: 20px;">
-  <iframe id="map-frame" src="Carte/map_montpellier_Lundi.html" width="100%" height="600" style="border: none;"></iframe>
+  <iframe id="map-frame" src="docs/Carte/map_montpellier_Lundi.html" width="100%" height="600" style="border: none;"></iframe>
 </div>
 
 <script>
   function changeMap(day) {
-    document.getElementById("map-frame").src = `Carte/map_montpellier_${day}.html`;
+    document.getElementById("map-frame").src = `docs/Carte/map_montpellier_${day}.html`;
   }
 </script>
 
@@ -52,11 +56,11 @@ Le vélo est un transport à la fois écologique et pratique !
 ## Vidéos
 
 <video controls width="100%" height="auto">
-  <source src="Video/bike_animation_12_Mai.mp4">
+  <source src="docs/Video/bike_animation_12_Mai.mp4">
 </video>
 
 <video controls width="100%" height="auto">
-  <source src="Video/bike_animation_14_Mai.mp4">
+  <source src="docs/Video/bike_animation_14_Mai.mp4">
 </video>
 
 
@@ -75,7 +79,7 @@ Les diagrammes ci-dessous permettent de visualiser le flux cycliste à Montpelli
 </div>
 
 <div id="diagram-container" style="margin-top: 20px;">
-  <iframe id="diagram-frame" src="Diagramme/Diagramme_Annee_2023.html" width="100%" height="600" style="border: none;"></iframe>
+  <iframe id="diagram-frame" src="docs/Diagramme/Diagramme_Annee_2023.html" width="100%" height="600" style="border: none;"></iframe>
 </div>
 
 <div id="diagram-text" style="margin-top: 20px; color: #34495e;">
@@ -85,7 +89,7 @@ Les diagrammes ci-dessous permettent de visualiser le flux cycliste à Montpelli
 
 <script>
   function changeDiagramme(view) {
-    document.getElementById("diagram-frame").src = `Diagramme/Diagramme_${view}_2023.html`;
+    document.getElementById("diagram-frame").src = `docs/Diagramme/Diagramme_${view}_2023.html`;
     const texts = {
       Annee: `
         <p>
@@ -121,7 +125,7 @@ Les diagrammes ci-dessous permettent de visualiser le flux cycliste à Montpelli
 
 ## Diagramme : locations de vélos
 <div id="diagram-container" style="margin-top: 20px;">
-  <iframe id="diagram-frame" src="Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe>
+  <iframe id="diagram-frame" src="docs/Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe>
 </div>
 Le nombre de locations de vélos coïncide globalement avec les flux de vélos excepté au mois de Mai (peut être dû aux jours fériés et au climat plus agréable).
 
