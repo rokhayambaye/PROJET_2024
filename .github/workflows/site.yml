@@ -1,0 +1,42 @@
+name: Deploy Quarto Site
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+  workflow_dispatch: 
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Cloner le dépôt
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Étape 2 : Installer Quarto
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.5.57"
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      # Étape 5 : Générer le site avec Quarto
+      - name: Render Quarto site
+        run: quarto render
+
+      # Étape 6 : Déployer le site sur GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs
