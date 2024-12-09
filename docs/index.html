@@ -75,16 +75,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div id="logo-container" style="position: absolute; top: 10px; left: 10px;">
-<p><img src="https://us.123rf.com/450wm/aquir/aquir2307/aquir230700775/208710489-cycliste-cycliste-sur-route-illustration-dessinée-à-la-main-illustration-de-dessin-animé-de-style.jpg?ver=6" alt="Cycliste sur route" style="max-width: 150px; max-height: 100px;"></p>
+<p><img src="https://us.123rf.com/450wm/aquir/aquir2307/aquir230700775/208710489-cycliste-cycliste-sur-route-illustration-dessinée-à-la-main-illustration-de-dessin-animé-de-style.jpg?ver=6" alt="Cycliste sur route" style="max-width: 150px; max-height: 100px;" onclick="location.reload();"></p>
 </div>
 <p>À Montpellier, le choix des transports est varié, mais le vélo se distingue comme l’une des solutions les plus écologiques et pratiques.</p>
 <p>Dans ce contexte, notre objectif est de visualiser le trafic cycliste sur une journée et de prédire l’intensité de ce trafic pour chaque jour de la semaine. Nous vous proposerons également une étude de ce trafic par le biais de différents diagrammes. Pour cela nous allons nous baser sur les <a href="https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo">éco-compteurs</a> fournies par la ville et les locations <a href="https://data.montpellier3m.fr/dataset/courses-des-velos-velomagg-de-montpellier-mediterranee-metropole">Vélomagg</a>.</p>
 <p>Le vélo, plus qu’un un simple loisir, est un moyen de transport incontournable à Montpellier !</p>
 <section id="cartes-interactives" class="level2">
 <h2 class="anchored" data-anchor-id="cartes-interactives">Cartes Interactives</h2>
-Voici les cartes estimant l’intensité du trafic cycliste à Montpellier par jour de semaine basée sur des données de l’année 2023.
+<p>Voici les cartes estimant l’intensité du trafic cycliste à Montpellier par jour de semaine basée sur des données de l’année 2023.</p>
 <div>
-<p><button onclick="changeMap('Lundi')" style="font-size: 12px; padding: 5px 10px;">Lundi</button> <button onclick="changeMap('Mardi')" style="font-size: 12px; padding: 5px 10px;">Mardi</button> <button onclick="changeMap('Mercredi')" style="font-size: 12px; padding: 5px 10px;">Mercredi</button> <button onclick="changeMap('Jeudi')" style="font-size: 12px; padding: 5px 10px;">Jeudi</button> <button onclick="changeMap('Vendredi')" style="font-size: 12px; padding: 5px 10px;">Vendredi</button> <button onclick="changeMap('Samedi')" style="font-size: 12px; padding: 5px 10px;">Samedi</button> <button class="dimanche" onclick="changeMap('Dimanche')" style="font-size: 12px; padding: 5px 10px;">Dimanche</button></p>
+<p><button onclick="changeMap('Lundi')" style="font-size: 15px; padding: 7px 12px;">Lundi</button> <button onclick="changeMap('Mardi')" style="font-size: 15px; padding: 7px 12px;">Mardi</button> <button onclick="changeMap('Mercredi')" style="font-size: 15px; padding: 7px 12px;">Mercredi</button> <button onclick="changeMap('Jeudi')" style="font-size: 15px; padding: 7px 12px;">Jeudi</button> <button onclick="changeMap('Vendredi')" style="font-size: 15px; padding: 7px 12px;">Vendredi</button> <button onclick="changeMap('Samedi')" style="font-size: 15px; padding: 7px 12px;">Samedi</button> <button class="dimanche" onclick="changeMap('Dimanche')" style="font-size: 15px; padding: 7px 12px;">Dimanche</button></p>
 </div>
 <div id="map-container" style="margin-top: 20px;">
 <p><iframe id="map-frame" src="carte/map_montpellier_Lundi.html" width="100%" height="600" style="border: none;"></iframe></p>
