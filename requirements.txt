@@ -3,7 +3,7 @@ matplotlib==3.9.2
 numpy==1.26.4
 osmnx==1.9.4
 folium==0.18.0
-networkx==3.3
+networkx==2.8.8
 geopandas==0.14.4
 matplotlib.colors==1.0.16
 shapely==2.0.6
