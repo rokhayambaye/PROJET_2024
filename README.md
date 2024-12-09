@@ -23,6 +23,11 @@ Elle inclut :
 ### Extrait du code
 Voici un extrait du code utilisé pour la création du site web :
 ```yaml
+---
+project:
+  type: website
+  output-dir: docs
+
 title: "Trafic Cycliste à Montpellier"
 format:
   html:

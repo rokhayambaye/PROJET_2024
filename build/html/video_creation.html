@@ -51,6 +51,7 @@
 <p class="caption" role="heading"><span class="caption-text">Traitement des bases de données</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="traitement_donnees/donnee_eco.html">Gestionnaire des Données Éco-Compteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="station.html">Recupération coordonnées des Stations Vélos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="traitement_donnees/donnee_velo.html">Traitement des Données VéloMagg</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Video</span></p>
@@ -100,17 +101,21 @@
 <ul class="simple">
 <li><p>Chargement des données depuis un fichier CSV contenant les trajets.</p></li>
 <li><p>Filtrage des trajets selon des critères temporels et de durée.</p></li>
-<li><p>Génération d’un graphe routier de Montpellier via <cite>osmnx</cite>.</p></li>
+<li><p>Génération d’un graphe routier de Montpellier via <strong>osmnx</strong>.</p></li>
 <li><p>Création d’une animation des vélos et des trajets en temps simulé.</p></li>
 <li><p>Sauvegarde de l’animation au format vidéo.</p></li>
 </ul>
 </section>
 <section id="dependances">
 <h2>Dépendances<a class="headerlink" href="#dependances" title="Lien vers cette rubrique"></a></h2>
-<p>Ce script utilise les bibliothèques suivantes :
-- <strong>pandas</strong>
-- <strong>matplotlib</strong>
-- <strong>osmnx</strong></p>
+<dl class="simple">
+<dt>Ce script utilise les bibliothèques suivantes :</dt><dd><ul class="simple">
+<li><p><strong>pandas</strong></p></li>
+<li><p><strong>matplotlib</strong></p></li>
+<li><p><strong>osmnx</strong></p></li>
+</ul>
+</dd>
+</dl>
 </section>
 <section id="code-source">
 <h2>Code Source<a class="headerlink" href="#code-source" title="Lien vers cette rubrique"></a></h2>
@@ -120,7 +125,7 @@
 <span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
 
 <span class="c1"># Charger les données depuis le fichier CSV</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Velomagg_avec_coordonnees.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Departure&quot;</span><span class="p">,</span> <span class="s2">&quot;Return&quot;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?id=1tS82dn4_n_yjaXe8iCaKtF6vgY1GpgpY&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Departure&quot;</span><span class="p">,</span> <span class="s2">&quot;Return&quot;</span><span class="p">])</span>
 
 <span class="c1"># Filtrer les données pour une journée spécifique et exclure les trajets trop longs ou trop courts</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Departure&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">&quot;2023-05-12&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">())</span> <span class="o">&amp;</span>

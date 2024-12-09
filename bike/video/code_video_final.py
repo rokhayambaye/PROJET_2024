@@ -6,7 +6,7 @@ from matplotlib.animation import FuncAnimation
 import osmnx as ox
 
 # Charger les données depuis le fichier CSV
-df = pd.read_csv("Velomagg_avec_coordonnees.csv", parse_dates=["Departure", "Return"])
+df = pd.read_csv("https://drive.google.com/uc?id=1tS82dn4_n_yjaXe8iCaKtF6vgY1GpgpY", parse_dates=["Departure", "Return"])
 
 # Filtrer les données pour une journée spécifique et exclure les trajets trop longs ou trop courts
 df = df[(df["Departure"].dt.date == pd.to_datetime("2023-05-12").date()) & 
