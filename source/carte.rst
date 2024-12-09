@@ -46,12 +46,15 @@ Fonctionnalités principales
 Fonctionnement du script
 ------------------------
 Le script commence par charger les données nécessaires (stations Velomagg, intensité de trafic, contours de la ville et pistes cyclables). Ensuite, pour chaque jour de la semaine, il effectue les étapes suivantes :  
+    - Filtre les données d'intensité pour le jour correspondant. 
 
-1. Filtre les données d'intensité pour le jour correspondant.      
-2. Associe les intensités aux segments de routes cyclables.  
-3. Crée une carte interactive centrée sur Montpellier.    
-4. Ajoute des marqueurs pour les stations Velomagg et des segments colorés pour les routes cyclables.    
-5. Sauvegarde la carte au format HTML.    
+    - Associe les intensités aux segments de routes cyclables. 
+
+    - Crée une carte interactive centrée sur Montpellier. 
+
+    - Ajoute des marqueurs pour les stations Velomagg et des segments colorés pour les routes cyclables.  
+      
+    - Sauvegarde la carte au format HTML.    
 
 Code source
 -----------
