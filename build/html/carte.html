@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Création de cartes interactives pour le trafic cycliste à Montpellier &mdash; Documentation ANALYSE DU TRAFIC CYCLISTE </title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d1a510d7"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=bf059b8c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Création de la Vidéo des Déplacements" href="video_creation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ANALYSE DU TRAFIC CYCLISTE
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Installation et Contacts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installer/installation.html">Installation du Projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installer/contacts.html">Contact</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Traitement des bases de données</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="traitement_donnees/donnee_eco.html">Gestionnaire des Données Éco-Compteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="station.html">Recupération coordonnées des Stations Vélos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traitement_donnees/donnee_velo.html">Traitement des Données VéloMagg</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Video</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="video_creation.html">Création de la Vidéo des Déplacements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Carte</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Création de cartes interactives pour le trafic cycliste à Montpellier</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fonctionnalites-principales">Fonctionnalités principales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fonctionnement-du-script">Fonctionnement du script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-source">Code source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exemples-de-sorties">Exemples de sorties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependances">Dépendances</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ANALYSE DU TRAFIC CYCLISTE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Création de cartes interactives pour le trafic cycliste à Montpellier</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/carte.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="creation-de-cartes-interactives-pour-le-trafic-cycliste-a-montpellier">
+<h1>Création de cartes interactives pour le trafic cycliste à Montpellier<a class="headerlink" href="#creation-de-cartes-interactives-pour-le-trafic-cycliste-a-montpellier" title="Lien vers cette rubrique"></a></h1>
+<p>Ce script génère des cartes interactives illustrant le trafic cycliste à Montpellier pour chaque jour de la semaine. Il utilise les données d’intensité des vélos et des infrastructures cyclables disponibles dans OpenStreetMap pour créer des visualisations informatives et colorées.</p>
+<section id="fonctionnalites-principales">
+<h2>Fonctionnalités principales<a class="headerlink" href="#fonctionnalites-principales" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic">
+<li><p><strong>Chargement des données :</strong></p>
+<ul class="simple">
+<li><p>Les stations Velomagg sont chargées à partir d’un fichier CSV distant.</p></li>
+<li><p>Les stations Velomagg sont chargées à partir d’un fichier CSV distant.</p></li>
+<li><p>Les données d’intensité de trafic cycliste sont extraites d’un autre fichier CSV.</p></li>
+<li><p>Les contours de la ville de Montpellier sont récupérés via <cite>osmnx</cite>.</p></li>
+</ul>
+</li>
+<li><p><strong>Analyse et traitement des données :</strong></p>
+<ul class="simple">
+<li><p>Les pistes cyclables de Montpellier sont extraites depuis OpenStreetMap, en excluant les types de routes non pertinentes (par exemple, autoroutes, chemins piétons).</p></li>
+<li><p>Une fonction associée permet de calculer l’intensité moyenne la plus proche pour chaque segment de piste cyclable.</p></li>
+</ul>
+</li>
+<li><p><strong>Génération des cartes interactives :</strong></p>
+<ul>
+<li><p><strong>Faculté des Sciences</strong> : Un marqueur est ajouté à cet emplacement clé.</p></li>
+<li><p><strong>Contour de la ville</strong> : Les limites de Montpellier sont tracées en noir.</p></li>
+<li><p><strong>Stations Velomagg</strong> : Chaque station est représentée par un marqueur.</p></li>
+<li><p><strong>Routes cyclables</strong> : Les routes sont colorées en fonction des intensités :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Vert : Faible (&lt;= 500)</p></li>
+<li><p>Jaune : Moyenne (&lt;= 1000)</p></li>
+<li><p>Orange : Élevée (&lt;= 2000)</p></li>
+<li><p>Rouge : Très élevée (&gt; 2000)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Création d’une carte pour chaque jour de la semaine :</strong>
+- Une carte interactive est générée et sauvegardée pour chaque jour de la semaine dans le répertoire <cite>bike/carte/</cite>.</p></li>
+</ol>
+</section>
+<section id="fonctionnement-du-script">
+<h2>Fonctionnement du script<a class="headerlink" href="#fonctionnement-du-script" title="Lien vers cette rubrique"></a></h2>
+<p>Le script commence par charger les données nécessaires (stations Velomagg, intensité de trafic, contours de la ville et pistes cyclables). Ensuite, pour chaque jour de la semaine, il effectue les étapes suivantes :</p>
+<ol class="arabic simple">
+<li><p>Filtre les données d’intensité pour le jour correspondant.</p></li>
+<li><p>Associe les intensités aux segments de routes cyclables.</p></li>
+<li><p>Crée une carte interactive centrée sur Montpellier.</p></li>
+<li><p>Ajoute des marqueurs pour les stations Velomagg et des segments colorés pour les routes cyclables.</p></li>
+<li><p>Sauvegarde la carte au format HTML.</p></li>
+</ol>
+</section>
+<section id="code-source">
+<h2>Code source<a class="headerlink" href="#code-source" title="Lien vers cette rubrique"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">folium</span>
+<span class="kn">from</span> <span class="nn">folium</span> <span class="kn">import</span> <span class="n">Icon</span>
+<span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">branca.colormap</span> <span class="k">as</span> <span class="nn">cm</span>
+
+<span class="n">stations_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?id=1HgOLf2JD46ZJlyrF_c99QZb6of6ajNYh&quot;</span><span class="p">)</span>
+
+<span class="n">intensite</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?id=1WUCvXiGC-AEIR8oBWMiq7esZ5L05PU1M&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+<span class="c1"># Contour de la ville</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">geocode_to_gdf</span><span class="p">(</span><span class="s2">&quot;Montpellier, France&quot;</span><span class="p">)</span>
+
+<span class="c1"># Charger les pistes cyclables de Montpellier depuis OpenStreetMap</span>
+<span class="n">montpellier_graph</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">graph_from_place</span><span class="p">(</span><span class="s2">&quot;Montpellier, France&quot;</span><span class="p">,</span> <span class="n">network_type</span><span class="o">=</span><span class="s2">&quot;bike&quot;</span><span class="p">)</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">graph_to_gdfs</span><span class="p">(</span><span class="n">montpellier_graph</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="p">[</span><span class="o">~</span><span class="n">edges</span><span class="p">[</span><span class="s1">&#39;highway&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;footway&#39;</span><span class="p">,</span> <span class="s1">&#39;pedestrian&#39;</span><span class="p">,</span> <span class="s1">&#39;motorway&#39;</span><span class="p">,</span> <span class="s1">&#39;motorway_link&#39;</span><span class="p">,</span> <span class="s1">&#39;trunk&#39;</span><span class="p">,</span> <span class="s1">&#39;trunk_link&#39;</span><span class="p">,</span> <span class="s1">&#39;primary&#39;</span><span class="p">,</span> <span class="s1">&#39;primary_link&#39;</span><span class="p">])]</span>
+<span class="c1">#Créer une échelle de couleurs basée sur les intensités</span>
+<span class="n">min_intensity</span> <span class="o">=</span> <span class="n">intensite</span><span class="p">[</span><span class="s1">&#39;intensite&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_intensity</span> <span class="o">=</span> <span class="n">intensite</span><span class="p">[</span><span class="s1">&#39;intensite&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># Poids et couleurs spécifiques associés</span>
+<span class="n">couleurs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;#2ca02c&quot;</span><span class="p">,</span>  <span class="c1"># Vert</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;#FFFF00&quot;</span><span class="p">,</span>  <span class="c1"># Jaune</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;#ff7f0e&quot;</span><span class="p">,</span>  <span class="c1"># Orange</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;#d62728&quot;</span><span class="p">,</span>  <span class="c1"># Rouge</span>
+<span class="p">}</span>
+
+<span class="c1"># Associer des couleurs aux routes cyclables</span>
+<span class="k">def</span> <span class="nf">get_closest_intensity</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">day_data</span><span class="p">):</span>
+<span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Trouve l&#39;intensité moyenne la plus proche pour une route donnée.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lat (float): Latitude du point.</span>
+<span class="sd">        lon (float): Longitude du point.</span>
+<span class="sd">        day_data (DataFrame): Données d&#39;intensité pour un jour donné.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">         float: Intensité la plus proche ou 0 si aucune donnée n&#39;est trouvée.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">day_data</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Aucune donnée disponible pour les coordonnées (</span><span class="si">{</span><span class="n">lat</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">lon</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="c1">#Trouver l&#39;intensité moyenne la plus proche d&#39;une route</span>
+    <span class="n">day_data</span> <span class="o">=</span> <span class="n">day_data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">distances</span> <span class="o">=</span> <span class="p">((</span><span class="n">day_data</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">lat</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">day_data</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">lon</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">closest_index</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">closest_index</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">closest_index</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">day_data</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Indice calculé (</span><span class="si">{</span><span class="n">closest_index</span><span class="si">}</span><span class="s2">) introuvable dans les données.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">day_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">closest_index</span><span class="p">][</span><span class="s1">&#39;intensite&#39;</span><span class="p">]</span>
+
+<span class="c1"># Cartes pour chaque jour de la semaine</span>
+<span class="n">days</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lundi&quot;</span><span class="p">,</span> <span class="s2">&quot;Mardi&quot;</span><span class="p">,</span> <span class="s2">&quot;Mercredi&quot;</span><span class="p">,</span> <span class="s2">&quot;Jeudi&quot;</span><span class="p">,</span> <span class="s2">&quot;Vendredi&quot;</span><span class="p">,</span> <span class="s2">&quot;Samedi&quot;</span><span class="p">,</span> <span class="s2">&quot;Dimanche&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">day</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">days</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Crée une carte interactive pour un jour donné en fonction de l&#39;intensité des routes.</span>
+
+<span class="sd">    Étapes :</span>
+<span class="sd">    - Ajout de la faculté des Sciences.</span>
+<span class="sd">    - Tracé des contours de la ville.</span>
+<span class="sd">    - Ajout des stations Velomagg.</span>
+<span class="sd">    - Ajout des routes colorées en fonction des intensités.</span>
+
+<span class="sd">    Enregistre une carte dans le répertoire `bike/carte`.</span>
+<span class="sd">   &quot;&quot;&quot;</span>
+    <span class="n">day_data</span> <span class="o">=</span> <span class="n">intensite</span><span class="p">[</span><span class="n">intensite</span><span class="p">[</span><span class="s1">&#39;jour&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">day</span><span class="p">]</span>
+    <span class="n">edges</span><span class="p">[</span><span class="s1">&#39;intensite&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">get_closest_intensity</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">day_data</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">mymap</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">43.6117</span><span class="p">,</span> <span class="mf">3.8767</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+
+    <span class="c1"># Faculté des Sciences</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">43.6312537</span><span class="p">,</span><span class="mf">3.8612405</span><span class="p">],</span>
+        <span class="n">popup</span><span class="o">=</span><span class="s2">&quot;Faculté des Sciences&quot;</span><span class="p">,</span>
+        <span class="n">icon</span><span class="o">=</span><span class="n">Icon</span><span class="p">(</span><span class="n">icon</span><span class="o">=</span><span class="s2">&quot;university&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;fa&quot;</span><span class="p">)</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">mymap</span><span class="p">)</span>
+
+    <span class="c1"># Contour de la ville</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">GeoJson</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">area</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">],</span>
+        <span class="n">style_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+           <span class="s2">&quot;fillOpacity&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">mymap</span><span class="p">)</span>
+
+    <span class="c1"># Stations Velomagg</span>
+    <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">stations_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+            <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]],</span>
+            <span class="n">popup</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">],</span>
+            <span class="n">icon</span><span class="o">=</span><span class="n">Icon</span><span class="p">(</span><span class="n">icon</span><span class="o">=</span><span class="s1">&#39;bicycle&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;fa&#39;</span><span class="p">,</span> <span class="n">icon_size</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">mymap</span><span class="p">)</span>
+
+    <span class="c1"># Ajouter les routes cyclables colorées en fonction de l&#39;intensité</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">edges</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;intensite&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">couleurs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Vert</span>
+        <span class="k">elif</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;intensite&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">couleurs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># Jaune</span>
+        <span class="k">elif</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;intensite&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2000</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">couleurs</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># Orange</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="n">couleurs</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># Rouge</span>
+
+        <span class="n">folium</span><span class="o">.</span><span class="n">PolyLine</span><span class="p">(</span>
+            <span class="n">locations</span><span class="o">=</span><span class="p">[(</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">],</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">mymap</span><span class="p">)</span>
+
+    <span class="n">mymap</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bike/carte/map_montpellier_</span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s2">.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="exemples-de-sorties">
+<h2>Exemples de sorties<a class="headerlink" href="#exemples-de-sorties" title="Lien vers cette rubrique"></a></h2>
+<ul>
+<li><p>Les cartes générées sont enregistrées dans <strong>bike/carte/</strong> sous les noms <strong>map_montpellier_Lundi.html</strong>, <strong>map_montpellier_Mardi.html</strong>, etc.</p></li>
+<li><p>Ces cartes sont interactives et affichent :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Les routes cyclables colorées par intensité.</p></li>
+<li><p>Les positions des stations Velomagg.</p></li>
+<li><p>Le contour de la ville de Montpellier.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="dependances">
+<h2>Dépendances<a class="headerlink" href="#dependances" title="Lien vers cette rubrique"></a></h2>
+<p>Pour exécuter ce script, les bibliothèques suivantes sont nécessaires :</p>
+<ul class="simple">
+<li><p><strong>folium</strong></p></li>
+<li><p><strong>osmnx</strong></p></li>
+<li><p><strong>pandas</strong></p></li>
+<li><p><strong>branca</strong></p></li>
+</ul>
+<p>Assurez-vous d’installer ces bibliothèques avant d’exécuter le script :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>folium<span class="w"> </span>osmnx<span class="w"> </span>pandas<span class="w"> </span>branca
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="video_creation.html" class="btn btn-neutral float-left" title="Création de la Vidéo des Déplacements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, DIALLO Ousmane , M&#39;RAD Samy , MBAYE Rokhaya, ROMANI DE VINCI Coralie.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
