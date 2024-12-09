@@ -1,7 +1,7 @@
 
 # ANALYSE DU TRAFIC CYCLISTE🚴‍♀️
 
-# **description**
+# **Description**
 
 Ce module analyse et visualise le trafic cycliste à Montpellier, en s'appuyant sur les trajets des vélos VéloMagg, les comptages des éco-compteurs, et les données cartographiques d'OpenStreetMap.  
 Grâce à des animations, des cartes interactives et des prédictions de trafic, ce projet offre une exploration complète des données liées aux déplacements à vélo dans la région.
@@ -30,5 +30,5 @@ Pour plus de détails, veuillez consulter le fichier [LICENSE](LICENSE).
 Ce projet a été réalisé par :
 - **DIALLO Ousmane**
 - **M'RAD Samy**
+-  **MBAYE Rokhaya**
 - **ROMANI DE VINCI Coralie**
-- **MBAYE Rokhaya**
