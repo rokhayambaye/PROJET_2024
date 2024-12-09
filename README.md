@@ -17,27 +17,15 @@ La documentation complète est disponible [ici](https://lien..). Elle inclut :
 - Une introduction détaillée au projet.
 - Des tutoriels pour le traitement des données et la création de vidéos.
 - Une description complète des classes et fonctions du projet.
-# Structure du Projet
-Le projet est structuré en plusieurs dossiers pour simplifier son développement, sa maintenance et son utilisation :
+- ## Lien vers le site web
+Le site est disponible à l'adresse suivante : https://coralieromani.github.io/PROJET_2024/
+## 📜 Licence
+Ce projet est sous licence MIT, une licence permissive largement utilisée. Elle permet :
 
-- Le dossier **`bike`** regroupe les fonctionnalités principales, avec des sous-dossiers pour gérer les bases de données (`Base_des_donnees`), créer des vidéos animées (`video`), produire des cartes interactives (`carte`), et générer des diagrammes visuels (`diagramme`).
-  
-- Le dossier **`roadmap`** contient la documentation liée à la planification, notamment le `README.md` et un diagramme de Gantt.
+- Une utilisation libre du code, y compris pour des projets commerciaux.
+- La modification et la redistribution du code, à condition de conserver les mentions de copyright et de licence.
 
-- Le dossier **`docs`** regroupe les fichiers HTML générés pour les cartes interactives, les diagrammes et le site web.
-
-- Le dossier **`slide`** inclut les diapositives de présentation, réalisées avec libreoffice impress.
-
-- Le dossier **`source`** est dédié à la création de documentation avec Sphinx, tandis que le dossier **`build`** stocke les fichiers HTML générés.
-
-- Le dossier **`tests`** contient les scripts pour vérifier la qualité et le bon fonctionnement du code.
-
-- Enfin, le dossier **`.github/workflows`** gère un workflow d’intégration continue pour exécuter des tests automatiquement à chaque mise à jour ou contribution.
-
-Cette organisation garantit une gestion claire et efficace du projet.
-
----
-
+Pour plus de détails, veuillez consulter le fichier [LICENSE](LICENSE).
 ## Auteurs
 Ce projet a été réalisé par :
 - **DIALLO Ousmane**
