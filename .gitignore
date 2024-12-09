@@ -1,4 +1,5 @@
 .DS_Store
-*cache*
+cache/
 /.quarto/
 *.csv
+test/__pycache__/
