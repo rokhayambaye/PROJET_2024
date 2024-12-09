@@ -27,7 +27,7 @@ fig_mois.add_trace(go.Bar(
 ))
 
 fig_mois.update_layout(
-    title='Nombre moyen de locations Vélomagg par mois (2023)',
+    title='Nombre de locations Vélomagg par mois (2023)',
     xaxis_title='Mois',
     yaxis_title='Nombre de locations',
     template='plotly_white',
@@ -35,5 +35,3 @@ fig_mois.update_layout(
 )
 
 fig_mois.write_html("docs/Diagramme/Diagramme_locations.html")
-fig_mois.show()
-

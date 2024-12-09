@@ -3,10 +3,10 @@ title: "TRAFIC CYCLISTE À MONTPELLIER"
 format:
   html:
     toc: true  # Affiche une table des matières
-    toc-title: "Sommaire"  # Titre personnalisé de la table des matières
+    toc-title: "Sommaire"  # Titre de la table des matières
     code-fold: true  # Permet de replier/déplier les blocs de code
-    css: styles.css  # Fichier CSS personnalisé pour styliser le site
-    theme: flatly  # Choix d'un thème pré-conçu pour une apparence moderne
+    css: styles.css  
+    theme: flatly  # Choix d'un thème
 ---
 
 <div id="logo-container" style="position: absolute; top: 10px; left: 10px;">
@@ -85,10 +85,7 @@ Les diagrammes ci-dessous permettent de visualiser le flux cycliste à Montpelli
 
 <script>
   function changeDiagramme(view) {
-    // Met à jour l'iframe en fonction du bouton cliqué
     document.getElementById("diagram-frame").src = `Diagramme/Diagramme_${view}_2023.html`;
-
-    // Définir les textes détaillés pour chaque vue
     const texts = {
       Annee: `
         <p>
@@ -116,8 +113,6 @@ Les diagrammes ci-dessous permettent de visualiser le flux cycliste à Montpelli
           </p>
       `
     };
-
-    // Met à jour le texte dynamique
     document.getElementById("diagram-text").innerHTML = texts[view];
   }
 </script>

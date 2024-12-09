@@ -29,15 +29,12 @@ fig.add_trace(go.Bar(
 
 # Mise en page 
 fig.update_layout(
-    title='Flux mensuel des vélos',
+    title='Flux mensuel des vélos(2023)',
     xaxis_title='Mois',
     yaxis_title='Nombres de Vélos (en millions)',
     template='plotly_white',
     height=500
 )
-
-# Afficher le graphique
-fig.show()
 
 # Sauvegarder le graphique dans un fichier HTML
 fig.write_html("docs/Diagramme/Diagramme_Mois_2023.html")
