@@ -1,7 +1,7 @@
 Contact
 =======
 
-Pour toute question ou demande d'assistance, vous pouvez nous contacter via les canaux suivants :
+Pour toute question ou demande d'assistance, vous pouvez nous joindre en utilisant les adresses e-mails ci-desoous :
 
 Équipe de Développement
 -----------------------
