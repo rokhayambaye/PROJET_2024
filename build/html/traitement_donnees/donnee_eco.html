@@ -94,31 +94,34 @@
 <p>Ce module contient une classe et des méthodes pour télécharger, traiter et fusionner les données des éco-compteurs.</p>
 <section id="classe-principale">
 <h2>Classe principale<a class="headerlink" href="#classe-principale" title="Lien vers cette rubrique"></a></h2>
-<p><strong>`GestionnaireDonnees`</strong></p>
-<p>Cette classe permet de :
-- Télécharger les fichiers JSON des éco-compteurs.
-- Convertir les fichiers JSON en un format structuré.
-- Filtrer les données pour l’année 2023.
-- Fusionner les données des différents fichiers JSON dans un fichier CSV.</p>
+<p><strong>GestionnaireDonnees</strong></p>
+<p>Cette classe permet de :</p>
+<ul class="simple">
+<li><p>Télécharger les fichiers JSON des éco-compteurs.</p></li>
+<li><p>Convertir les fichiers JSON en un format structuré.</p></li>
+<li><p>Filtrer les données pour l’année 2023.</p></li>
+<li><p>Fusionner les données des différents fichiers JSON dans un fichier CSV.</p></li>
+</ul>
 <p>### Paramètres d’initialisation</p>
 <ul class="simple">
-<li><p><strong>`url_base`</strong> : URL de base où les fichiers JSON sont disponibles.</p></li>
-<li><p><strong>`dossier_brut`</strong> : Répertoire pour stocker les fichiers JSON téléchargés.</p></li>
-<li><p><strong>`fichier_fusion`</strong> : Nom du fichier CSV final qui contiendra toutes les données fusionnées.</p></li>
+<li><p><strong>url_base</strong> : URL de base où les fichiers JSON sont disponibles.</p></li>
+<li><p><strong>dossier_brut</strong> : Répertoire pour stocker les fichiers JSON téléchargés.</p></li>
+<li><p><strong>fichier_fusion</strong> : Nom du fichier CSV final qui contiendra toutes les données fusionnées.</p></li>
 </ul>
 <p>### Méthodes</p>
 <ul class="simple">
-<li><p><strong>`telecharger_json()`</strong>
+<li><p><strong>telecharger_json()</strong>
 Télécharge les fichiers JSON disponibles à partir de l’URL de base.</p></li>
-<li><p><strong>`convertir_json_en_donnees(fichier_entree)`</strong>
+<li><p><strong>convertir_json_en_donnees(fichier_entree)</strong>
 Convertit les fichiers JSON en un DataFrame Pandas, avec filtrage des données invalides.</p></li>
-<li><p><strong>`fusionner_donnees()`</strong>
+<li><p><strong>fusionner_donnees()</strong>
 Fusionne les données filtrées de tous les fichiers JSON et les enregistre dans un fichier CSV.</p></li>
-<li><p><strong>`executer()`</strong>
+<li><p><strong>executer()</strong>
 Exécute l’intégralité du processus : téléchargement, conversion et fusion des données.</p></li>
 </ul>
 <p>### Exemple d’utilisation</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">traitement_donnee</span> <span class="kn">import</span> <span class="n">GestionnaireDonnees</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;../bike/Base_des_donnees&#39;</span><span class="p">)))</span>
+<span class="kn">from</span> <span class="nn">gestionnaire_donnee_eco</span> <span class="kn">import</span> <span class="n">GestionnaireDonnees</span>
 
 <span class="c1"># Définir les paramètres de gestion des données</span>
 <span class="n">url_base</span> <span class="o">=</span> <span class="s2">&quot;https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo&quot;</span>
@@ -134,17 +137,15 @@ Exécute l’intégralité du processus : téléchargement, conversion et fusion
 </div>
 <p>### Fichier de sortie</p>
 <ul class="simple">
-<li><p>Le fichier CSV de sortie (<cite>fichier_fusion</cite>) contiendra les colonnes suivantes :
-- <cite>intensity</cite>, <cite>laneId</cite>, <cite>date</cite>, <cite>longitude</cite>, <cite>latitude</cite>, <cite>id</cite>, <cite>type</cite>, <cite>vehicleType</cite>, <cite>reversedLane</cite></p></li>
+<li><p>Le fichier CSV de sortie (<strong>fichier_fusion</strong>) contiendra les colonnes suivantes :
+- <strong>intensity</strong>, <strong>laneId</strong>, <strong>date</strong>, <strong>longitude</strong>, <strong>latitude</strong>, <strong>id</strong>, <strong>type</strong>, <strong>vehicleType</strong>, <strong>reversedLane</strong></p></li>
 <li><p>Seules les données de l’année 2023 seront incluses dans le fichier fusionné.</p></li>
 </ul>
-<p>—</p>
 <p>## Notes supplémentaires</p>
 <ul class="simple">
 <li><p>Le processus de téléchargement est automatisé et inclut une validation des données pour garantir leur intégrité.</p></li>
 <li><p>Les données sont filtrées par date pour inclure uniquement celles de 2023.</p></li>
 </ul>
-<p>—</p>
 </section>
 </section>
 

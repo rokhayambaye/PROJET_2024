@@ -3,7 +3,7 @@ from unittest.mock import patch, MagicMock
 import os
 import sys
 
-# Ajouter le chemin du dossier contenant p.py pour l'import
+# Chemin du dossier contenant velomagg.py
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../bike/Base_des_donnees')))
 from gestionnaire_donnees_eco import GestionnaireDonnees
 import unittest

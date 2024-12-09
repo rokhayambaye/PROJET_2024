@@ -5,37 +5,53 @@ Ce script génère des cartes interactives illustrant le trafic cycliste à Mont
 
 Fonctionnalités principales
 ---------------------------
+
 1. **Chargement des données :**
-   - Les **stations Velomagg** sont chargées à partir d'un fichier CSV distant.
-   - Les données d'**intensité de trafic cycliste** sont extraites d'un autre fichier CSV.
+
+   - Les stations Velomagg sont chargées à partir d'un fichier CSV distant.  
+
+   - Les stations Velomagg sont chargées à partir d'un fichier CSV distant.  
+
+   - Les données d'intensité de trafic cycliste sont extraites d'un autre fichier CSV.  
+
    - Les contours de la ville de Montpellier sont récupérés via `osmnx`.
 
 2. **Analyse et traitement des données :**
+
    - Les pistes cyclables de Montpellier sont extraites depuis OpenStreetMap, en excluant les types de routes non pertinentes (par exemple, autoroutes, chemins piétons).
+
    - Une fonction associée permet de calculer l'intensité moyenne la plus proche pour chaque segment de piste cyclable.
 
-3. **Génération des cartes interactives :**
-   - **Faculté des Sciences** : Un marqueur est ajouté à cet emplacement clé.
-   - **Contour de la ville** : Les limites de Montpellier sont tracées en noir.
-   - **Stations Velomagg** : Chaque station est représentée par un marqueur.
-   - **Routes cyclables** : Les routes sont colorées en fonction des intensités :
-     - Vert : Faible (<= 500)
-     - Jaune : Moyenne (<= 1000)
-     - Orange : Élevée (<= 2000)
-     - Rouge : Très élevée (> 2000)
+3. **Génération des cartes interactives :**   
+
+   - **Faculté des Sciences** : Un marqueur est ajouté à cet emplacement clé.  
+
+   - **Contour de la ville** : Les limites de Montpellier sont tracées en noir.  
+
+   - **Stations Velomagg** : Chaque station est représentée par un marqueur.  
+
+   - **Routes cyclables** : Les routes sont colorées en fonction des intensités :  
+
+         - Vert : Faible (<= 500)  
+
+         - Jaune : Moyenne (<= 1000)  
+
+         - Orange : Élevée (<= 2000)  
+
+         - Rouge : Très élevée (> 2000)
 
 4. **Création d'une carte pour chaque jour de la semaine :**
    - Une carte interactive est générée et sauvegardée pour chaque jour de la semaine dans le répertoire `bike/carte/`.
 
 Fonctionnement du script
 ------------------------
-Le script commence par charger les données nécessaires (stations Velomagg, intensité de trafic, contours de la ville et pistes cyclables). Ensuite, pour chaque jour de la semaine, il effectue les étapes suivantes :
+Le script commence par charger les données nécessaires (stations Velomagg, intensité de trafic, contours de la ville et pistes cyclables). Ensuite, pour chaque jour de la semaine, il effectue les étapes suivantes :  
 
-1. Filtre les données d'intensité pour le jour correspondant.
-2. Associe les intensités aux segments de routes cyclables.
-3. Crée une carte interactive centrée sur Montpellier.
-4. Ajoute des marqueurs pour les stations Velomagg et des segments colorés pour les routes cyclables.
-5. Sauvegarde la carte au format HTML.
+1. Filtre les données d'intensité pour le jour correspondant.      
+2. Associe les intensités aux segments de routes cyclables.  
+3. Crée une carte interactive centrée sur Montpellier.    
+4. Ajoute des marqueurs pour les stations Velomagg et des segments colorés pour les routes cyclables.    
+5. Sauvegarde la carte au format HTML.    
 
 Code source
 -----------
@@ -162,20 +178,25 @@ Code source
 
 Exemples de sorties
 -------------------
-- Les cartes générées sont enregistrées dans `bike/carte/` sous les noms `map_montpellier_Lundi.html`, `map_montpellier_Mardi.html`, etc.
-- Ces cartes sont interactives et affichent :
-  - Les routes cyclables colorées par intensité.
-  - Les positions des stations Velomagg.
-  - Le contour de la ville de Montpellier.
+- Les cartes générées sont enregistrées dans **bike/carte/** sous les noms **map_montpellier_Lundi.html**, **map_montpellier_Mardi.html**, etc.  
+- Ces cartes sont interactives et affichent :  
+- Les routes cyclables colorées par intensité.  
+- Les positions des stations Velomagg.  
+- Le contour de la ville de Montpellier.  
 
 Dépendances
 -----------
 Pour exécuter ce script, les bibliothèques suivantes sont nécessaires :
-- `folium`
-- `osmnx`
-- `pandas`
-- `branca`
+- **folium**  
 
-Assurez-vous d'installer ces bibliothèques avant d'exécuter le script :
-```bash
-pip install folium osmnx pandas branca
+- **osmnx**  
+
+- **pandas**  
+
+- **branca**
+
+Assurez-vous d'installer ces bibliothèques avant d'exécuter le script :  
+
+.. code-block:: bash
+
+    pip install folium osmnx pandas branca
