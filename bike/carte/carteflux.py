@@ -3,7 +3,9 @@ from folium import Icon
 import osmnx as ox
 import pandas as pd
 
+stations_exclues = ["Parvis Jules Ferry", "Pérols"]
 stations_df = pd.read_csv("https://drive.google.com/uc?id=1HgOLf2JD46ZJlyrF_c99QZb6of6ajNYh")
+stations_df = stations_df[~stations_df['nom'].isin(stations_exclues)]
 
 intensite = pd.read_csv("https://drive.google.com/uc?id=1WUCvXiGC-AEIR8oBWMiq7esZ5L05PU1M", sep=',')
 
