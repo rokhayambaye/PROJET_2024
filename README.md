@@ -20,7 +20,7 @@ Elle inclut :
 - Une introduction détaillée au projet.
 - Des tutoriels pour le traitement des données et la création de vidéos.
 - Une description complète des classes et fonctions du projet.
-## Extrait du code
+# Extrait du code
 Voici un extrait du code utilisé pour la création du site web :
 ```yaml
 title: "Trafic Cycliste à Montpellier"
@@ -40,14 +40,14 @@ format:
        onclick="location.reload();" />
 </div>
 ```
-## 📜 Licence
+# 📜 Licence
 Ce projet est sous licence MIT, une licence permissive largement utilisée. Elle permet :
 
 - Une utilisation libre du code, y compris pour des projets commerciaux.
 - La modification et la redistribution du code, à condition de conserver les mentions de copyright et de licence.
 
 Pour plus de détails, veuillez consulter le fichier [LICENSE](LICENSE).
-## Auteurs
+# **Auteurs**
 Ce projet a été réalisé par :
 - **DIALLO Ousmane**
 - **M'RAD Samy**
