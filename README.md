@@ -31,13 +31,14 @@ format:
     code-fold: true  # Activation des blocs de code repliables
     css: styles.css  # Fichier CSS pour personnaliser le style
     theme: flatly  # Thème choisi pour l'apparence
+---
+
 <div id="logo-container" style="position: absolute; top: 10px; left: 10px;">
   <img src="https://us.123rf.com/450wm/aquir/aquir2307/aquir230700775/208710489-cycliste-cycliste-sur-route-illustration-dessinée-à-la-main-illustration-de-dessin-animé-de-style.jpg?ver=6" 
        alt="Cycliste sur route" 
        style="max-width: 150px; max-height: 100px;" 
        onclick="location.reload();" />
 </div>
----
 ```
 ## 📜 Licence
 Ce projet est sous licence MIT, une licence permissive largement utilisée. Elle permet :
