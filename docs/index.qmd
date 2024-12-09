@@ -1,5 +1,5 @@
 ---
-title: "CIRCULATION DES VÉLOS À MONTPELLIER"
+title: "TRAFIC CYCLISTE À MONTPELLIER"
 format:
   html:
     toc: true  # Affiche une table des matières
@@ -14,8 +14,6 @@ format:
        alt="Cycliste sur route" style="max-width: 150px; max-height: 100px;"/>
 </div>
 
-## Introduction
-
 À Montpellier, le choix des transports est varié, mais le vélo se distingue comme l'une des solutions les plus écologiques et pratiques. 
 
 Dans ce contexte, notre objectif est de visualiser le trafic cycliste sur une journée et de prédire l'intensité de ce trafic pour chaque jour de la semaine. Nous vous proposerons également une étude de ce trafic par le biais de différents diagrammes.
@@ -25,7 +23,7 @@ Le vélo, plus qu'un un simple loisir, est un moyen de transport incontournable 
 
 ## Cartes Interactives
 
-Voici les cartes prédisant l'intensité du trafic cycliste à Montpellier par jour de semaine basée sur des données de l’année 2023.
+Voici les cartes estimant l'intensité du trafic cycliste à Montpellier par jour de semaine basée sur des données de l’année 2023.
 <div>
   <button onclick="changeMap('Lundi')" style="font-size: 12px; padding: 5px 10px;">Lundi</button>
   <button onclick="changeMap('Mardi')" style="font-size: 12px; padding: 5px 10px;">Mardi</button>
