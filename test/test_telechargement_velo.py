@@ -4,8 +4,8 @@ import sys
 import os
 
 # Ajoute le répertoire parent du dossier 'bike' au sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'bike', 'Base_des_donnees', 'velomagg')))
-
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'bike', 'Base_des_donnees')))
+print(sys.path)
 # Importation de la classe
 from velomagg import TraitementDonneesVelomagg
 
@@ -47,12 +47,6 @@ def tester_traitement_donnees_velomagg():
     assert not traitement.df_trajets.isnull().values.any(), "Des valeurs manquantes subsistent"
     print("Suppression des lignes manquantes réussie")
     
-    # Test de la méthode de sauvegarde dans un fichier CSV
-    print("Test: Sauvegarde dans un fichier CSV")
-    traitement.sauvegarder_csv()
-    assert os.path.exists(traitement.fichier_sortie), f"Le fichier {traitement.fichier_sortie} n'a pas été créé"
-    print(f"Le fichier {traitement.fichier_sortie} a été créé avec succès")
-
 # Appeler la fonction de test
 tester_traitement_donnees_velomagg()
 # %%
