@@ -1,7 +1,7 @@
 Contact
 =======
 
-Pour toute question ou demande d'assistance, vous pouvez nous joindre en utilisant les adresses e-mails ci-desoous :
+Pour toute question ou demande d'assistance, vous pouvez nous contacter à l'adresse e-mail suivante :
 
 Équipe de Développement
 -----------------------
