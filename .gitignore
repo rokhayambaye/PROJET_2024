@@ -1,5 +1,3 @@
 .DS_Store
-cache/
-/.quarto/
-*.csv
-test/__pycache__/
+*cache*
+*/.quarto/*
