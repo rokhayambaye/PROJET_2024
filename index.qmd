@@ -130,4 +130,4 @@ Les diagrammes ci-dessous permettent de visualiser le flux cycliste à Montpelli
 Le nombre de locations de vélos coïncide globalement avec les flux de vélos excepté au mois de Mai (peut être dû aux jours fériés et au climat plus agréable).
 
 ## Documentation
-Si vous souhaitez en apprendre plus, nous mettons à votre disposition la documentation permettant d'installer et de suivre notre démarche : [__Documentation__](build/html/index.html).
+Si vous souhaitez en apprendre plus, nous mettons à votre disposition la documentation permettant d'installer et de suivre notre démarche : [__Documentation__](docs/build/html/index.html).
