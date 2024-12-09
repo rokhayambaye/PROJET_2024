@@ -22,7 +22,7 @@ Pour cela nous allons nous baser sur les [éco-compteurs](https://data.montpelli
 
 Le vélo, plus qu'un un simple loisir, est un moyen de transport incontournable à Montpellier !
 
-## Cartes Interactives
+## Cartes
 
 Voici les cartes estimant l'intensité du trafic cycliste à Montpellier par jour de semaine basée sur des données de l’année 2023.
 
@@ -49,7 +49,7 @@ Voici les cartes estimant l'intensité du trafic cycliste à Montpellier par jou
 Nous remarquons clairement que la circulation cycliste est plus fluide durant le week-end. Cependant, en semaine, la circulation reste assez fluide sur une grande partie de Montpellier.  
 Le vélo est un transport à la fois écologique et pratique !
 
-## Vidéo des flux
+## Vidéos
 
 <video controls width="100%" height="auto">
   <source src="Video/bike_animation_12_Mai.mp4">
@@ -60,7 +60,7 @@ Le vélo est un transport à la fois écologique et pratique !
 </video>
 
 
-## Diagrammes circulation de vélos
+## Diagrammes : flux de vélos
 
 Les diagrammes ci-dessous permettent de visualiser le flux cycliste à Montpellier sur l'année 2023. Vous pourrez explorer :
 
@@ -125,9 +125,11 @@ Les diagrammes ci-dessous permettent de visualiser le flux cycliste à Montpelli
 
 
 
-## Diagramme location de vélos
+## Diagramme : locations de vélos
 <div id="diagram-container" style="margin-top: 20px;">
   <iframe id="diagram-frame" src="Diagramme/Diagramme_locations.html" width="100%" height="600" style="border: none;"></iframe>
 </div>
 Le nombre de locations de vélos coïncide globalement avec les flux de vélos excepté au mois de Mai (peut être dû aux jours fériés et au climat plus agréable).
 
+## Documentation
+Si vous souhaitez en apprendre plus, nous mettons à votre disposition la documentation permettant d'installer et de suivre notre démarche : [__Documentation__](build/html/index.html).
