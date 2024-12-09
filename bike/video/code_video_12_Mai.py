@@ -87,7 +87,7 @@ frames = range(0, int((df["Return"].max() - df["Departure"].min()).total_seconds
 ani = FuncAnimation(fig, update, frames=frames, interval=200)
 
 # Sauvegarder la vidéo
-ani.save("bike_animation_12_Mai.mp4", fps=5, writer="ffmpeg")
+ani.save("docs/Video/bike_animation_12_Mai.mp4", fps=5, writer="ffmpeg")
 plt.show()
 
 # %%

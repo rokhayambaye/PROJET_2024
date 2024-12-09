@@ -35,11 +35,8 @@ def add_music_to_video(video_path, audio_path, output_video_with_audio_path, dur
     except Exception as e:
         print(f"Erreur inattendue : {e}")
 
-# Chemins des fichiers
-video_path = r"C:\video\bike_animation_12_Mai.mp4"  # Chemin de la vidéo
-audio_path = r"C:\video\musique.mp3"                     # Chemin de l'audio
-output_video_with_audio = r"C:\video\bike_animation_12_Mai_with_son.mp4"  # Chemin de sortie de la vidéo avec audio
-duration = 57  # Durée en seconde
+# Ajouter la musique à la vidéo du 12 Mai
+add_music_to_video("docs/Video/bike_animation_12_Mai.mp4", "bike/video/musique.mp3", "docs/Video/bike_animation_12_Mai_son.mp4", 57)
 
-# Ajouter la musique à la vidéo avec durée limitée
-add_music_to_video(video_path, audio_path, output_video_with_audio, duration)
+# Ajouter la musique à la vidéo du 14 Mai
+add_music_to_video("docs/Video/bike_animation_14_Mai.mp4", "bike/video/musique.mp3", "docs/Video/bike_animation_14_Mai_son.mp4", 57)
