@@ -1,12 +1,16 @@
 ---
+project:
+  type: website
+  output-dir: docs
+
 title: "TRAFIC CYCLISTE À MONTPELLIER"
 format:
   html:
-    toc: true  # Affiche une table des matières
-    toc-title: "Sommaire"  # Titre de la table des matières
-    code-fold: true 
-    css: styles.css  
-    theme: flatly  # Choix d'un thème
+    toc: true
+    toc-title: "Sommaire"
+    code-fold: true
+    css: styles.css  # Chemin relatif correct pour le CSS
+    theme: flatly    # Thème de base Quarto
 ---
 
 <div id="logo-container" style="position: absolute; top: 10px; left: 10px;">
