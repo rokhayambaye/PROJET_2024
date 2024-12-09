@@ -27,10 +27,11 @@ Guide
    :caption: Traitement des bases de données 
 
    traitement_donnees/donnee_eco
+   station
    traitement_donnees/donnee_velo
 .. toctree::
    :maxdepth: 2 
-   :Caption : Donnée Ecocompteurs et Données Velomagg traitement_donnees/donnee_eco traitement_donnees/donnee_velo
+   :Caption : Donnée Ecocompteurs, recupérer coordonnées stations et Données Velomagg traitement_donnees/donnee_eco station traitement_donnees/donnee_velo 
 .. toctree::
    :maxdepth: 2
    :caption: Video
