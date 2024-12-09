@@ -80,11 +80,4 @@ class TraitementDonneesVelomagg:
         self.sauvegarder_csv()
 
 
-# %%
-url_trajets = "https://drive.google.com/uc?id=1kUMForLXwdGvV9ha2Qx-vMd6CnoMnWV5"
-url_stations = "https://drive.google.com/uc?id=1HgOLf2JD46ZJlyrF_c99QZb6of6ajNYh"
 
-# Créer une instance de la classe et traiter les données
-traitement = TraitementDonneesVelomagg(url_trajets, url_stations)
-traitement.executer()
-# %%
