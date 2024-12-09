@@ -43,15 +43,15 @@ Cette fonction traite un **DataFrame** contenant des informations sur des statio
 
         - **longitude** (float) : La longitude de la station.
 
-### Comportement
+- **Comportement**
 
-- Pour chaque ligne du **DataFrame**, la fonction extrait le nom de la station et la ville associée, puis utilise la fonction **obtenir_coordonnees** pour récupérer les coordonnées géographiques.  
+    - Pour chaque ligne du **DataFrame**, la fonction extrait le nom de la station et la ville associée, puis utilise la fonction **obtenir_coordonnees** pour récupérer les coordonnées géographiques.  
 
-- Si des informations sont manquantes pour une station (nom ou ville), la ligne est ignorée et un message est affiché.  
+    - Si des informations sont manquantes pour une station (nom ou ville), la ligne est ignorée et un message est affiché.  
 
-- La fonction respecte la limite de fréquence de l'API en introduisant une pause de 1 seconde entre chaque requête.
+    - La fonction respecte la limite de fréquence de l'API en introduisant une pause de 1 seconde entre chaque requête.
 
-### Exemple d'utilisation
+- **Exemple d'utilisation**
 
 .. code-block:: python
 
@@ -61,8 +61,8 @@ Cette fonction traite un **DataFrame** contenant des informations sur des statio
     # Traiter les stations pour obtenir leurs coordonnées
     stations_coordonnees = traiter_stations(MMM_MMM_Velomagg)
 
-### Notes supplémentaires
+- **Notes supplémentaires**
 
-- La fonction **obtenir_coordonnees** utilise l'API Nominatim, qui impose une limite de fréquence des requêtes. Un délai de 1 seconde est respecté entre chaque appel pour éviter d'être bloqué.
+    - La fonction **obtenir_coordonnees** utilise l'API Nominatim, qui impose une limite de fréquence des requêtes. Un délai de 1 seconde est respecté entre chaque appel pour éviter d'être bloqué.
 
-- Les stations pour lesquelles le nom ou la ville est manquant sont ignorées, et un message est affiché pour chaque ligne incomplète.
+    - Les stations pour lesquelles le nom ou la ville est manquant sont ignorées, et un message est affiché pour chaque ligne incomplète.

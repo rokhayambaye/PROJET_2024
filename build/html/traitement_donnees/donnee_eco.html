@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Traitement des Données VéloMagg" href="donnee_velo.html" />
+    <link rel="next" title="Recupération coordonnées des Stations Vélos" href="../station.html" />
     <link rel="prev" title="Contact" href="../installer/contacts.html" /> 
 </head>
 
@@ -54,6 +54,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#classe-principale">Classe principale</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../station.html">Recupération coordonnées des Stations Vélos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="donnee_velo.html">Traitement des Données VéloMagg</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Video</span></p>
@@ -101,25 +102,39 @@
 <li><p>Convertir les fichiers JSON en un format structuré.</p></li>
 <li><p>Filtrer les données pour l’année 2023.</p></li>
 <li><p>Fusionner les données des différents fichiers JSON dans un fichier CSV.</p></li>
-</ul>
-<p>### Paramètres d’initialisation</p>
-<ul class="simple">
+<li><p><strong>Paramètres d’initialisation</strong></p>
+<ul>
 <li><p><strong>url_base</strong> : URL de base où les fichiers JSON sont disponibles.</p></li>
 <li><p><strong>dossier_brut</strong> : Répertoire pour stocker les fichiers JSON téléchargés.</p></li>
 <li><p><strong>fichier_fusion</strong> : Nom du fichier CSV final qui contiendra toutes les données fusionnées.</p></li>
 </ul>
-<p>### Méthodes</p>
-<ul class="simple">
-<li><p><strong>telecharger_json()</strong>
-Télécharge les fichiers JSON disponibles à partir de l’URL de base.</p></li>
-<li><p><strong>convertir_json_en_donnees(fichier_entree)</strong>
-Convertit les fichiers JSON en un DataFrame Pandas, avec filtrage des données invalides.</p></li>
-<li><p><strong>fusionner_donnees()</strong>
-Fusionne les données filtrées de tous les fichiers JSON et les enregistre dans un fichier CSV.</p></li>
-<li><p><strong>executer()</strong>
-Exécute l’intégralité du processus : téléchargement, conversion et fusion des données.</p></li>
+</li>
+<li><p><strong>Méthodes</strong></p>
+<ul>
+<li><dl class="simple">
+<dt><strong>telecharger_json()</strong></dt><dd><p>Télécharge les fichiers JSON disponibles à partir de l’URL de base.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>convertir_json_en_donnees(fichier_entree)</strong></dt><dd><p>Convertit les fichiers JSON en un DataFrame Pandas, avec filtrage des données invalides.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>fusionner_donnees()</strong></dt><dd><p>Fusionne les données filtrées de tous les fichiers JSON et les enregistre dans un fichier CSV.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>executer()</strong></dt><dd><p>Exécute l’intégralité du processus : téléchargement, conversion et fusion des données.</p>
+</dd>
+</dl>
+</li>
 </ul>
-<p>### Exemple d’utilisation</p>
+</li>
+<li><p><strong>Exemple d’utilisation</strong></p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;../bike/Base_des_donnees&#39;</span><span class="p">)))</span>
 <span class="kn">from</span> <span class="nn">gestionnaire_donnee_eco</span> <span class="kn">import</span> <span class="n">GestionnaireDonnees</span>
 
@@ -135,16 +150,29 @@ Exécute l’intégralité du processus : téléchargement, conversion et fusion
 <span class="n">gestionnaire</span><span class="o">.</span><span class="n">executer</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>### Fichier de sortie</p>
-<ul class="simple">
-<li><p>Le fichier CSV de sortie (<strong>fichier_fusion</strong>) contiendra les colonnes suivantes :
-- <strong>intensity</strong>, <strong>laneId</strong>, <strong>date</strong>, <strong>longitude</strong>, <strong>latitude</strong>, <strong>id</strong>, <strong>type</strong>, <strong>vehicleType</strong>, <strong>reversedLane</strong></p></li>
+<ul>
+<li><p><strong>Fichier de sortie</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Le fichier CSV de sortie (<strong>fichier_fusion</strong>) contiendra les colonnes suivantes :</dt><dd><ul>
+<li><p><strong>intensity</strong>, <strong>laneId</strong>, <strong>date</strong>, <strong>longitude</strong>, <strong>latitude</strong>, <strong>id</strong>, <strong>type</strong>, <strong>vehicleType</strong>, <strong>reversedLane</strong></p></li>
+</ul>
+</dd>
+</dl>
+</li>
 <li><p>Seules les données de l’année 2023 seront incluses dans le fichier fusionné.</p></li>
 </ul>
-<p>## Notes supplémentaires</p>
-<ul class="simple">
+</div></blockquote>
+</li>
+<li><p><strong>Notes supplémentaires</strong></p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Le processus de téléchargement est automatisé et inclut une validation des données pour garantir leur intégrité.</p></li>
 <li><p>Les données sont filtrées par date pour inclure uniquement celles de 2023.</p></li>
+</ul>
+</div></blockquote>
+</li>
 </ul>
 </section>
 </section>
@@ -154,7 +182,7 @@ Exécute l’intégralité du processus : téléchargement, conversion et fusion
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="../installer/contacts.html" class="btn btn-neutral float-left" title="Contact" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="donnee_velo.html" class="btn btn-neutral float-right" title="Traitement des Données VéloMagg" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../station.html" class="btn btn-neutral float-right" title="Recupération coordonnées des Stations Vélos" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

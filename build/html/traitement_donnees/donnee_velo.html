@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Création de la Vidéo des Déplacements" href="../video_creation.html" />
-    <link rel="prev" title="Gestionnaire des Données Éco-Compteurs" href="donnee_eco.html" /> 
+    <link rel="prev" title="Recupération coordonnées des Stations Vélos" href="../station.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,6 +51,7 @@
 <p class="caption" role="heading"><span class="caption-text">Traitement des bases de données</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="donnee_eco.html">Gestionnaire des Données Éco-Compteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../station.html">Recupération coordonnées des Stations Vélos</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Traitement des Données VéloMagg</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#classe-principale">Classe principale</a></li>
 </ul>
@@ -103,26 +104,47 @@
 <li><p>Supprimer les lignes avec des valeurs manquantes.</p></li>
 <li><p>Sauvegarder les données traitées dans un fichier CSV.</p></li>
 </ol>
-<p>### Paramètres d’initialisation</p>
-<ul class="simple">
+<ul>
+<li><p><strong>Paramètres d’initialisation</strong></p>
+<blockquote>
+<div><ul class="simple">
 <li><p><strong>url_trajets</strong> : URL contenant les données des trajets.</p></li>
 <li><p><strong>url_stations</strong> : URL contenant les données des stations.</p></li>
 <li><p><strong>fichier_sortie</strong> <em>(optionnel)</em> : Nom du fichier CSV de sortie (par défaut : <cite>Velomagg_avec_coordonnees.csv</cite>).</p></li>
 </ul>
-<p>### Méthodes</p>
+</div></blockquote>
+</li>
+<li><p><strong>Méthodes</strong></p>
 <ul class="simple">
-<li><p><strong>telecharger_et_nettoyer_trajets()</strong>
-Télécharge les données des trajets et nettoie les noms des stations avec des remplacements spécifiques.</p></li>
-<li><p><strong>ajouter_coordonnees_stations()</strong>
-Télécharge les données des stations et ajoute les coordonnées aux stations de départ et d’arrivée dans les données des trajets.</p></li>
-<li><p><strong>supprimer_lignes_manquantes()</strong>
-Supprime les lignes des trajets contenant des valeurs manquantes pour garantir des données complètes.</p></li>
-<li><p><strong>sauvegarder_csv()</strong>
-Sauvegarde les données enrichies dans un fichier CSV spécifié lors de l’initialisation.</p></li>
-<li><p><strong>executer()</strong>
-Exécute toutes les étapes du pipeline de traitement des données (dans l’ordre des méthodes mentionnées).</p></li>
+<li><dl class="simple">
+<dt><strong>telecharger_et_nettoyer_trajets()</strong></dt><dd><p>Télécharge les données des trajets et nettoie les noms des stations avec des remplacements spécifiques.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>ajouter_coordonnees_stations()</strong></dt><dd><p>Télécharge les données des stations et ajoute les coordonnées aux stations de départ et d’arrivée dans les données des trajets.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>supprimer_lignes_manquantes()</strong></dt><dd><p>Supprime les lignes des trajets contenant des valeurs manquantes pour garantir des données complètes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>sauvegarder_csv()</strong></dt><dd><p>Sauvegarde les données enrichies dans un fichier CSV spécifié lors de l’initialisation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>executer()</strong></dt><dd><p>Exécute toutes les étapes du pipeline de traitement des données (dans l’ordre des méthodes mentionnées).</p>
+</dd>
+</dl>
+</li>
 </ul>
-<p>### Exemple d’utilisation</p>
+</li>
+<li><p><strong>Exemple d’utilisation</strong></p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">velomagg</span> <span class="kn">import</span> <span class="n">TraitementDonneesVelomagg</span>
 
 <span class="c1"># Définir les URLs des données</span>
@@ -141,18 +163,27 @@ Exécute toutes les étapes du pipeline de traitement des données (dans l’ord
 <span class="n">traitement</span><span class="o">.</span><span class="n">executer</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>### Fichier de sortie</p>
-<ul class="simple">
+<ul>
+<li><p><strong>Fichier de sortie</strong></p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Les données enrichies sont enregistrées dans le fichier CSV défini par <strong>fichier_sortie</strong>.</p></li>
-<li><p>Ce fichier contient les colonnes suivantes :
-- <strong>Departure station</strong>, <strong>Departure</strong>, <strong>Return station</strong>, <strong>Return</strong>
-- <strong>Duration (sec.)</strong>, <strong>Covered distance (m)</strong>
-- <strong>latitude_depart</strong>, <strong>longitude_depart</strong>, <strong>latitude_retour</strong>, <strong>longitude_retour</strong></p></li>
+<li><p>Ce fichier contient les colonnes suivantes :</p>
+<ul>
+<li><p><strong>Departure station</strong>, <strong>Departure</strong>, <strong>Return station</strong>, <strong>Return</strong></p></li>
+<li><p><strong>Duration (sec.)</strong>, <strong>Covered distance (m)</strong></p></li>
+<li><p><strong>latitude_depart</strong>, <strong>longitude_depart</strong>, <strong>latitude_retour</strong>, <strong>longitude_retour</strong></p></li>
 </ul>
-<p>## Notes supplémentaires</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Notes supplémentaires</strong></p>
 <ul class="simple">
 <li><p>Les noms des stations sont nettoyés à l’aide d’un dictionnaire de remplacements spécifiques pour uniformiser les données.</p></li>
 <li><p>Les lignes avec des valeurs manquantes sont supprimées après ajout des coordonnées.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 </section>
@@ -161,7 +192,7 @@ Exécute toutes les étapes du pipeline de traitement des données (dans l’ord
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="donnee_eco.html" class="btn btn-neutral float-left" title="Gestionnaire des Données Éco-Compteurs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../station.html" class="btn btn-neutral float-left" title="Recupération coordonnées des Stations Vélos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
         <a href="../video_creation.html" class="btn btn-neutral float-right" title="Création de la Vidéo des Déplacements" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

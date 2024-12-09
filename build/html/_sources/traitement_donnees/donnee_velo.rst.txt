@@ -20,30 +20,32 @@ Cette classe permet de :
 
 5. Sauvegarder les données traitées dans un fichier CSV.
 
-### Paramètres d'initialisation
+- **Paramètres d'initialisation**
 
-- **url_trajets** : URL contenant les données des trajets.
-- **url_stations** : URL contenant les données des stations.
-- **fichier_sortie** *(optionnel)* : Nom du fichier CSV de sortie (par défaut : `Velomagg_avec_coordonnees.csv`).
+    - **url_trajets** : URL contenant les données des trajets.
 
-### Méthodes
+    - **url_stations** : URL contenant les données des stations.
 
-- **telecharger_et_nettoyer_trajets()**  
-  Télécharge les données des trajets et nettoie les noms des stations avec des remplacements spécifiques.
+    - **fichier_sortie** *(optionnel)* : Nom du fichier CSV de sortie (par défaut : `Velomagg_avec_coordonnees.csv`).
 
-- **ajouter_coordonnees_stations()**  
-  Télécharge les données des stations et ajoute les coordonnées aux stations de départ et d'arrivée dans les données des trajets.
+- **Méthodes**
 
-- **supprimer_lignes_manquantes()**  
-  Supprime les lignes des trajets contenant des valeurs manquantes pour garantir des données complètes.
+  - **telecharger_et_nettoyer_trajets()**  
+      Télécharge les données des trajets et nettoie les noms des stations avec des remplacements spécifiques.
 
-- **sauvegarder_csv()**  
-  Sauvegarde les données enrichies dans un fichier CSV spécifié lors de l'initialisation.
+  - **ajouter_coordonnees_stations()**  
+      Télécharge les données des stations et ajoute les coordonnées aux stations de départ et d'arrivée dans les données des trajets.
 
-- **executer()**  
-  Exécute toutes les étapes du pipeline de traitement des données (dans l'ordre des méthodes mentionnées).
+  - **supprimer_lignes_manquantes()**  
+      Supprime les lignes des trajets contenant des valeurs manquantes pour garantir des données complètes.
 
-### Exemple d'utilisation
+  - **sauvegarder_csv()**  
+       Sauvegarde les données enrichies dans un fichier CSV spécifié lors de l'initialisation.
+
+  - **executer()**  
+       Exécute toutes les étapes du pipeline de traitement des données (dans l'ordre des méthodes mentionnées).
+
+- **Exemple d'utilisation**
 
 .. code-block:: python
 
@@ -64,15 +66,20 @@ Cette classe permet de :
     # Exécuter le traitement
     traitement.executer()
 
-### Fichier de sortie
+- **Fichier de sortie**
 
-- Les données enrichies sont enregistrées dans le fichier CSV défini par **fichier_sortie**.
-- Ce fichier contient les colonnes suivantes :
-  - **Departure station**, **Departure**, **Return station**, **Return**
-  - **Duration (sec.)**, **Covered distance (m)**
-  - **latitude_depart**, **longitude_depart**, **latitude_retour**, **longitude_retour**
+    - Les données enrichies sont enregistrées dans le fichier CSV défini par **fichier_sortie**.
 
-## Notes supplémentaires
+    - Ce fichier contient les colonnes suivantes :
+    
+      - **Departure station**, **Departure**, **Return station**, **Return**
 
-- Les noms des stations sont nettoyés à l'aide d'un dictionnaire de remplacements spécifiques pour uniformiser les données.
-- Les lignes avec des valeurs manquantes sont supprimées après ajout des coordonnées.
+      - **Duration (sec.)**, **Covered distance (m)**
+
+      - **latitude_depart**, **longitude_depart**, **latitude_retour**, **longitude_retour**
+
+- **Notes supplémentaires**
+
+  - Les noms des stations sont nettoyés à l'aide d'un dictionnaire de remplacements spécifiques pour uniformiser les données.  
+
+  - Les lignes avec des valeurs manquantes sont supprimées après ajout des coordonnées.

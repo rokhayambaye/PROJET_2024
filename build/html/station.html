@@ -147,14 +147,17 @@
 </ul>
 </div></blockquote>
 </li>
-</ul>
-<p>### Comportement</p>
-<ul class="simple">
+<li><p><strong>Comportement</strong></p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Pour chaque ligne du <strong>DataFrame</strong>, la fonction extrait le nom de la station et la ville associée, puis utilise la fonction <strong>obtenir_coordonnees</strong> pour récupérer les coordonnées géographiques.</p></li>
 <li><p>Si des informations sont manquantes pour une station (nom ou ville), la ligne est ignorée et un message est affiché.</p></li>
 <li><p>La fonction respecte la limite de fréquence de l’API en introduisant une pause de 1 seconde entre chaque requête.</p></li>
 </ul>
-<p>### Exemple d’utilisation</p>
+</div></blockquote>
+</li>
+<li><p><strong>Exemple d’utilisation</strong></p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Charger les données des stations</span>
 <span class="n">MMM_MMM_Velomagg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://data.montpellier3m.fr/sites/default/files/ressources/MMM_MMM_Velomagg.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
 
@@ -162,10 +165,15 @@
 <span class="n">stations_coordonnees</span> <span class="o">=</span> <span class="n">traiter_stations</span><span class="p">(</span><span class="n">MMM_MMM_Velomagg</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>### Notes supplémentaires</p>
-<ul class="simple">
+<ul>
+<li><p><strong>Notes supplémentaires</strong></p>
+<blockquote>
+<div><ul class="simple">
 <li><p>La fonction <strong>obtenir_coordonnees</strong> utilise l’API Nominatim, qui impose une limite de fréquence des requêtes. Un délai de 1 seconde est respecté entre chaque appel pour éviter d’être bloqué.</p></li>
 <li><p>Les stations pour lesquelles le nom ou la ville est manquant sont ignorées, et un message est affiché pour chaque ligne incomplète.</p></li>
+</ul>
+</div></blockquote>
+</li>
 </ul>
 </section>
 </section>

@@ -17,27 +17,27 @@ Cette classe permet de :
 
 - Fusionner les données des différents fichiers JSON dans un fichier CSV.    
 
-### Paramètres d'initialisation
+- **Paramètres d'initialisation**
 
-- **url_base** : URL de base où les fichiers JSON sont disponibles.  
-- **dossier_brut** : Répertoire pour stocker les fichiers JSON téléchargés.  
-- **fichier_fusion** : Nom du fichier CSV final qui contiendra toutes les données fusionnées.  
+  - **url_base** : URL de base où les fichiers JSON sont disponibles.  
+  - **dossier_brut** : Répertoire pour stocker les fichiers JSON téléchargés.  
+  - **fichier_fusion** : Nom du fichier CSV final qui contiendra toutes les données fusionnées.  
 
-### Méthodes
+- **Méthodes**
 
-- **telecharger_json()**  
-  Télécharge les fichiers JSON disponibles à partir de l'URL de base.
+  - **telecharger_json()**  
+      Télécharge les fichiers JSON disponibles à partir de l'URL de base.
 
-- **convertir_json_en_donnees(fichier_entree)**  
-  Convertit les fichiers JSON en un DataFrame Pandas, avec filtrage des données invalides.
+  - **convertir_json_en_donnees(fichier_entree)**  
+      Convertit les fichiers JSON en un DataFrame Pandas, avec filtrage des données invalides.
 
-- **fusionner_donnees()**  
-  Fusionne les données filtrées de tous les fichiers JSON et les enregistre dans un fichier CSV.
+  - **fusionner_donnees()**  
+      Fusionne les données filtrées de tous les fichiers JSON et les enregistre dans un fichier CSV.
 
-- **executer()**  
-  Exécute l'intégralité du processus : téléchargement, conversion et fusion des données.
+  - **executer()**  
+      Exécute l'intégralité du processus : téléchargement, conversion et fusion des données.
 
-### Exemple d'utilisation
+- **Exemple d'utilisation**
 
 .. code-block:: python
 
@@ -55,14 +55,15 @@ Cette classe permet de :
     # Exécuter le traitement complet
     gestionnaire.executer()
 
-### Fichier de sortie
+- **Fichier de sortie**
 
-- Le fichier CSV de sortie (**fichier_fusion**) contiendra les colonnes suivantes :
-  - **intensity**, **laneId**, **date**, **longitude**, **latitude**, **id**, **type**, **vehicleType**, **reversedLane**
+    - Le fichier CSV de sortie (**fichier_fusion**) contiendra les colonnes suivantes :
+        - **intensity**, **laneId**, **date**, **longitude**, **latitude**, **id**, **type**, **vehicleType**, **reversedLane**
   
-- Seules les données de l'année 2023 seront incluses dans le fichier fusionné.
+    - Seules les données de l'année 2023 seront incluses dans le fichier fusionné.
 
-## Notes supplémentaires
+- **Notes supplémentaires**
 
-- Le processus de téléchargement est automatisé et inclut une validation des données pour garantir leur intégrité.  
-- Les données sont filtrées par date pour inclure uniquement celles de 2023.  
+    - Le processus de téléchargement est automatisé et inclut une validation des données pour garantir leur intégrité. 
+     
+    - Les données sont filtrées par date pour inclure uniquement celles de 2023.  
