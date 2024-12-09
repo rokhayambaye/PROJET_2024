@@ -1,4 +1,3 @@
-import csv
 from geopy.geocoders import Nominatim
 import time
 import pandas as pd

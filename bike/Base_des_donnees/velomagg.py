@@ -1,6 +1,5 @@
 #%%
 import pandas as pd
-import pandas as pd  # Pour manipuler les données
 
 class TraitementDonneesVelomagg:
     def __init__(self, url_trajets, url_stations, fichier_sortie="Velomagg_avec_coordonnees.csv"):

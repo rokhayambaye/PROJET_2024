@@ -2,7 +2,6 @@ import folium
 from folium import Icon
 import osmnx as ox
 import pandas as pd
-import branca.colormap as cm
 
 stations_df = pd.read_csv("https://drive.google.com/uc?id=1HgOLf2JD46ZJlyrF_c99QZb6of6ajNYh")
 
