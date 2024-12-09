@@ -1,6 +1,7 @@
 ---
 project:
   type: website
+  output-dir: docs
 
 title: "TRAFIC CYCLISTE À MONTPELLIER"
 format:
