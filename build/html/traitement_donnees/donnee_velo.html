@@ -95,12 +95,14 @@
 <section id="classe-principale">
 <h2>Classe principale<a class="headerlink" href="#classe-principale" title="Lien vers cette rubrique"></a></h2>
 <p><strong>TraitementDonneesVelomagg</strong></p>
-<p>Cette classe permet de :
-1. Télécharger les données de trajets et des stations.
-2. Nettoyer les noms des stations.
-3. Ajouter les coordonnées (latitude et longitude) aux stations de départ et d’arrivée des trajets.
-4. Supprimer les lignes avec des valeurs manquantes.
-5. Sauvegarder les données traitées dans un fichier CSV.</p>
+<p>Cette classe permet de :</p>
+<ol class="arabic simple">
+<li><p>Télécharger les données de trajets et des stations.</p></li>
+<li><p>Nettoyer les noms des stations.</p></li>
+<li><p>Ajouter les coordonnées (latitude et longitude) aux stations de départ et d’arrivée des trajets.</p></li>
+<li><p>Supprimer les lignes avec des valeurs manquantes.</p></li>
+<li><p>Sauvegarder les données traitées dans un fichier CSV.</p></li>
+</ol>
 <p>### Paramètres d’initialisation</p>
 <ul class="simple">
 <li><p><strong>url_trajets</strong> : URL contenant les données des trajets.</p></li>
@@ -147,13 +149,11 @@ Exécute toutes les étapes du pipeline de traitement des données (dans l’ord
 - <strong>Duration (sec.)</strong>, <strong>Covered distance (m)</strong>
 - <strong>latitude_depart</strong>, <strong>longitude_depart</strong>, <strong>latitude_retour</strong>, <strong>longitude_retour</strong></p></li>
 </ul>
-<p>—</p>
 <p>## Notes supplémentaires</p>
 <ul class="simple">
 <li><p>Les noms des stations sont nettoyés à l’aide d’un dictionnaire de remplacements spécifiques pour uniformiser les données.</p></li>
 <li><p>Les lignes avec des valeurs manquantes sont supprimées après ajout des coordonnées.</p></li>
 </ul>
-<p>—</p>
 </section>
 </section>
 

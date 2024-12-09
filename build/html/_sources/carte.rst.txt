@@ -32,13 +32,13 @@ Fonctionnalités principales
 
    - **Routes cyclables** : Les routes sont colorées en fonction des intensités :  
 
-         - Vert : Faible (<= 500)  
+        - Vert : Faible (<= 500)  
 
-         - Jaune : Moyenne (<= 1000)  
+        - Jaune : Moyenne (<= 1000)  
 
-         - Orange : Élevée (<= 2000)  
+        - Orange : Élevée (<= 2000)  
 
-         - Rouge : Très élevée (> 2000)
+        - Rouge : Très élevée (> 2000)
 
 4. **Création d'une carte pour chaque jour de la semaine :**
    - Une carte interactive est générée et sauvegardée pour chaque jour de la semaine dans le répertoire `bike/carte/`.
@@ -180,13 +180,18 @@ Exemples de sorties
 -------------------
 - Les cartes générées sont enregistrées dans **bike/carte/** sous les noms **map_montpellier_Lundi.html**, **map_montpellier_Mardi.html**, etc.  
 - Ces cartes sont interactives et affichent :  
-- Les routes cyclables colorées par intensité.  
-- Les positions des stations Velomagg.  
-- Le contour de la ville de Montpellier.  
+
+    - Les routes cyclables colorées par intensité.  
+
+    - Les positions des stations Velomagg.  
+
+    - Le contour de la ville de Montpellier.  
+
 
 Dépendances
 -----------
-Pour exécuter ce script, les bibliothèques suivantes sont nécessaires :
+Pour exécuter ce script, les bibliothèques suivantes sont nécessaires :  
+
 - **folium**  
 
 - **osmnx**  

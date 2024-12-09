@@ -8,11 +8,16 @@ Classe principale
 
 **TraitementDonneesVelomagg**
 
-Cette classe permet de :
-1. Télécharger les données de trajets et des stations.
-2. Nettoyer les noms des stations.
-3. Ajouter les coordonnées (latitude et longitude) aux stations de départ et d'arrivée des trajets.
-4. Supprimer les lignes avec des valeurs manquantes.
+Cette classe permet de :  
+
+1. Télécharger les données de trajets et des stations.  
+
+2. Nettoyer les noms des stations.  
+
+3. Ajouter les coordonnées (latitude et longitude) aux stations de départ et d'arrivée des trajets.  
+
+4. Supprimer les lignes avec des valeurs manquantes.  
+
 5. Sauvegarder les données traitées dans un fichier CSV.
 
 ### Paramètres d'initialisation
@@ -67,11 +72,7 @@ Cette classe permet de :
   - **Duration (sec.)**, **Covered distance (m)**
   - **latitude_depart**, **longitude_depart**, **latitude_retour**, **longitude_retour**
 
----
-
 ## Notes supplémentaires
 
 - Les noms des stations sont nettoyés à l'aide d'un dictionnaire de remplacements spécifiques pour uniformiser les données.
 - Les lignes avec des valeurs manquantes sont supprimées après ajout des coordonnées.
-
----
