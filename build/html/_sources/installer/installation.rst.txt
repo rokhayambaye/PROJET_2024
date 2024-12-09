@@ -35,7 +35,7 @@ Pour vérifier l'installation de FFmpeg, exécutez la commande suivante dans un 
    Clonez le dépôt à l'aide de la commande suivante :git clone https://github.com/coralieromani/PROJET_2024 
 2. **Installer les dépendances** :
 
-Installez les bibliothèques nécessaires via le fichier `requirements.txt` :
+Installez les bibliothèques nécessaires via le fichier **requirements.txt** :
 
 .. code-block:: bash
 
