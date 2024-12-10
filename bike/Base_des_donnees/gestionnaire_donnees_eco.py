@@ -1,4 +1,3 @@
-# Importation des bibliothèques nécessaires
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -7,24 +6,58 @@ import pandas as pd
 from urllib.parse import urljoin
 
 class GestionnaireDonnees:
+    """
+    Classe pour gérer le traitement des données JSON.
+
+    cette classe permet de telecharger des fichiers JSON à partir d'une URL de base,
+    de les convertir en données csv (filtrées par année), puis de fusionner
+    les résultats dans un fichier CSV.
+
+    Paramètres :
+    -----------
+    url_base : str
+        url de base pour télécharger les fichiers JSON.
+    dossier_brut : str
+        chemin du dossier où les fichiers JSON seront stockés.
+    fichier_fusion : str
+        Chemin du fichier CSV final contenant les données fusionnées.
+    """
+
     def __init__(self, url_base, dossier_brut, fichier_fusion):
-        # Initialisation des attributs principaux
+        """
+        Initialise les paramètres principaux de la classe.
+
+        paramètre :
+        -----------
+        url_base : str
+            url de base pour récupérer les fichiers JSON.
+        dossier_brut : str
+            Dossier pour stocker les fichiers JSON téléchargés.
+        fichier_fusion : str
+            Chemin du fichier CSV final contenant les données fusionnées.
+        """
         self.url_base = url_base
         self.dossier_brut = dossier_brut
         self.fichier_fusion = fichier_fusion
 
-        # Creation du dossier de stockage des fichiers JSON s'il n'existe pas
+        # Création du dossier de stockage des fichiers JSON s'il n'existe pas
         os.makedirs(dossier_brut, exist_ok=True)
 
     def telecharger_json(self):
-        # Recherche et telechargement des fichiers JSON disponibles à l'URL de base
-        print("Recherche des fichiers JSON a télécharger...")
+        """
+        Télécharge les fichiers JSON disponibles à l'URL de base.
+
+        sortie :
+        ---------
+        list
+            Liste des chemins complets des fichiers JSON téléchargés.
+        """
+        print("Recherche des fichiers JSON à télécharger...")
         response = requests.get(self.url_base)
         if response.status_code != 200:
-            print(f"Échec de la recuperation des donnees (Code {response.status_code})")
+            print(f"Échec de la récupération des données (Code {response.status_code})")
             return []
-        
-        # Analyse du contenu HTML pour extraire les liens vers les fichiers JSON
+
         soup = BeautifulSoup(response.content, 'html.parser')
         liens = soup.find_all('a', href=True)
         urls_json = [urljoin(self.url_base, lien['href']) for lien in liens if lien['href'].endswith('.json')]
@@ -39,13 +72,25 @@ class GestionnaireDonnees:
                     with open(chemin_complet, 'wb') as fichier:
                         fichier.write(response.content)
                     fichiers_json.append(chemin_complet)
-                    print(f"Fichier télecharge : {nom_fichier}")
+                    print(f"Fichier téléchargé : {nom_fichier}")
                 else:
-                    print(f"Echec du telechargement du fichier {url} (Code {response.status_code})")
+                    print(f"Échec du téléchargement du fichier {url} (Code {response.status_code})")
         return fichiers_json
 
     def convertir_json_en_donnees(self, fichier_entree):
-        # Traitement et conversion des fichiers JSON en donnees structurées
+        """
+        Convertit en csv et filtre un fichier JSON .
+
+        Paramètres :
+        -----------
+        fichier_entree : str
+            Chemin du fichier JSON à traiter.
+
+        sortie :
+        ---------
+        pandas.DataFrame
+            DataFrame contenant les données filtrées pour l'année 2023.
+        """
         liste_donnees = []
         try:
             with open(fichier_entree, 'r', encoding='utf-8') as fichier:
@@ -57,7 +102,6 @@ class GestionnaireDonnees:
                     for chaine_json in chaines_json:
                         try:
                             objet_json = json.loads(chaine_json)
-                            # Validation des donnees et filtrage des entrees non valides
                             if any(objet_json.get(cle) is None for cle in [
                                 'intensity', 'laneId', 'dateObserved', 'location', 'id', 'type', 'vehicleType', 'reversedLane']):
                                 continue
@@ -80,9 +124,9 @@ class GestionnaireDonnees:
                             continue
 
             if not liste_donnees:
-                print(f"Aucune donnee valide trouvee dans {fichier_entree}.")
+                print(f"Aucune donnée valide trouvée dans {fichier_entree}.")
                 return []
-            # Conversion en DataFrame et filtrage des données pour l'année 2023
+            
             df = pd.DataFrame(liste_donnees).dropna()
             df['date'] = pd.to_datetime(df['date'])
             masque = (df['date'] >= '2023-01-01') & (df['date'] <= '2023-12-31')
@@ -94,12 +138,14 @@ class GestionnaireDonnees:
             return []
 
     def fusionner_donnees(self):
-        # Fusion de toutes les données filtrées des fichiers JSON en un seul fichier CSV
+        """
+        Fusionne les données filtrées des fichiers JSON en un seul fichier CSV.
+        """
         data_frames = []
         fichiers_json = self.telecharger_json()
 
         if not fichiers_json:
-            print("Aucun fichier JSON telecharge.")
+            print("Aucun fichier JSON téléchargé.")
             return
 
         for fichier in fichiers_json:
@@ -111,10 +157,14 @@ class GestionnaireDonnees:
         if data_frames:
             merged_df = pd.concat(data_frames, ignore_index=True)
             merged_df.to_csv(self.fichier_fusion, index=False)
-            print(f"Fichier fusionne enregistre sous : {self.fichier_fusion}")
+            print(f"Fichier fusionné enregistré sous : {self.fichier_fusion}")
         else:
-            print("Aucune donnee a fusionner.")
+            print("Aucune donnée à fusionner.")
 
     def executer(self):
-        # Exécution complète du pipeline
+        """
+        Exécute les méthodes complet:téléchage,convertit et fusionne les données dans un fichier CSV.
+        """
         self.fusionner_donnees()
+
+

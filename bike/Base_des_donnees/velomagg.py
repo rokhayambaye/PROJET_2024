@@ -1,7 +1,39 @@
-#%%
+
 import pandas as pd
 
 class TraitementDonneesVelomagg:
+    """
+    Classe permettant  de traiter et nettoyer des données de trajets de vélos , 
+    en ajoutant les coordonnées des stations de départ et de retour, et en enregistrant 
+    dans un fichier CSV.
+
+    Paramètres
+    ----------
+    url_trajets : str
+        url du fichier csv contenant les données des trajets des vélos velomagg de l année 2023.
+    url_stations : str
+        url du fichier CSV contenant les données des stations.
+    fichier_sortie : str
+        Nom du fichier CSV où les données enrichies seront sauvegardées.
+    df_trajets : pandas.DataFrame, optionnel
+        DataFrame contenant les données des trajets après traitement.
+    dict_stations : dict, optionnel
+        Dictionnaire contenant les coordonnées (latitude et longitude) des stations.
+
+    Méthodes
+    --------
+    telecharger_et_nettoyer_trajets()
+        Télécharge et nettoie les données des trajets, corrige les noms des stations.
+    ajouter_coordonnees_stations()
+        télécharge les données des stations et ajoute les coordonnées aux trajets.
+    supprimer_lignes_manquantes()
+        supprime les lignes contenant des  valeurs manquantes dans les données des trajets des velos.
+    sauvegarder_csv()
+        enregistre les données dans un fichier CSV.
+    executer()
+        exécute l'ensemble du processus de traitement des données.
+    """
+    
     def __init__(self, url_trajets, url_stations, fichier_sortie="Velomagg_avec_coordonnees.csv"):
         # Initialisation des URLs et du fichier de sortie
         self.url_trajets = url_trajets
@@ -78,6 +110,3 @@ class TraitementDonneesVelomagg:
         self.ajouter_coordonnees_stations()
         self.supprimer_lignes_manquantes()
         self.sauvegarder_csv()
-
-
-
