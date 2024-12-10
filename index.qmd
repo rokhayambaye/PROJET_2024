@@ -56,11 +56,11 @@ Le vélo est un transport à la fois écologique et pratique !
 ## Vidéos
 
 <video controls width="100%" height="auto">
-  <source src="docs/Video/bike_animation_12_Mai.mp4">
+  <source src="docs/Video/bike_animation_12_Mai_son.mp4">
 </video>
 
 <video controls width="100%" height="auto">
-  <source src="docs/Video/bike_animation_14_Mai.mp4">
+  <source src="docs/Video/bike_animation_14_Mai_son.mp4">
 </video>
 
 
