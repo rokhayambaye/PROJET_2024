@@ -1,7 +1,15 @@
-Création de la Vidéo des Déplacements
-=====================================
+Gestion des Vidéos : Déplacements des Vélos à Montpellier
+=========================================================
 
-Ce script permet de générer une animation montrant les déplacements des vélos à Montpellier sur une journée spécifique, en utilisant les données de trajets et un fond de carte d'OpenStreetMap.
+Ce document décrit les scripts et fonctions permettant de créer des vidéos animées des déplacements des vélos à Montpellier et d'ajouter une bande sonore aux vidéos générées.
+
+Tous les scripts et fonctions décrits ici se trouvent dans le dossier suivant :  
+**bike/video**
+
+Création de l'Animation
+------------------------
+
+Le script `code_video_date.py` génère une animation montrant les déplacements des vélos à Montpellier sur une journée spécifique, en utilisant les données de trajets et un fond de carte d'OpenStreetMap.
 
 Fonctionnalités
 ----------------
@@ -19,6 +27,10 @@ Ce script utilise les bibliothèques suivantes :
     - **matplotlib**
 
     - **osmnx**
+
+**Génération de la Vidéo pour le 12 Mai 2023**
+
+Ce code génère une vidéo représentant les déplacements des vélos le **12 mai 2023**. Voici le script utilisé :
 
 Code Source
 ------------
@@ -113,9 +125,116 @@ Code Source
     ani.save("bike_animation_12_Mai.mp4", fps=5, writer="ffmpeg")
     plt.show()
 
-Résultat
----------
-L'animation génère une vidéo des déplacements des vélos pour le 12 mai 2023, montrant en temps réel les trajets des utilisateurs.
+**Génération de la Vidéo pour le 14 Mai 2023**
+
+Pour générer la vidéo des déplacements des vélos pour le **14 mai 2023**, le même script est utilisé, à l'exception de la date. Voici les modifications apportées :
+
+.. code-block:: python
+
+   # Charger les données pour le 14 mai 2023
+   df = pd.read_csv("https://drive.google.com/uc?id=1tS82dn4_n_yjaXe8iCaKtF6vgY1GpgpY", parse_dates=["Departure", "Return"])
+   df = df[(df["Departure"].dt.date == pd.to_datetime("2023-05-14").date()) &
+           (df["Return"].dt.date == pd.to_datetime("2023-05-14").date()) &
+           ((df["Return"] - df["Departure"]).dt.total_seconds() <= 86400)]
+   df["duration"] = (df["Return"] - df["Departure"]).dt.total_seconds()
+   df = df[df["duration"] > 10]
+
+   # Reste du code identique : création de la carte et animation.
+   ani.save("bike_animation_14_Mai.mp4", fps=5, writer="ffmpeg")
+
+**Résultat**
+
+Les animations génèrent deux vidéos représentant les déplacements des vélos :  
+
+1. **12 mai 2023 :** Sauvegardée sous le nom `bike_animation_12_Mai.mp4`.
+2. **14 mai 2023 :** Sauvegardée sous le nom `bike_animation_14_Mai.mp4`.
+
+
+Ajout de Musique à la Vidéo
+---------------------------
+
+**Description :**  
+Cette fonction ajoute une piste audio à une vidéo générée, en ajustant la durée de l'audio pour correspondre à celle de la vidéo. Si nécessaire, l'audio est coupé ou répété.
+
+**Prototype :**  
+.. code-block:: python
+
+   def add_music_to_video(video_path, audio_path, output_video_with_audio_path, duration):
+
+**Paramètres :**
+
+- **video_path** *(str)* : Chemin du fichier vidéo d'entrée.
+- **audio_path** *(str)* : Chemin du fichier audio d'entrée.
+- **output_video_with_audio_path** *(str)* : Chemin pour sauvegarder la vidéo avec audio ajouté.
+- **duration** *(int ou float)* : Durée souhaitée de la vidéo et de l'audio en secondes.
+
+**Code Source :**
+
+.. code-block:: python
+
+   from moviepy.editor import VideoFileClip, AudioFileClip, concatenate_audioclips
+
+   def add_music_to_video(video_path, audio_path, output_video_with_audio_path, duration):
+       import os
+       if not os.path.isfile(video_path):
+           print(f"Erreur : La vidéo '{video_path}' est introuvable.")
+           return
+       if not os.path.isfile(audio_path):
+           print(f"Erreur : L'audio '{audio_path}' est introuvable.")
+           return
+
+       try:
+           video_clip = VideoFileClip(video_path).subclip(0, duration)
+           audio_clip = AudioFileClip(audio_path)
+
+           if audio_clip.duration > duration:
+               audio_clip = audio_clip.subclip(0, duration)
+           elif audio_clip.duration < duration:
+               num_loops = int(duration // audio_clip.duration) + 1
+               audio_clip = concatenate_audioclips([audio_clip] * num_loops).subclip(0, duration)
+
+           video_with_audio = video_clip.set_audio(audio_clip)
+           video_with_audio.write_videofile(output_video_with_audio_path, codec="libx264", audio_codec="aac")
+           print(f"Vidéo avec musique créée avec succès : {output_video_with_audio_path}")
+
+       except Exception as e:
+           print(f"Erreur inattendue : {e}")
+
+**Exemple d'utilisation :**
+
+Pour ajouter une musique à chacune des vidéos générées :  
+
+.. code-block:: python
+
+   add_music_to_video(
+       video_path="bike_animation_12_Mai.mp4",
+       audio_path="bike/video/musique.mp3",
+       output_video_with_audio_path="bike_animation_12_Mai_son.mp4",
+       duration=57
+   )
+
+   add_music_to_video(
+       video_path="bike_animation_14_Mai.mp4",
+       audio_path="bike/video/musique.mp3",
+       output_video_with_audio_path="bike_animation_14_Mai_son.mp4",
+       duration=57
+   )
+
+**Messages d'erreurs potentiellles :**
+
+- Si le fichier vidéo ou audio est introuvable :
+
+  .. code-block:: text
+
+     Erreur : La vidéo '<chemin>' est introuvable.
+     Erreur : L'audio '<chemin>' est introuvable.
+
+- En cas d'erreur inattendue :
+
+  .. code-block:: text
+
+     Erreur inattendue : <détails de l'exception>
+
 
 .. note::
 

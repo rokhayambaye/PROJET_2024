@@ -1,10 +1,10 @@
-Recupération coordonnées des Stations Vélos
-==========================================
+Recupération coordonnées des stations(bike/Base_des_donnees/station)
+====================================================================
 
 Ce module contient deux fonctions principales permettant de récupérer les coordonnées géographiques des stations de vélo à partir de leurs noms et villes, et de traiter un ensemble de données des stations de vélo.
 
-Fonction principale
--------------------
+Description des fonctions
+-------------------------
 **obtenir_coordonnees**
 
 Cette fonction utilise le service de géocodage de l'API Nominatim de **geopy** pour obtenir les coordonnées géographiques (latitude et longitude) d'un lieu donné dans une ville spécifiée en France.

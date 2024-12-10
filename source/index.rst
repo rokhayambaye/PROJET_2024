@@ -21,7 +21,7 @@ Guide
    installer/contacts
 .. toctree::
    :maxdepth: 2 
-   :Caption : installation et contacts    installer/installation installer/contacts  
+   :Caption : installation et contacts    installer/installation installer/contacts 
 .. toctree::
    :maxdepth: 2
    :caption: Traitement des bases de données 

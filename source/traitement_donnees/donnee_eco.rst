@@ -1,10 +1,10 @@
-Gestionnaire des Données Éco-Compteurs
-=======================================
+Gestionnaire de données éco (bike/Base_des_donnees/gestionnaire_donnee_eco)
+===========================================================================
 
 Ce module contient une classe et des méthodes pour télécharger, traiter et fusionner les données des éco-compteurs.
 
-Classe principale
-------------------
+Description de la classe GestionnaireDonnees
+--------------------------------------------
 **GestionnaireDonnees** 
 
 Cette classe permet de :  

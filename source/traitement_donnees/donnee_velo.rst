@@ -1,12 +1,10 @@
-Traitement des Données VéloMagg
-================================
+Traitement des données vélomagg(bike/Base_des_donnees/velomagg)
+==============================================================
 
 Ce module contient une classe et des méthodes pour télécharger, nettoyer et enrichir les données des trajets VéloMagg avec les coordonnées des stations.
 
-Classe principale
-------------------
-
-**TraitementDonneesVelomagg**
+Description de la classe TraitementDonneesVelomagg
+--------------------------------------------------
 
 Cette classe permet de :  
 
