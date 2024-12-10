@@ -9,8 +9,8 @@ format:
     toc: true
     toc-title: "Sommaire"
     code-fold: true
-    css: styles.css  # Chemin relatif correct pour le CSS
-    theme: flatly    # Thème de base Quarto
+    css: styles.css  
+    theme: flatly  
 ---
 
 <div id="logo-container" style="position: absolute; top: 10px; left: 10px;">
