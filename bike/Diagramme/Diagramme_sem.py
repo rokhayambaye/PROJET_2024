@@ -12,7 +12,7 @@ Donnees_montpellier['date'] = pd.to_datetime(Donnees_montpellier['date'])
 flux_global = Donnees_montpellier.groupby('date')['intensity'].sum()
 
 
-# Ajouter une colonne pour le jour de la semaine (0 = Lundi, 6 = Dimanche)
+# Ajouter une colonne pour les jour de la semaine
 Donnees_montpellier['weekday'] = Donnees_montpellier['date'].dt.dayofweek
 
 # Calculer la moyenne des flux par jour de la semaine
@@ -37,6 +37,5 @@ fig.update_layout(
     height=500
 )
 
-# Afficher le graphique
-fig.show()
+# Sauvegarder le graphique
 fig.write_html("docs/Diagramme/Diagramme_Semaine_2023.html")

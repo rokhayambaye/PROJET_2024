@@ -16,7 +16,7 @@ mois = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
 # Calculer le nombre moyen de locations par mois
 locations_par_mois = velomagg_data.groupby('Month').size()
 
-# Créer un graphique interactif pour les locations par mois
+# Créer un graphique
 fig_mois = go.Figure()
 
 fig_mois.add_trace(go.Bar(
