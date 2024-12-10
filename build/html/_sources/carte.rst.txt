@@ -1,4 +1,4 @@
-Création de cartes interactives pour le trafic cycliste à Montpellier
+Creation des cartes (bike/carte/carteflux)
 =====================================================================
 
 Ce script génère des cartes interactives illustrant le trafic cycliste à Montpellier pour chaque jour de la semaine. Il utilise les données d'intensité des vélos et des infrastructures cyclables disponibles dans OpenStreetMap pour créer des visualisations informatives et colorées.

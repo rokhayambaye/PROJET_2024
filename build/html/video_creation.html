@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Création de la Vidéo des Déplacements &mdash; Documentation ANALYSE DU TRAFIC CYCLISTE </title>
+  <title>Gestion des Vidéos : Déplacements des Vélos à Montpellier &mdash; Documentation ANALYSE DU TRAFIC CYCLISTE </title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -20,8 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Création de cartes interactives pour le trafic cycliste à Montpellier" href="carte.html" />
-    <link rel="prev" title="Traitement des Données VéloMagg" href="traitement_donnees/donnee_velo.html" /> 
+    <link rel="next" title="bike/carte/carteflux" href="carte.html" />
+    <link rel="prev" title="bike/Base_des_donnees/velomagg" href="traitement_donnees/donnee_velo.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,23 +50,24 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Traitement des bases de données</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="traitement_donnees/donnee_eco.html">Gestionnaire des Données Éco-Compteurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="station.html">Recupération coordonnées des Stations Vélos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="traitement_donnees/donnee_velo.html">Traitement des Données VéloMagg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traitement_donnees/donnee_eco.html">bike/Base_des_donnees/gestionnaire_donnee_eco</a></li>
+<li class="toctree-l1"><a class="reference internal" href="station.html">bike/Base_des_donnees/station</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traitement_donnees/donnee_velo.html">bike/Base_des_donnees/velomagg</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Video</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Création de la Vidéo des Déplacements</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Gestion des Vidéos : Déplacements des Vélos à Montpellier</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creation-de-l-animation">Création de l’Animation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fonctionnalites">Fonctionnalités</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dependances">Dépendances</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#code-source">Code Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#resultat">Résultat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ajout-de-musique-a-la-video">Ajout de Musique à la Vidéo</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Carte</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="carte.html">Création de cartes interactives pour le trafic cycliste à Montpellier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carte.html">bike/carte/carteflux</a></li>
 </ul>
 
         </div>
@@ -83,7 +84,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Création de la Vidéo des Déplacements</li>
+      <li class="breadcrumb-item active">Gestion des Vidéos : Déplacements des Vélos à Montpellier</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/video_creation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -93,9 +94,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="creation-de-la-video-des-deplacements">
-<h1>Création de la Vidéo des Déplacements<a class="headerlink" href="#creation-de-la-video-des-deplacements" title="Lien vers cette rubrique"></a></h1>
-<p>Ce script permet de générer une animation montrant les déplacements des vélos à Montpellier sur une journée spécifique, en utilisant les données de trajets et un fond de carte d’OpenStreetMap.</p>
+  <section id="gestion-des-videos-deplacements-des-velos-a-montpellier">
+<h1>Gestion des Vidéos : Déplacements des Vélos à Montpellier<a class="headerlink" href="#gestion-des-videos-deplacements-des-velos-a-montpellier" title="Lien vers cette rubrique"></a></h1>
+<p>Ce document décrit les scripts et fonctions permettant de créer des vidéos animées des déplacements des vélos à Montpellier et d’ajouter une bande sonore aux vidéos générées.</p>
+<p>Tous les scripts et fonctions décrits ici se trouvent dans le dossier suivant :
+<strong>bike/video</strong></p>
+<section id="creation-de-l-animation">
+<h2>Création de l’Animation<a class="headerlink" href="#creation-de-l-animation" title="Lien vers cette rubrique"></a></h2>
+<p>Le script <cite>code_video_date.py</cite> génère une animation montrant les déplacements des vélos à Montpellier sur une journée spécifique, en utilisant les données de trajets et un fond de carte d’OpenStreetMap.</p>
+</section>
 <section id="fonctionnalites">
 <h2>Fonctionnalités<a class="headerlink" href="#fonctionnalites" title="Lien vers cette rubrique"></a></h2>
 <ul class="simple">
@@ -116,6 +123,8 @@
 </ul>
 </dd>
 </dl>
+<p><strong>Génération de la Vidéo pour le 12 Mai 2023</strong></p>
+<p>Ce code génère une vidéo représentant les déplacements des vélos le <strong>12 mai 2023</strong>. Voici le script utilisé :</p>
 </section>
 <section id="code-source">
 <h2>Code Source<a class="headerlink" href="#code-source" title="Lien vers cette rubrique"></a></h2>
@@ -209,10 +218,104 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<p><strong>Génération de la Vidéo pour le 14 Mai 2023</strong></p>
+<p>Pour générer la vidéo des déplacements des vélos pour le <strong>14 mai 2023</strong>, le même script est utilisé, à l’exception de la date. Voici les modifications apportées :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Charger les données pour le 14 mai 2023</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://drive.google.com/uc?id=1tS82dn4_n_yjaXe8iCaKtF6vgY1GpgpY&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Departure&quot;</span><span class="p">,</span> <span class="s2">&quot;Return&quot;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Departure&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">&quot;2023-05-14&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">())</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Return&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">&quot;2023-05-14&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">())</span> <span class="o">&amp;</span>
+        <span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Return&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Departure&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">86400</span><span class="p">)]</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Return&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Departure&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1"># Reste du code identique : création de la carte et animation.</span>
+<span class="n">ani</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;bike_animation_14_Mai.mp4&quot;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="s2">&quot;ffmpeg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Résultat</strong></p>
+<p>Les animations génèrent deux vidéos représentant les déplacements des vélos :</p>
+<ol class="arabic simple">
+<li><p><strong>12 mai 2023 :</strong> Sauvegardée sous le nom <cite>bike_animation_12_Mai.mp4</cite>.</p></li>
+<li><p><strong>14 mai 2023 :</strong> Sauvegardée sous le nom <cite>bike_animation_14_Mai.mp4</cite>.</p></li>
+</ol>
 </section>
-<section id="resultat">
-<h2>Résultat<a class="headerlink" href="#resultat" title="Lien vers cette rubrique"></a></h2>
-<p>L’animation génère une vidéo des déplacements des vélos pour le 12 mai 2023, montrant en temps réel les trajets des utilisateurs.</p>
+<section id="ajout-de-musique-a-la-video">
+<h2>Ajout de Musique à la Vidéo<a class="headerlink" href="#ajout-de-musique-a-la-video" title="Lien vers cette rubrique"></a></h2>
+<p><strong>Description :</strong>
+Cette fonction ajoute une piste audio à une vidéo générée, en ajustant la durée de l’audio pour correspondre à celle de la vidéo. Si nécessaire, l’audio est coupé ou répété.</p>
+<p><strong>Prototype :</strong>
+.. code-block:: python</p>
+<blockquote>
+<div><p>def add_music_to_video(video_path, audio_path, output_video_with_audio_path, duration):</p>
+</div></blockquote>
+<p><strong>Paramètres :</strong></p>
+<ul class="simple">
+<li><p><strong>video_path</strong> <em>(str)</em> : Chemin du fichier vidéo d’entrée.</p></li>
+<li><p><strong>audio_path</strong> <em>(str)</em> : Chemin du fichier audio d’entrée.</p></li>
+<li><p><strong>output_video_with_audio_path</strong> <em>(str)</em> : Chemin pour sauvegarder la vidéo avec audio ajouté.</p></li>
+<li><p><strong>duration</strong> <em>(int ou float)</em> : Durée souhaitée de la vidéo et de l’audio en secondes.</p></li>
+</ul>
+<p><strong>Code Source :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">moviepy.editor</span> <span class="kn">import</span> <span class="n">VideoFileClip</span><span class="p">,</span> <span class="n">AudioFileClip</span><span class="p">,</span> <span class="n">concatenate_audioclips</span>
+
+<span class="k">def</span> <span class="nf">add_music_to_video</span><span class="p">(</span><span class="n">video_path</span><span class="p">,</span> <span class="n">audio_path</span><span class="p">,</span> <span class="n">output_video_with_audio_path</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">video_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur : La vidéo &#39;</span><span class="si">{</span><span class="n">video_path</span><span class="si">}</span><span class="s2">&#39; est introuvable.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">audio_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur : L&#39;audio &#39;</span><span class="si">{</span><span class="n">audio_path</span><span class="si">}</span><span class="s2">&#39; est introuvable.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">video_clip</span> <span class="o">=</span> <span class="n">VideoFileClip</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span><span class="o">.</span><span class="n">subclip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+        <span class="n">audio_clip</span> <span class="o">=</span> <span class="n">AudioFileClip</span><span class="p">(</span><span class="n">audio_path</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">audio_clip</span><span class="o">.</span><span class="n">duration</span> <span class="o">&gt;</span> <span class="n">duration</span><span class="p">:</span>
+            <span class="n">audio_clip</span> <span class="o">=</span> <span class="n">audio_clip</span><span class="o">.</span><span class="n">subclip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">audio_clip</span><span class="o">.</span><span class="n">duration</span> <span class="o">&lt;</span> <span class="n">duration</span><span class="p">:</span>
+            <span class="n">num_loops</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">duration</span> <span class="o">//</span> <span class="n">audio_clip</span><span class="o">.</span><span class="n">duration</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">audio_clip</span> <span class="o">=</span> <span class="n">concatenate_audioclips</span><span class="p">([</span><span class="n">audio_clip</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_loops</span><span class="p">)</span><span class="o">.</span><span class="n">subclip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+
+        <span class="n">video_with_audio</span> <span class="o">=</span> <span class="n">video_clip</span><span class="o">.</span><span class="n">set_audio</span><span class="p">(</span><span class="n">audio_clip</span><span class="p">)</span>
+        <span class="n">video_with_audio</span><span class="o">.</span><span class="n">write_videofile</span><span class="p">(</span><span class="n">output_video_with_audio_path</span><span class="p">,</span> <span class="n">codec</span><span class="o">=</span><span class="s2">&quot;libx264&quot;</span><span class="p">,</span> <span class="n">audio_codec</span><span class="o">=</span><span class="s2">&quot;aac&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vidéo avec musique créée avec succès : </span><span class="si">{</span><span class="n">output_video_with_audio_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur inattendue : </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<p>Pour ajouter une musique à chacune des vidéos générées :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add_music_to_video</span><span class="p">(</span>
+    <span class="n">video_path</span><span class="o">=</span><span class="s2">&quot;bike_animation_12_Mai.mp4&quot;</span><span class="p">,</span>
+    <span class="n">audio_path</span><span class="o">=</span><span class="s2">&quot;bike/video/musique.mp3&quot;</span><span class="p">,</span>
+    <span class="n">output_video_with_audio_path</span><span class="o">=</span><span class="s2">&quot;bike_animation_12_Mai_son.mp4&quot;</span><span class="p">,</span>
+    <span class="n">duration</span><span class="o">=</span><span class="mi">57</span>
+<span class="p">)</span>
+
+<span class="n">add_music_to_video</span><span class="p">(</span>
+    <span class="n">video_path</span><span class="o">=</span><span class="s2">&quot;bike_animation_14_Mai.mp4&quot;</span><span class="p">,</span>
+    <span class="n">audio_path</span><span class="o">=</span><span class="s2">&quot;bike/video/musique.mp3&quot;</span><span class="p">,</span>
+    <span class="n">output_video_with_audio_path</span><span class="o">=</span><span class="s2">&quot;bike_animation_14_Mai_son.mp4&quot;</span><span class="p">,</span>
+    <span class="n">duration</span><span class="o">=</span><span class="mi">57</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Messages d’erreurs potentiellles :</strong></p>
+<ul>
+<li><p>Si le fichier vidéo ou audio est introuvable :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Erreur : La vidéo &#39;&lt;chemin&gt;&#39; est introuvable.
+Erreur : L&#39;audio &#39;&lt;chemin&gt;&#39; est introuvable.
+</pre></div>
+</div>
+</li>
+<li><p>En cas d’erreur inattendue :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Erreur inattendue : &lt;détails de l&#39;exception&gt;
+</pre></div>
+</div>
+</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Assurez-vous que les données d’entrée <cite>Velomagg_avec_coordonnees.csv</cite> sont correctement formatées et placées dans le même répertoire que le script.</p>
@@ -224,8 +327,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="traitement_donnees/donnee_velo.html" class="btn btn-neutral float-left" title="Traitement des Données VéloMagg" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="carte.html" class="btn btn-neutral float-right" title="Création de cartes interactives pour le trafic cycliste à Montpellier" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="traitement_donnees/donnee_velo.html" class="btn btn-neutral float-left" title="bike/Base_des_donnees/velomagg" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="carte.html" class="btn btn-neutral float-right" title="bike/carte/carteflux" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
